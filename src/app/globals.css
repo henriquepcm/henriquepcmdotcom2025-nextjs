@@ -3,19 +3,92 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+     --henriquepcm-dark-purple: #522258;
+     --henriquepcm-base-purple: #6e2d76;
+     --henriquepcm-light-purple: #deb5e3;
+     --henriquepcm-pink: #ff0093;
+     --henriquepcm-green: #01c381;
+     --henriquepcm-orange: #ff9900;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+     @apply scroll-smooth;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+     @apply flex justify-center bg-henriquepcmdarkpurple text-henriquepcmlightpurple text-xs tracking-widest leading-6 bg-[radial-gradient(90rem_40rem_at_top,_#FF9900_25%,_#FF0093_80%,_#522258_100%)];
+}
+
+h1 {
+     @apply uppercase font-black text-white text-2xl mb-3;
+}
+
+h2 {
+     @apply text-white text-xl font-bold tracking-wide leading-8;
+}
+
+h3 {
+     @apply text-white font-bold text-xs tracking-widest mb-2;
+}
+
+label {
+     @apply uppercase text-[0.6rem] tracking-widest;
+}
+
+input,
+textarea {
+     @apply border-b border-henriquepcmbasepurple bg-transparent text-white outline-none transition duration-300;
+}
+
+input {
+     @apply h-10;
+}
+
+textarea {
+     @apply h-40 resize-none pt-2;
+}
+
+.tabtitle {
+     @apply text-henriquepcmlightpurple uppercase text-xs mb-5 tracking-widest;
+}
+
+.grid-overlay {
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     display: grid;
+     grid-template-columns: repeat(24, 1fr); /* 12-column grid */
+     gap: 1px; /* Adjust spacing */
+     pointer-events: none; /* Allows clicking through the grid */
+     z-index: 9999; /* Ensure it's on top */
+}
+
+.grid-overlay div {
+     background: #000;
+     opacity: 0.2; /* Semi-transparent columns */
+}
+
+/* Main menu effect */
+ul > li > a {
+     position: relative;
+     display: inline-block;
+     padding: 10px;
+     transition: transform 0.3s ease;
+}
+
+ul > li > a::after {
+     content: "";
+     position: absolute;
+     bottom: 0;
+     left: 0;
+     width: 0; /* Initially hidden */
+     height: 0.15rem;
+     background-color: var(--henriquepcm-pink); /* Border color */
+     transition: width 0.3s ease-in-out;
+}
+
+ul > li > a:hover::after {
+     width: 100%;
 }
