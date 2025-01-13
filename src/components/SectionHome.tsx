@@ -1,10 +1,29 @@
-import HomeAnimation from "./Animations/HomeAnimation";
-import { onErrorProps } from "./Error/ErrorType";
+import getGraphQLData from "@/utilities/getGraphQLData";
+import SectionHomeRender from "./SectionHomeRender";
+import { gql } from "@apollo/client";
+import { HomeData } from "./Animations/HomeAnimation";
+import ErrorMessage from "./Error/ErrorMessage";
 
-export default function SectionHome({ onError }: onErrorProps) {
-     return (
-          <section id="Home" className="flex flex-col min-h-screen w-full">
-               <HomeAnimation onError={onError} />
-          </section>
-     );
+const GET_HOME_DATA = gql`
+     query Home {
+          home {
+               title
+               subtitle
+          }
+     }
+`;
+
+export default async function SectionHome() {
+     try {
+          const data = await getGraphQLData<{ home: HomeData }>(GET_HOME_DATA);
+
+          if (!data) {
+               console.log("Missing home data");
+               throw new Error("Missing home data");
+          }
+
+          return <SectionHomeRender data={data.home} />;
+     } catch (error) {
+          return <ErrorMessage error={error} />;
+     }
 }

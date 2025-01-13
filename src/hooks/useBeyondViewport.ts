@@ -1,8 +1,9 @@
+"use client";
 import { useEffect, useState } from "react";
 
 export const useBeyondViewport = () => {
-     const [innerHeight, setInnerHeight] = useState(window.innerHeight);
-     const [scrollPosition, setScrollPosition] = useState(window.scrollY);
+     const [innerHeight, setInnerHeight] = useState(0);
+     const [scrollPosition, setScrollPosition] = useState(0);
      const [isBeyondViewport, setIsBeyondViewport] = useState(false);
      const [margin, setMargin] = useState(0);
 

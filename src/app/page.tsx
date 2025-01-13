@@ -1,42 +1,22 @@
-"use client";
-
-import fetchGraphQLData from "@/utilities/fetchGraphQLData";
-import { useEffect, useState } from "react";
-
-export default function App() {
-     const isClient = typeof window !== "undefined";
-     console.log(isClient ? "Client-side rendering" : "Server-side rendering");
-
-     const [data, setData] = useState(null);
-
-     useEffect(() => {
-          const fetchData = async () => {
-               const result = await fetchGraphQLData();
-               setData(result);
-          };
-
-          fetchData();
-     }, []);
-
-     if (!data) {
-          return <div>Loading...</div>;
-     }
-
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
+import SectionAbout from "@/components/SectionAbout";
+import SectionContact from "@/components/SectionContact";
+import SectionHome from "@/components/SectionHome";
+import SectionProjects from "@/components/SectionProjects";
+import SectionSkills from "@/components/SectionSkills";
+export default async function App() {
      return (
-          <div>
-               {data.header.menuItems.map((item) => {
-                    return <div key={item.id}>{item.label}</div>;
-               })}
+          <div className="w-full max-w-[1920px]">
+               <Header />
+               <main>
+                    <SectionHome />
+                    <SectionAbout />
+                    <SectionProjects />
+                    <SectionSkills />
+                    <SectionContact />
+               </main>
+               <Footer />
           </div>
      );
-}
-
-{
-     /* Grid to align elements */
-     /*  
-     <div className="grid-overlay">
-          {[...Array(24)].map((_, i) => (
-               <div key={i}></div>
-          ))}
-     </div> */
 }

@@ -1,18 +1,18 @@
-import { ApolloError } from "@apollo/client";
+"use client";
 
 interface ErrorProps {
-     error: ApolloError;
+     error: unknown;
 }
 
 export default function ErrorMessage({ error }: ErrorProps) {
-     console.error(error.message);
+     console.error(error);
 
      const handleRefresh = () => {
           window.location.reload();
      };
 
      return (
-          <div className="flex min-h-screen">
+          <div className="flex min-h-svh bg-black z-50">
                <div className="flex flex-col text-white rounded-md p-10 items-center justify-center">
                     <svg
                          viewBox="0 0 100 35"

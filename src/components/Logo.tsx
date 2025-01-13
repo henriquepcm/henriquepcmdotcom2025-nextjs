@@ -1,25 +1,21 @@
-import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
-interface BrandProps {
+interface BrandData {
      logo: string;
      link: string;
 }
 
-interface LogoProps {
-     brand?: BrandProps;
-     loading: boolean;
+interface BrandDataProps {
+     data: BrandData;
 }
 
-export default function Logo({ brand, loading }: LogoProps) {
-     if (loading) return <Skeleton width={80} height={28} />;
-     if (brand)
-          return (
-               <a
-                    dangerouslySetInnerHTML={{ __html: brand.logo }}
-                    href={brand.link}
-                    aria-label="Go to the home section"
-                    className="w-20"
-               ></a>
-          );
+export default function Logo({ data }: BrandDataProps) {
+     return (
+          <a
+               dangerouslySetInnerHTML={{ __html: data.logo }}
+               href={data.link}
+               aria-label="Go to the home section"
+               className="w-20"
+          ></a>
+     );
 }

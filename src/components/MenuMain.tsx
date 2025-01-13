@@ -16,7 +16,7 @@ interface ButtonProps {
 interface MenuMainProps {
      items?: ItemProps[];
      button?: ButtonProps;
-     loading: boolean;
+     loading?: boolean;
 }
 
 export default function MenuMain({ items, button, loading }: MenuMainProps) {
