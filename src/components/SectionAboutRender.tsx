@@ -28,7 +28,7 @@ export default function SectionAboutRender({ data }: AboutDataProps) {
      return (
           <section
                id="About"
-               className="flex flex-row justify-center items-center pt-44 min-h-screen bg-[url(/img/bg-light-radial.avif),url(/img/bg-light-1.avif),url(/img/bg-light-2.avif)] [background-position:70%_40%,0%_0%,100%_50%] bg-no-repeat"
+               className="flex flex-row justify-center items-center pt-28 min-h-screen bg-[url(/img/bg-light-radial.avif),url(/img/bg-light-1.avif),url(/img/bg-light-2.avif)] [background-position:70%_40%,0%_0%,100%_50%] bg-no-repeat"
           >
                <div className="flex flex-row justify-center items-center gap-28">
                     <div className="flex flex-col w-10/12 sm:w-8/12">

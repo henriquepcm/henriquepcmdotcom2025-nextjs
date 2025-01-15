@@ -1,5 +1,3 @@
-import "react-loading-skeleton/dist/skeleton.css";
-
 interface BrandData {
      logo: string;
      link: string;

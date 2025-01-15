@@ -33,7 +33,7 @@ export default function SectionProjectsRender({ data }: ProjectsDataProps) {
                          <section
                               id="Projects"
                               key={project.documentId}
-                              className="flex flex-col min-h-screen justify-center items-center pt-44 bg-[url(/img/bg-light-radial.avif),url(/img/bg-light-1.avif),url(/img/bg-light-2.avif)] [background-position:50%_10%,100%_70%,0%_0%] bg-no-repeat"
+                              className="flex flex-col min-h-screen justify-center items-center pt-28 bg-[url(/img/bg-light-radial.avif),url(/img/bg-light-1.avif),url(/img/bg-light-2.avif)] [background-position:50%_10%,100%_70%,0%_0%] bg-no-repeat"
                          >
                               <div className="flex flex-col lg:flex-row lg:gap-10 items-end h-full w-10/12 sm:w-8/12">
                                    <div className="lg:w-3/6">

@@ -1,7 +1,6 @@
 "use client";
-
-import "react-loading-skeleton/dist/skeleton.css";
 import { useSpring, useInView, animated } from "@react-spring/web";
+import Image from "next/image";
 
 export interface HomeData {
      title: string;
@@ -88,69 +87,47 @@ export default function HomeAnimation({ data }: HomeDataProps) {
                          style={stylePhone}
                          className="hidden lg:flex flex-col"
                     >
-                         <picture>
-                              <source
-                                   srcSet="./img/phone-kiwi-sideways-retina.avif"
-                                   media="(min-resolution: 2dppx)"
-                              />
-                              <img
-                                   fetchPriority="high"
-                                   src="./img/phone-kiwi-sideways-regular.avif"
-                                   alt="Sideways cell phone"
-                                   className="w-[7rem] -translate-y-5"
-                              />
-                         </picture>
+                         <Image
+                              priority={true}
+                              src="/img/phone-kiwi-sideways-retina.avif"
+                              width={120}
+                              height={182}
+                              alt="Sideways cell phone"
+                              className="w-[7rem] -translate-y-5"
+                         />
 
-                         <picture>
-                              <source
-                                   srcSet="./img/phone-kiwi-sideways-shadow-retina.avif"
-                                   media="(min-resolution: 2dppx)"
-                              />
-                              <img
-                                   fetchPriority="high"
-                                   src="./img/phone-kiwi-sideways-shadow.avif"
-                                   alt=""
-                                   className="w-[7rem] -translate-y-12 translate-x-12"
-                              />
-                         </picture>
+                         <Image
+                              priority={true}
+                              src="/img/phone-kiwi-sideways-shadow-retina.avif"
+                              width={141}
+                              height={78}
+                              alt=""
+                              className="w-[7rem] -translate-y-12 translate-x-12"
+                         />
                     </animated.div>
 
                     <animated.div style={styleLaptop} className="flex flex-col">
-                         <picture>
-                              <source
-                                   srcSet="./img/laptop-retina.avif"
-                                   media="(min-resolution: 2dppx)"
-                              />
-                              <img
-                                   fetchPriority="high"
-                                   src="./img/laptop-regular.avif"
-                                   alt="Laptop"
-                                   className="w-[19rem] -translate-y-5 z-20"
-                              />
-                         </picture>
+                         <Image
+                              priority={true}
+                              src="/img/laptop-retina.avif"
+                              width={362}
+                              height={360}
+                              alt="Laptop"
+                              className="w-[19rem] -translate-y-5 z-20"
+                         />
 
-                         <picture>
-                              <source
-                                   srcSet="./img/laptop-shadow-retina.avif"
-                                   media="(min-resolution: 2dppx)"
-                              />
-                              <img
-                                   fetchPriority="high"
-                                   src="./img/laptop-shadow.avif"
-                                   alt=""
-                                   className="w-[19rem] -translate-y-20 -translate-x-4 z-10"
-                              />
-                         </picture>
+                         <Image
+                              fetchPriority="high"
+                              src="/img/laptop-shadow-retina.avif"
+                              width={438}
+                              height={132}
+                              alt=""
+                              className="w-[19rem] -translate-y-20 -translate-x-4 z-10"
+                         />
                     </animated.div>
                </animated.div>
-
-               <div className="flex flex-col items-center absolute z-50 mt-[26rem] w-[18.8rem] lg:w-full">
-                    <animated.h1
-                         style={styleRole}
-                         className="flex justify-center items-center text-center leading-8"
-                    >
-                         {data.subtitle}
-                    </animated.h1>
+               <div className="flex flex-col items-center text-center absolute z-50 mt-[26rem] w-[18.8rem] lg:w-full">
+                    <animated.h1 style={styleRole}>{data.subtitle}</animated.h1>
                     <div className="flex justify-center uppercase text-white text-center leading-[1.5rem] tracking-[0.44rem]">
                          <animated.div style={styleH1}>
                               {data.title}

@@ -1,4 +1,5 @@
 import { useSpring, useInView, animated } from "@react-spring/web";
+import Image from "next/image";
 
 export default function KiwiAppAnimation() {
      const [refPhone, inViewPhone] = useInView({
@@ -71,21 +72,24 @@ export default function KiwiAppAnimation() {
                               style={styleElectricity}
                               className="absolute z-50 w-[8.3rem]"
                          >
-                              <img
+                              <Image
                                    loading="lazy"
-                                   src="./img/kiwi-app-phone-electricity.avif"
-                                   srcSet="./img/kiwi-app-phone-electricity.avif 1x, ./img/kiwi-app-phone-electricity-retina.avif 2x"
+                                   src="/img/kiwi-app-phone-electricity-retina.avif"
+                                   width={185}
+                                   height={107}
                                    alt=""
                               />
                          </animated.div>
+
                          <animated.div
                               style={styleCellPhone}
                               className="absolute z-40 w-[8.3rem]"
                          >
-                              <img
+                              <Image
                                    loading="lazy"
-                                   src="./img/kiwi-app-phone-cell-phone.avif"
-                                   srcSet="./img/kiwi-app-phone-cell-phone.avif 1x, ./img/kiwi-app-phone-cell-phone-retina.avif 2x"
+                                   src="/img/kiwi-app-phone-cell-phone-retina.avif"
+                                   width={185}
+                                   height={107}
                                    alt=""
                               />
                          </animated.div>
@@ -93,10 +97,11 @@ export default function KiwiAppAnimation() {
                               style={styleInternet}
                               className="absolute z-30 w-[8.3rem]"
                          >
-                              <img
+                              <Image
                                    loading="lazy"
-                                   src="./img/kiwi-app-phone-internet.avif"
-                                   srcSet="./img/kiwi-app-phone-internet.avif 1x, ./img/kiwi-app-phone-internet-retina.avif 2x"
+                                   src="/img/kiwi-app-phone-internet-retina.avif"
+                                   width={185}
+                                   height={107}
                                    alt=""
                               />
                          </animated.div>
@@ -104,18 +109,20 @@ export default function KiwiAppAnimation() {
                               style={styleInsurance}
                               className="absolute z-20 w-[8.3rem]"
                          >
-                              <img
+                              <Image
                                    loading="lazy"
-                                   src="./img/kiwi-app-phone-health-insurance.avif"
-                                   srcSet="./img/kiwi-app-phone-health-insurance.avif 1x, ./img/kiwi-app-phone-health-insurance-retina.avif 2x"
+                                   src="/img/kiwi-app-phone-health-insurance-retina.avif"
+                                   width={185}
+                                   height={107}
                                    alt=""
                               />
                          </animated.div>
                          <div className="absolute z-10 w-[25rem] ">
-                              <img
+                              <Image
                                    loading="lazy"
-                                   src="./img/kiwi-app-phone-base.avif"
-                                   srcSet="./img/kiwi-app-phone-base.avif 1x, ./img/kiwi-app-phone-base-retina.avif 2x"
+                                   src="/img/kiwi-app-phone-base-retina.avif"
+                                   width={530}
+                                   height={312}
                                    alt=""
                               />
                          </div>
@@ -124,10 +131,11 @@ export default function KiwiAppAnimation() {
                          style={stylePhoneShadow}
                          className="absolute -z-10 translate-y-2 w-[25rem] "
                     >
-                         <img
+                         <Image
                               loading="lazy"
-                              src="./img/kiwi-app-phone-base-shadow.avif"
-                              srcSet="./img/kiwi-app-phone-base-shadow.avif 1x, ./img/kiwi-app-phone-base-shadow-retina.avif 2x"
+                              src="/img/kiwi-app-phone-base-shadow.avif"
+                              width={535}
+                              height={326}
                               alt=""
                          />
                     </animated.div>

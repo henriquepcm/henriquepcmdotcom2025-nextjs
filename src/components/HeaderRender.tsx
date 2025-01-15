@@ -3,6 +3,7 @@
 import { useBeyondViewport } from "../hooks/useBeyondViewport";
 import Logo from "./Logo";
 import MenuMain from "./MenuMain";
+import MenuMobile from "./MenuMobile";
 
 export interface HeaderData {
      menuItems: {
@@ -42,6 +43,10 @@ export default function HeaderRender({ data }: HeaderRenderProps) {
                     <div className="flex justify-between items-center h-20 w-10/12 max-w-[1920px] relative">
                          <Logo data={data.brand} />
                          <MenuMain
+                              items={data.menuItems}
+                              button={data.button}
+                         />
+                         <MenuMobile
                               items={data.menuItems}
                               button={data.button}
                          />
