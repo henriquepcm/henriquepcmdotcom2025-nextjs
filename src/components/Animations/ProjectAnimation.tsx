@@ -93,82 +93,101 @@ export default function ProjectAnimation({ project }: ProjectAnimationProps) {
      });
 
      return (
-          <animated.div
-               ref={refProject}
-               className="flex items-center lg:items-end justify-center lg:h-[20rem] h-[30rem] relative"
-          >
-               <div className="md:w-5/6 lg:w-full">
-                    <div>
-                         <animated.div style={styleDesktopScreen}>
-                              <Image
-                                   src={image.desktopHomeScreen.src}
-                                   width={1376}
-                                   height={757}
-                                   alt={image.desktopHomeScreen.alt}
-                                   className="md:w-5/6 lg:w-full"
-                                   loading="lazy"
-                              />
-                         </animated.div>
-                         <animated.div style={styleDesktopScreenShadow}>
-                              <Image
-                                   src="/img/desktop-screen-shadow-retina.avif"
-                                   width={708}
-                                   height={55}
-                                   className="md:w-5/6 lg:w-full"
-                                   loading="lazy"
-                                   alt=""
-                              />
-                         </animated.div>
-                    </div>
-                    <div className="-translate-y-72 translate-x-5">
-                         <div className="absolute mt-24">
-                              <animated.div style={styleMobileSecondaryScreen}>
+          <>
+               {/* @ts-expect-error bug with React Spring + TypeScript + Next.js 15 https://github.com/pmndrs/react-spring/issues/2332 */}
+               <animated.div
+                    ref={refProject}
+                    className="flex items-center lg:items-end justify-center lg:h-[20rem] h-[30rem] relative"
+               >
+                    <div className="md:w-5/6 lg:w-full">
+                         <div>
+                              {/* @ts-expect-error bug with React Spring + TypeScript + Next.js 15 https://github.com/pmndrs/react-spring/issues/2332 */}
+                              <animated.div style={styleDesktopScreen}>
                                    <Image
-                                        src={image.mobileSecondaryScreen.src}
-                                        width={177}
-                                        height={365}
-                                        alt={image.mobileSecondaryScreen.alt}
-                                        className="w-[6.1rem]"
+                                        src={image.desktopHomeScreen.src}
+                                        width={1376}
+                                        height={757}
+                                        alt={image.desktopHomeScreen.alt}
+                                        className="md:w-5/6 lg:w-full"
                                         loading="lazy"
                                    />
                               </animated.div>
-                              <animated.div
-                                   style={styleMobileSecondaryScreenShadow}
-                              >
+                              {/* @ts-expect-error bug with React Spring + TypeScript + Next.js 15 https://github.com/pmndrs/react-spring/issues/2332 */}
+                              <animated.div style={styleDesktopScreenShadow}>
                                    <Image
-                                        src="/img/phone-shadow-retina.avif"
-                                        width={195}
-                                        height={42}
-                                        className="w-[6.1rem]"
+                                        src="/img/desktop-screen-shadow-retina.avif"
+                                        width={708}
+                                        height={55}
+                                        className="md:w-5/6 lg:w-full"
                                         loading="lazy"
                                         alt=""
                                    />
                               </animated.div>
                          </div>
-                         <div className="absolute ml-16 mt-28">
-                              <animated.div style={styleMobileHomeScreen}>
-                                   <Image
-                                        src={image.mobileHomeScreen.src}
-                                        width={178}
-                                        height={366}
-                                        alt={image.mobileHomeScreen.alt}
-                                        className="w-[6.1rem]"
-                                        loading="lazy"
-                                   />
-                              </animated.div>
-                              <animated.div style={styleMobileHomeScreenShadow}>
-                                   <Image
-                                        src="/img/phone-shadow-retina.avif"
-                                        width={195}
-                                        height={42}
-                                        className="w-[6.1rem]"
-                                        loading="lazy"
-                                        alt=""
-                                   />
-                              </animated.div>
+                         <div className="-translate-y-72 translate-x-5">
+                              <div className="absolute mt-24">
+                                   {/* @ts-expect-error bug with React Spring + TypeScript + Next.js 15 https://github.com/pmndrs/react-spring/issues/2332 */}
+                                   <animated.div
+                                        style={styleMobileSecondaryScreen}
+                                   >
+                                        <Image
+                                             src={
+                                                  image.mobileSecondaryScreen
+                                                       .src
+                                             }
+                                             width={177}
+                                             height={365}
+                                             alt={
+                                                  image.mobileSecondaryScreen
+                                                       .alt
+                                             }
+                                             className="w-[6.1rem]"
+                                             loading="lazy"
+                                        />
+                                   </animated.div>
+                                   {/* @ts-expect-error bug with React Spring + TypeScript + Next.js 15 https://github.com/pmndrs/react-spring/issues/2332 */}
+                                   <animated.div
+                                        style={styleMobileSecondaryScreenShadow}
+                                   >
+                                        <Image
+                                             src="/img/phone-shadow-retina.avif"
+                                             width={195}
+                                             height={42}
+                                             className="w-[6.1rem]"
+                                             loading="lazy"
+                                             alt=""
+                                        />
+                                   </animated.div>
+                              </div>
+                              <div className="absolute ml-16 mt-28">
+                                   {/* @ts-expect-error bug with React Spring + TypeScript + Next.js 15 https://github.com/pmndrs/react-spring/issues/2332 */}
+                                   <animated.div style={styleMobileHomeScreen}>
+                                        <Image
+                                             src={image.mobileHomeScreen.src}
+                                             width={178}
+                                             height={366}
+                                             alt={image.mobileHomeScreen.alt}
+                                             className="w-[6.1rem]"
+                                             loading="lazy"
+                                        />
+                                   </animated.div>
+                                   {/* @ts-expect-error bug with React Spring + TypeScript + Next.js 15 https://github.com/pmndrs/react-spring/issues/2332 */}
+                                   <animated.div
+                                        style={styleMobileHomeScreenShadow}
+                                   >
+                                        <Image
+                                             src="/img/phone-shadow-retina.avif"
+                                             width={195}
+                                             height={42}
+                                             className="w-[6.1rem]"
+                                             loading="lazy"
+                                             alt=""
+                                        />
+                                   </animated.div>
+                              </div>
                          </div>
                     </div>
-               </div>
-          </animated.div>
+               </animated.div>
+          </>
      );
 }

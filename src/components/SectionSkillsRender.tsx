@@ -73,10 +73,12 @@ export default function SectionSkillsRender({ data }: SkillsDataProps) {
                          <h2>{data.title}</h2>
                          <p className="mt-5 mb-5">{data.description}</p>
                     </div>
+                    {/* @ts-expect-error bug with React Spring + TypeScript + Next.js 15 https://github.com/pmndrs/react-spring/issues/2332 */}
                     <animated.div
                          ref={refSkills}
                          className="flex flex-col items-center w-full"
                     >
+                         {/* @ts-expect-error bug with React Spring + TypeScript + Next.js 15 https://github.com/pmndrs/react-spring/issues/2332 */}
                          <animated.div
                               {...bindSkillsRow1()}
                               style={{
@@ -98,6 +100,7 @@ export default function SectionSkillsRender({ data }: SkillsDataProps) {
                                         />
                                    ))}
                          </animated.div>
+                         {/* @ts-expect-error bug with React Spring + TypeScript + Next.js 15 https://github.com/pmndrs/react-spring/issues/2332 */}
                          <animated.div
                               {...bindSkillsRow2()}
                               style={{

@@ -62,84 +62,93 @@ export default function KiwiAppAnimation() {
      });
 
      return (
-          <animated.div
-               ref={refPhone}
-               className="flex items-center justify-center -translate-x-[12.5rem] -translate-y-20 h-[20rem] relative"
-          >
-               <div>
-                    <animated.div style={stylePhoneBase}>
-                         <animated.div
-                              style={styleElectricity}
-                              className="absolute z-50 w-[8.3rem]"
-                         >
-                              <Image
-                                   loading="lazy"
-                                   src="/img/kiwi-app-phone-electricity-retina.avif"
-                                   width={185}
-                                   height={107}
-                                   alt=""
-                              />
-                         </animated.div>
+          <>
+               {/* @ts-expect-error bug with React Spring + TypeScript + Next.js 15 https://github.com/pmndrs/react-spring/issues/2332 */}
+               <animated.div
+                    ref={refPhone}
+                    className="flex items-center justify-center -translate-x-[12.5rem] -translate-y-20 h-[20rem] relative"
+               >
+                    <div>
+                         {/* @ts-expect-error bug with React Spring + TypeScript + Next.js 15 https://github.com/pmndrs/react-spring/issues/2332 */}
+                         <animated.div style={stylePhoneBase}>
+                              {/* @ts-expect-error bug with React Spring + TypeScript + Next.js 15 https://github.com/pmndrs/react-spring/issues/2332 */}
+                              <animated.div
+                                   style={styleElectricity}
+                                   className="absolute z-50 w-[8.3rem]"
+                              >
+                                   <Image
+                                        loading="lazy"
+                                        src="/img/kiwi-app-phone-electricity-retina.avif"
+                                        width={185}
+                                        height={107}
+                                        alt=""
+                                   />
+                              </animated.div>
 
+                              {/* @ts-expect-error bug with React Spring + TypeScript + Next.js 15 https://github.com/pmndrs/react-spring/issues/2332 */}
+                              <animated.div
+                                   style={styleCellPhone}
+                                   className="absolute z-40 w-[8.3rem]"
+                              >
+                                   <Image
+                                        loading="lazy"
+                                        src="/img/kiwi-app-phone-cell-phone-retina.avif"
+                                        width={185}
+                                        height={107}
+                                        alt=""
+                                   />
+                              </animated.div>
+                              {/* @ts-expect-error bug with React Spring + TypeScript + Next.js 15 https://github.com/pmndrs/react-spring/issues/2332 */}
+                              <animated.div
+                                   style={styleInternet}
+                                   className="absolute z-30 w-[8.3rem]"
+                              >
+                                   <Image
+                                        loading="lazy"
+                                        src="/img/kiwi-app-phone-internet-retina.avif"
+                                        width={185}
+                                        height={107}
+                                        alt=""
+                                   />
+                              </animated.div>
+                              {/* @ts-expect-error bug with React Spring + TypeScript + Next.js 15 https://github.com/pmndrs/react-spring/issues/2332 */}
+                              <animated.div
+                                   style={styleInsurance}
+                                   className="absolute z-20 w-[8.3rem]"
+                              >
+                                   <Image
+                                        loading="lazy"
+                                        src="/img/kiwi-app-phone-health-insurance-retina.avif"
+                                        width={185}
+                                        height={107}
+                                        alt=""
+                                   />
+                              </animated.div>
+                              <div className="absolute z-10 w-[25rem] ">
+                                   <Image
+                                        loading="lazy"
+                                        src="/img/kiwi-app-phone-base-retina.avif"
+                                        width={530}
+                                        height={312}
+                                        alt=""
+                                   />
+                              </div>
+                         </animated.div>
+                         {/* @ts-expect-error bug with React Spring + TypeScript + Next.js 15 https://github.com/pmndrs/react-spring/issues/2332 */}
                          <animated.div
-                              style={styleCellPhone}
-                              className="absolute z-40 w-[8.3rem]"
+                              style={stylePhoneShadow}
+                              className="absolute -z-10 translate-y-2 w-[25rem] "
                          >
                               <Image
                                    loading="lazy"
-                                   src="/img/kiwi-app-phone-cell-phone-retina.avif"
-                                   width={185}
-                                   height={107}
+                                   src="/img/kiwi-app-phone-base-shadow.avif"
+                                   width={535}
+                                   height={326}
                                    alt=""
                               />
                          </animated.div>
-                         <animated.div
-                              style={styleInternet}
-                              className="absolute z-30 w-[8.3rem]"
-                         >
-                              <Image
-                                   loading="lazy"
-                                   src="/img/kiwi-app-phone-internet-retina.avif"
-                                   width={185}
-                                   height={107}
-                                   alt=""
-                              />
-                         </animated.div>
-                         <animated.div
-                              style={styleInsurance}
-                              className="absolute z-20 w-[8.3rem]"
-                         >
-                              <Image
-                                   loading="lazy"
-                                   src="/img/kiwi-app-phone-health-insurance-retina.avif"
-                                   width={185}
-                                   height={107}
-                                   alt=""
-                              />
-                         </animated.div>
-                         <div className="absolute z-10 w-[25rem] ">
-                              <Image
-                                   loading="lazy"
-                                   src="/img/kiwi-app-phone-base-retina.avif"
-                                   width={530}
-                                   height={312}
-                                   alt=""
-                              />
-                         </div>
-                    </animated.div>
-                    <animated.div
-                         style={stylePhoneShadow}
-                         className="absolute -z-10 translate-y-2 w-[25rem] "
-                    >
-                         <Image
-                              loading="lazy"
-                              src="/img/kiwi-app-phone-base-shadow.avif"
-                              width={535}
-                              height={326}
-                              alt=""
-                         />
-                    </animated.div>
-               </div>
-          </animated.div>
+                    </div>
+               </animated.div>
+          </>
      );
 }

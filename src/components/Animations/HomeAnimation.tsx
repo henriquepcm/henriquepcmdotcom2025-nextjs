@@ -79,10 +79,12 @@ export default function HomeAnimation({ data }: HomeDataProps) {
 
      return (
           <div className="flex flex-col flex-grow justify-center items-center -translate-y-10 lg:-translate-y-0 relative">
+               {/* @ts-expect-error bug with React Spring + TypeScript + Next.js 15 https://github.com/pmndrs/react-spring/issues/2332 */}
                <animated.div
                     ref={refHomeAnimation}
                     className="flex flex-row items-center translate-y-5"
                >
+                    {/* @ts-expect-error bug with React Spring + TypeScript + Next.js 15 https://github.com/pmndrs/react-spring/issues/2332 */}
                     <animated.div
                          style={stylePhone}
                          className="hidden lg:flex flex-col"
@@ -106,6 +108,7 @@ export default function HomeAnimation({ data }: HomeDataProps) {
                          />
                     </animated.div>
 
+                    {/* @ts-expect-error bug with React Spring + TypeScript + Next.js 15 https://github.com/pmndrs/react-spring/issues/2332 */}
                     <animated.div style={styleLaptop} className="flex flex-col">
                          <Image
                               priority={true}
@@ -127,8 +130,10 @@ export default function HomeAnimation({ data }: HomeDataProps) {
                     </animated.div>
                </animated.div>
                <div className="flex flex-col items-center text-center absolute z-50 mt-[26rem] w-[18.8rem] lg:w-full">
+                    {/* @ts-expect-error bug with React Spring + TypeScript + Next.js 15 https://github.com/pmndrs/react-spring/issues/2332 */}
                     <animated.h1 style={styleRole}>{data.subtitle}</animated.h1>
                     <div className="flex justify-center uppercase text-white text-center leading-[1.5rem] tracking-[0.44rem]">
+                         {/* @ts-expect-error bug with React Spring + TypeScript + Next.js 15 https://github.com/pmndrs/react-spring/issues/2332 */}
                          <animated.div style={styleH1}>
                               {data.title}
                          </animated.div>

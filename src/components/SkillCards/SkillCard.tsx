@@ -42,20 +42,23 @@ export default function SkillCard({ icon, label }: SkillCardProps) {
      });
 
      return (
-          <animated.div
-               ref={refCard}
-               style={styleCard}
-               onMouseEnter={() => setIsHovered(true)}
-               onMouseLeave={() => setIsHovered(false)}
-               className="flex flex-col border border-henriquepcmbasepurple group w-[11.25rem] h-[6.25rem] rounded-md ease-in-out duration-300 hover:bg-henriquepcmbasepurple hover:border-henriquepcmdarkpurple hover:scale-95 hover:translate-y-2"
-          >
-               <div
-                    dangerouslySetInnerHTML={{ __html: icon }}
-                    className="w-[1.3rem] h-[50%] mt-[1.3rem] ml-[1.3rem] group-hover:mt-[1.5rem] group-hover:scale-95 ease-in-out duration-300"
-               ></div>
-               <div className="h-[50%] ml-[1.3rem] text-[0.6rem] group-hover:ml-[1.2rem] group-hover:mt-[-0.1rem] group-hover:-translate-y-[0.6rem] group-hover:scale-95 ease-in-out duration-300">
-                    {label}
-               </div>
-          </animated.div>
+          <>
+               {/* @ts-expect-error bug with React Spring + TypeScript + Next.js 15 https://github.com/pmndrs/react-spring/issues/2332 */}
+               <animated.div
+                    ref={refCard}
+                    style={styleCard}
+                    onMouseEnter={() => setIsHovered(true)}
+                    onMouseLeave={() => setIsHovered(false)}
+                    className="flex flex-col border border-henriquepcmbasepurple group w-[11.25rem] h-[6.25rem] rounded-md ease-in-out duration-300 hover:bg-henriquepcmbasepurple hover:border-henriquepcmdarkpurple hover:scale-95 hover:translate-y-2"
+               >
+                    <div
+                         dangerouslySetInnerHTML={{ __html: icon }}
+                         className="w-[1.3rem] h-[50%] mt-[1.3rem] ml-[1.3rem] group-hover:mt-[1.5rem] group-hover:scale-95 ease-in-out duration-300"
+                    ></div>
+                    <div className="h-[50%] ml-[1.3rem] text-[0.6rem] group-hover:ml-[1.2rem] group-hover:mt-[-0.1rem] group-hover:-translate-y-[0.6rem] group-hover:scale-95 ease-in-out duration-300">
+                         {label}
+                    </div>
+               </animated.div>
+          </>
      );
 }
