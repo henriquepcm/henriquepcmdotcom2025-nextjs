@@ -17,7 +17,11 @@ export const metadata: Metadata = {
      icons: {
           icon: "img/henrique-pochmann-front-end-developer-ui-ux-designer-brazil.png",
      },
+     alternates: {
+          canonical: "https://henriquepcm.com/",
+     },
      robots: "index, follow",
+
      keywords:
           "Henrique Pochmann, front-end, ui/ux, developer, Porto Alegre, Brazil, LATAM",
      publisher: "Henrique Pochmann",
