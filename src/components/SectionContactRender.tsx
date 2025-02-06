@@ -147,7 +147,7 @@ export default function SectionContactRender({ data }: ContactDataProps) {
                          <div className="flex flex-col items-center lg:items-end lg:w-3/6">
                               <div className="flex flex-col items-center gap-3">
                                    <Image
-                                        src="/img/henrique-pochmann-front-end-developer-retina.avif"
+                                        src="/img/front-end-developer-ui-ux-designer-brazil-latam-henrique-pochmann.avif"
                                         width={121}
                                         height={121}
                                         className="w-24 rounded-full border-[0.35rem]"
