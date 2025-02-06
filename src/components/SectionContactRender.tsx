@@ -152,7 +152,7 @@ export default function SectionContactRender({ data }: ContactDataProps) {
                                         height={121}
                                         className="w-24 rounded-full border-[0.35rem]"
                                         loading="lazy"
-                                        alt="Avatar showing the face of the front-end developer Henrique Pochmann"
+                                        alt="Avatar showing the face of the front-end developer and UI/UX designer in Brazil, Latam, Henrique Pochmann"
                                    />
 
                                    <div className="flex flex-col items-center justify-center mb-5">
