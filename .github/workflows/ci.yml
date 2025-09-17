@@ -25,11 +25,9 @@ jobs:
       - name: TypeScript type check
         run: npx tsc --noEmit --strict
 
-      - name: Lint for no "any" types
-        run: npx eslint . --ext .ts,.tsx --rule '@typescript-eslint/no-explicit-any: error'
+      - name: ESLint for no "any" and no console.log
+        run: |
+          npx eslint . --ext .ts,.tsx --rule "@typescript-eslint/no-explicit-any: error" --rule "no-console: ['error', { 'allow': ['warn','error'] }]"
 
       - name: Prettier check
         run: npx prettier --check .
-
-      - name: Remove console.log statements
-        run: npx eslint . --ext .ts,.tsx --rule 'no-console: ["error", { "allow": ["warn", "error"] }]'
