@@ -2,29 +2,23 @@
 
 import ExternalLink from "./ExternalLink";
 import KiwiAppAnimation from "./Animations/KiwiAppAnimation";
+import { Data } from "@/types/aboutTypes";
 
-export interface AboutData {
-     section: string;
-     title: string;
-     description: string;
-     careerThings: {
-          id: string;
-          description: string;
-          icon: string;
-     }[];
-     button: {
-          label: string;
-          icon: string;
-          link: string;
-     };
-     titleCareerThings: string;
-}
+export default function SectionAboutRender({ data }: { data: Data }) {
+     //————— Titles ———————————————
+     const section = data.page.title;
+     const mainTitle = data.page.titles.mainTitle;
+     const secondaryTitle = data.page.titles.secondaryTitle;
 
-interface AboutDataProps {
-     data: AboutData;
-}
+     //————— Button ———————————————
+     const buttonLabel = data.page.resume.buttonLabel;
+     const buttonIcon = data.page.resume.buttonIcon;
+     const buttonFilePath = data.page.resume.resumeDownloadLink;
 
-export default function SectionAboutRender({ data }: AboutDataProps) {
+     //————— Career Highlights ———————————————
+     const careerHighlights = data.careerHighlights.nodes;
+     const highlightsSectionTitle = data.page.resume.highlightsSectionTitle;
+
      return (
           <section
                id="About"
@@ -34,17 +28,15 @@ export default function SectionAboutRender({ data }: AboutDataProps) {
                     <div className="flex flex-col w-10/12 sm:w-8/12">
                          <div className="flex flex-col h-full lg:flex-row gap-10 mb-10 sm:mb-5">
                               <div className="lg:w-3/6">
-                                   <div className="tabtitle">
-                                        {data.section}
-                                   </div>
-                                   <h2 className="mb-5">{data.title}</h2>
-                                   <p className="mb-5">{data.description}</p>
+                                   <div className="tabtitle">{section}</div>
+                                   <h2 className="mb-5">{mainTitle}</h2>
+                                   <p className="mb-5">{secondaryTitle}</p>
 
                                    <div className="w-5/6 md:w-3/6 lg:w-5/6 xl:w-4/6">
                                         <ExternalLink
-                                             label={data.button.label}
-                                             icon={data.button.icon}
-                                             link={data.button.link}
+                                             label={buttonLabel}
+                                             icon={buttonIcon}
+                                             link={buttonFilePath}
                                         />
                                    </div>
                               </div>
@@ -54,19 +46,25 @@ export default function SectionAboutRender({ data }: AboutDataProps) {
                          </div>
                          <div className="flex flex-col">
                               <span className="mb-8">
-                                   {data.titleCareerThings}
+                                   {highlightsSectionTitle}
                               </span>
                               <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
-                                   {data.careerThings.map((thing) => {
+                                   {careerHighlights.map((highlight) => {
                                         return (
-                                             <li key={thing.id}>
+                                             <li key={highlight.id}>
                                                   <div
                                                        dangerouslySetInnerHTML={{
-                                                            __html: thing.icon,
+                                                            __html: highlight
+                                                                 .careerHighlights
+                                                                 .icon,
                                                        }}
                                                        className="text-white mb-3 size-5"
                                                   ></div>
-                                                  {thing.description}
+                                                  {
+                                                       highlight
+                                                            .careerHighlights
+                                                            .description
+                                                  }
                                              </li>
                                         );
                                    })}

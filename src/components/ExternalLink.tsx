@@ -36,7 +36,7 @@ export default function ExternalLink({ label, icon, link }: ExternalLinkProps) {
                          target="_blank"
                          rel="noreferrer"
                          className="text-white transform duration-300 group-hover:translate-x-2"
-                         href={link}
+                         href={`${link}`}
                     >
                          {label}
                     </a>

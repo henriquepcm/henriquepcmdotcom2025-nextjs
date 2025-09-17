@@ -1,42 +1,45 @@
 import getGraphQLData from "@/utilities/getGraphQLData";
 import SectionAboutRender from "./SectionAboutRender";
-import { AboutData } from "./SectionAboutRender";
 import { gql } from "@apollo/client";
+import { Data } from "@/types/aboutTypes";
 
 const GET_ABOUT_DATA = gql`
      query About {
-          about {
-               section
+          page(id: "about", idType: URI) {
                title
-               description
-               careerThings {
-                    id
-                    description
-                    icon
+               titles {
+                    mainTitle
+                    secondaryTitle
                }
-               button {
-                    id
-                    label
-                    icon
-                    link
+               resume {
+                    highlightsSectionTitle
+                    buttonIcon
+                    buttonLabel
+                    resumeDownloadLink
                }
-               titleCareerThings
+          }
+          careerHighlights {
+               nodes {
+                    id
+                    careerHighlights {
+                         icon
+                         description
+                    }
+               }
           }
      }
 `;
 
 export default async function SectionAbout() {
      try {
-          const data = await getGraphQLData<{ about: AboutData }>(
-               GET_ABOUT_DATA
-          );
+          const data = await getGraphQLData<Data>(GET_ABOUT_DATA);
 
-          if (!data.about) {
+          if (!data) {
                console.log("Missing about data");
                throw new Error("Missing about data");
           }
 
-          return <SectionAboutRender data={data.about} />;
+          return <SectionAboutRender data={data} />;
      } catch (error) {
           console.error("Error loading about data", error);
           return <div>Error loading about data.</div>;

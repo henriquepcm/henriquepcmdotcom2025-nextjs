@@ -3,23 +3,22 @@
 import { useSpring, useInView, animated } from "@react-spring/web";
 import { useDrag } from "@use-gesture/react";
 import SkillCard from "./SkillCards/SkillCard";
+import { Data } from "@/types/skillsType";
 
-export interface SkillsData {
-     section: string;
-     title: string;
-     description: string;
-     skillCards: {
-          id: string;
-          icon: string;
-          label: string;
-     }[];
-}
+export default function SectionSkillsRender({ data }: { data: Data }) {
+     // ––––– Derived Data —————————————————————————
+     const section = data.page.title;
+     const mainTitle = data.page.titles.mainTitle;
+     const secondaryTitle = data.page.titles.secondaryTitle;
+     const skillCards = data.technologies.nodes.map((skill) => {
+          return {
+               id: skill.id,
+               label: skill.technologies.label,
+               icon: skill.technologies.icon,
+          };
+     });
 
-interface SkillsDataProps {
-     data: SkillsData;
-}
-
-export default function SectionSkillsRender({ data }: SkillsDataProps) {
+     // ––––– Animations —————————————————————————
      const [refSkills, inViewSkills] = useInView({
           rootMargin: "-40% 0%",
      });
@@ -69,9 +68,9 @@ export default function SectionSkillsRender({ data }: SkillsDataProps) {
           >
                <div className="h-fit w-10/12 sm:w-8/12">
                     <div className="w-10/12 sm:w-8/12">
-                         <div className="tabtitle">{data.section}</div>
-                         <h2>{data.title}</h2>
-                         <p className="mt-5 mb-5">{data.description}</p>
+                         <div className="tabtitle">{section}</div>
+                         <h2>{mainTitle}</h2>
+                         <p className="mt-5 mb-5">{secondaryTitle}</p>
                     </div>
                     {/* @ts-expect-error bug with React Spring + TypeScript + Next.js 15 https://github.com/pmndrs/react-spring/issues/2332 */}
                     <animated.div
@@ -87,10 +86,10 @@ export default function SectionSkillsRender({ data }: SkillsDataProps) {
                               }}
                               className="flex flex-row gap-5 hover:cursor-grab ml-96"
                          >
-                              {data.skillCards
+                              {skillCards
                                    .slice(
-                                        data.skillCards.length / 2,
-                                        data.skillCards.length
+                                        skillCards.length / 2,
+                                        skillCards.length
                                    )
                                    .map((skill) => (
                                         <SkillCard
@@ -109,8 +108,8 @@ export default function SectionSkillsRender({ data }: SkillsDataProps) {
                               }}
                               className="flex flex-row gap-5 hover:cursor-grab mr-96 mt-10"
                          >
-                              {data.skillCards
-                                   .slice(0, data.skillCards.length / 2)
+                              {skillCards
+                                   .slice(0, skillCards.length / 2)
                                    .map((skill) => (
                                         <SkillCard
                                              key={skill.id}

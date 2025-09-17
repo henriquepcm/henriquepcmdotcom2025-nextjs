@@ -1,47 +1,52 @@
 import { gql } from "@apollo/client";
-import { ContactData } from "./SectionContactRender";
 import getGraphQLData from "@/utilities/getGraphQLData";
 import SectionContactRender from "./SectionContactRender";
+import { Data } from "@/types/contactTypes";
 
 const GET_CONTACT_DATA = gql`
-     query Contact {
-          contact {
-               section
-               title
-               name
-               buttons {
-                    id
-                    label
-                    icon
-                    link
-               }
-               contactDetails {
-                    id
-                    icon
-                    label
-               }
-               messageSentTitle
-               messageSentMessage
-               roleFirstLine
-               roleSecondLine
-          }
-     }
+  query Contact {
+    page(id: "contact", idType: URI) {
+      contactItems {
+        email
+        emailIcon
+        location
+        locationIcon
+        name
+        role
+        timezone
+        timezoneIcon
+      }
+      title
+      titles {
+        mainTitle
+        secondaryTitle
+      }
+    }
+    socialSites {
+      nodes {
+        id
+        socialSites {
+          icon
+          label
+          link
+        }
+      }
+    }
+  }
 `;
 
 export default async function SectionContact() {
-     try {
-          const data = await getGraphQLData<{ contact: ContactData }>(
-               GET_CONTACT_DATA
-          );
+  try {
+    const data = await getGraphQLData<Data>(GET_CONTACT_DATA);
 
-          if (!data.contact) {
-               console.log("Missing contact data");
-               throw new Error("Missing contact data");
-          }
+    if (!data) {
+      console.log("Missing contact data");
+      throw new Error("Missing contact data");
+    }
 
-          return <SectionContactRender data={data.contact} />;
-     } catch (error) {
-          console.error("Error loading contact data", error);
-          return <div>Error loading contact data.</div>;
-     }
+    return <SectionContactRender data={data} />;
+  } catch (error) {
+    console.error("Error loading contact data", error);
+    return <div>Error loading contact data.</div>;
+  }
 }

@@ -1,24 +1,9 @@
 import { useState, useRef } from "react";
 import { useOutsideClick } from "../hooks/useOutsideClick";
 import { BurgerIcon } from "./icons/BurgerIcon";
+import { Menu } from "@/types/headerTypes";
 
-interface ItemProps {
-     id: string;
-     label: string;
-     link: string;
-}
-
-interface ButtonProps {
-     label: string;
-     link: string;
-}
-
-interface MenuMobileProps {
-     items: ItemProps[];
-     button: ButtonProps;
-}
-
-export default function MenuMobile({ items, button }: MenuMobileProps) {
+export default function MenuMobile({ items, button }: Menu) {
      const [isMobileMenuVisible, setIsMobileMenuVisible] = useState(false);
      const menuRef = useRef<HTMLUListElement | null>(null);
      const menuIconRef = useRef<HTMLButtonElement | null>(null);
@@ -41,6 +26,7 @@ export default function MenuMobile({ items, button }: MenuMobileProps) {
                </button>
 
                <nav
+                    aria-label="Website mobile menu"
                     className={`${
                          isMobileMenuVisible
                               ? "opacity-100 visible"
@@ -52,14 +38,20 @@ export default function MenuMobile({ items, button }: MenuMobileProps) {
                          className="flex flex-col justify-center p-10 gap-5 uppercase text-[0.6rem] text-white tracking-[0.15rem]"
                     >
                          {items.map((item) => {
+                              const excluded = ["Footer", "Header", "Contact"];
+
+                              if (excluded.includes(item.title)) {
+                                   return null;
+                              }
                               return (
                                    <li key={item.id}>
                                         <a
                                              onClick={handleMenuVisibility}
                                              className="block"
-                                             href={item.link}
+                                             href={`#${item.title}`}
+                                             aria-label={`Go to the ${item.title} section"`}
                                         >
-                                             {item.label}
+                                             {item.title}
                                         </a>
                                    </li>
                               );

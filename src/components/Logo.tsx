@@ -1,19 +1,12 @@
-interface BrandData {
-     logo: string;
-     link: string;
-}
+import Link from "next/link";
 
-interface BrandDataProps {
-     data: BrandData;
-}
-
-export default function Logo({ data }: BrandDataProps) {
+export default function Logo({ svgString }: { svgString: string }) {
      return (
-          <a
-               dangerouslySetInnerHTML={{ __html: data.logo }}
-               href={data.link}
+          <Link
+               dangerouslySetInnerHTML={{ __html: svgString }}
+               href="#Home"
                aria-label="Go to the home section"
                className="w-20"
-          ></a>
+          ></Link>
      );
 }

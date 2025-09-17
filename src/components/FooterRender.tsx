@@ -1,26 +1,22 @@
-export interface FooterData {
-     icon: string;
-     text: string;
-}
+import { Data } from "@/types/footerTypes";
 
-interface FooterDataProps {
-     data: FooterData;
-}
+export default function FooterRender({ data }: { data: Data }) {
+  const icon = data.page.footer.icon;
+  const description = data.page.footer.description;
 
-export default function FooterRender({ data }: FooterDataProps) {
-     return (
-          <footer className="flex items-end justify-center w-full h-96 pb-10">
-               <div className="flex flex-col w-10/12 lg:w-8/12">
-                    <div
-                         dangerouslySetInnerHTML={{
-                              __html: data.icon,
-                         }}
-                         className="size-[1.1rem] text-white mb-2"
-                    ></div>
-                    <div>
-                         {data.text}-{new Date().getFullYear()}.
-                    </div>
-               </div>
-          </footer>
-     );
+  return (
+    <footer className="flex h-96 w-full items-end justify-center pb-10">
+      <div className="flex w-10/12 flex-col lg:w-8/12">
+        <div
+          dangerouslySetInnerHTML={{
+            __html: icon,
+          }}
+          className="mb-2 size-[1.1rem] text-white"
+        ></div>
+        <div>
+          {description}-{new Date().getFullYear()}.
+        </div>
+      </div>
+    </footer>
+  );
 }

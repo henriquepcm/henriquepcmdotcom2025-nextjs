@@ -1,13 +1,7 @@
+import { Button } from "@/types/headerTypes";
 import { useBeyondViewport } from "../hooks/useBeyondViewport";
 
-interface ButtonProps {
-     button: {
-          link: string;
-          label: string;
-     };
-}
-
-export default function ButtonContact({ button }: ButtonProps) {
+export default function ButtonContact({ button }: { button: Button }) {
      const { isBeyondViewport } = useBeyondViewport();
 
      return (

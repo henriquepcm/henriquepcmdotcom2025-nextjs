@@ -1,18 +1,24 @@
 import SectionSkillsRender from "./SectionSkillsRender";
 import { gql } from "@apollo/client";
 import getGraphQLData from "@/utilities/getGraphQLData";
-import { SkillsData } from "./SectionSkillsRender";
+import { Data } from "@/types/skillsType";
 
 const GET_SKILLS_DATA = gql`
      query Skill {
-          skill {
-               section
+          page(id: "skills", idType: URI) {
                title
-               description
-               skillCards {
+               titles {
+                    mainTitle
+                    secondaryTitle
+               }
+          }
+          technologies(first: 100) {
+               nodes {
                     id
-                    icon
-                    label
+                    technologies {
+                         icon
+                         label
+                    }
                }
           }
      }
@@ -20,16 +26,14 @@ const GET_SKILLS_DATA = gql`
 
 export default async function SectionSkills() {
      try {
-          const data = await getGraphQLData<{ skill: SkillsData }>(
-               GET_SKILLS_DATA
-          );
+          const data = await getGraphQLData<Data>(GET_SKILLS_DATA);
 
-          if (!data.skill) {
+          if (!data) {
                console.log("Missing skills data");
                throw new Error("Missing skills data");
           }
 
-          return <SectionSkillsRender data={data.skill} />;
+          return <SectionSkillsRender data={data} />;
      } catch (error) {
           console.error("Error loading skills data", error);
           return <div>Error loading skills data.</div>;
