@@ -1,32 +1,32 @@
 export type Page = {
-     header: {
-          logo: string;
-          buttonLabel: string;
-          buttonLink: string;
-     };
+  header: {
+    logo: string;
+    buttonLabel: string;
+    buttonLink: string;
+  };
 };
 
 export type PageNode = {
-     id: string;
-     title: string;
-     menuOrder: number;
+  id: string;
+  title: string;
+  menuOrder: number;
 };
 
 export type Pages = {
-     nodes: PageNode[];
+  nodes: PageNode[];
 };
 
 export type Data = {
-     page: Page;
-     pages: Pages;
+  page: Page;
+  pages: Pages;
 };
 
 export type Button = {
-     label: string;
-     link: string;
+  label: string;
+  link: string;
 };
 
 export type Menu = {
-     items: PageNode[];
-     button: Button;
+  items: PageNode[];
+  button: Button;
 };

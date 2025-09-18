@@ -40,7 +40,7 @@ export default async function SectionContact() {
     const data = await getGraphQLData<Data>(GET_CONTACT_DATA);
 
     if (!data) {
-      console.log("Missing contact data");
+      console.error("Missing contact data");
       throw new Error("Missing contact data");
     }
 

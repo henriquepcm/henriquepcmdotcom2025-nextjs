@@ -80,6 +80,7 @@ export default function HomeAnimation({ titles }: { titles: Titles }) {
         <animated.div style={stylePhone} className="hidden flex-col lg:flex">
           <Image
             priority={true}
+            fetchPriority="high"
             src="/img/phone-kiwi-sideways-retina.avif"
             width={120}
             height={182}
@@ -89,6 +90,7 @@ export default function HomeAnimation({ titles }: { titles: Titles }) {
 
           <Image
             priority={true}
+            fetchPriority="high"
             src="/img/phone-kiwi-sideways-shadow-retina.avif"
             width={141}
             height={78}
@@ -101,6 +103,7 @@ export default function HomeAnimation({ titles }: { titles: Titles }) {
         <animated.div style={styleLaptop} className="flex flex-col">
           <Image
             priority={true}
+            fetchPriority="high"
             src="/img/laptop-retina.avif"
             width={362}
             height={360}
@@ -109,6 +112,7 @@ export default function HomeAnimation({ titles }: { titles: Titles }) {
           />
 
           <Image
+            priority={true}
             fetchPriority="high"
             src="/img/laptop-shadow-retina.avif"
             width={438}
