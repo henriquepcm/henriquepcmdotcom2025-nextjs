@@ -104,7 +104,7 @@ export default function HomeAnimation({ titles }: { titles: Titles }) {
           <Image
             priority={true}
             fetchPriority="high"
-            src="/img/laptop-retina.avif"
+            src="/img/laptop-regular.avif"
             width={304}
             height={303}
             sizes="(max-width: 640px) 90vw, (max-width: 1024px) 50vw, 304px"
