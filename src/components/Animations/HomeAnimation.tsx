@@ -107,7 +107,6 @@ export default function HomeAnimation({ titles }: { titles: Titles }) {
             src="/img/laptop-retina.avif"
             width={304}
             height={302}
-            sizes="(max-width: 640px) 90vw, 304px"
             alt="Laptop"
             className="z-20 w-[19rem] -translate-y-5"
           />
