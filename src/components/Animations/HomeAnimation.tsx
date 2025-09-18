@@ -105,8 +105,9 @@ export default function HomeAnimation({ titles }: { titles: Titles }) {
             priority={true}
             fetchPriority="high"
             src="/img/laptop-retina.avif"
-            width={362}
-            height={360}
+            width={304}
+            height={302}
+            sizes="(max-width: 640px) 90vw, (max-width: 1024px) 50vw, 304px"
             alt="Laptop"
             className="z-20 w-[19rem] -translate-y-5"
           />
