@@ -128,9 +128,10 @@ export default function KiwiAppAnimation() {
               <Image
                 loading="lazy"
                 src="/img/kiwi-app-phone-base-retina.avif"
-                width={530}
-                height={312}
-                alt=""
+                width={400}
+                height={235}
+                sizes="(max-width: 768px) 100vw, 400px"
+                alt="Kiwi App on Phone"
               />
             </div>
           </animated.div>
