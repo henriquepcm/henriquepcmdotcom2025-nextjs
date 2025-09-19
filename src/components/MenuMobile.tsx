@@ -20,9 +20,9 @@ export default function MenuMobile({ items, button }: Menu) {
         aria-label="open the mobile menu"
         ref={menuIconRef}
         onClick={handleMenuVisibility}
-        className="hover:bg-brandprimary items-center justify-center p-1 duration-300 hover:rounded-full"
+        className="items-center justify-center p-1 duration-300 hover:rounded-full hover:bg-brandprimary"
       >
-        <BurgerIcon className="text-brandtextprimary size-6" />
+        <BurgerIcon className="size-6 text-brandtextprimary" />
       </button>
 
       <nav
@@ -31,7 +31,7 @@ export default function MenuMobile({ items, button }: Menu) {
           isMobileMenuVisible
             ? "visible opacity-100"
             : "invisible rotate-45 opacity-0"
-        } transition-translate-y bg-brandsurface border-brandborder absolute right-0 top-10 w-60 origin-top-right rounded-md border shadow-[-15px_20px_20px_rgba(0,0,0,0.4)] transition-all duration-300 ease-in-out`}
+        } transition-translate-y absolute right-0 top-10 w-60 origin-top-right rounded-md border border-brandborder bg-brandsurface shadow-[-15px_20px_20px_rgba(0,0,0,0.4)] transition-all duration-300 ease-in-out`}
       >
         <ul
           ref={menuRef}

@@ -27,19 +27,19 @@ html {
 }
 
 body {
-  @apply brand-bg-gradient text-brandtextsecondary flex justify-center text-xs leading-6 tracking-widest;
+  @apply brand-bg-gradient flex justify-center text-xs leading-6 tracking-widest text-brandtextsecondary;
 }
 
 h1 {
-  @apply text-brandtextprimary mb-3 text-2xl font-black uppercase;
+  @apply mb-3 text-2xl font-black uppercase text-brandtextprimary;
 }
 
 h2 {
-  @apply text-brandtextprimary text-xl font-bold leading-8 tracking-wide;
+  @apply text-xl font-bold leading-8 tracking-wide text-brandtextprimary;
 }
 
 h3 {
-  @apply text-brandtextprimary mb-2 text-xs font-bold tracking-widest;
+  @apply mb-2 text-xs font-bold tracking-widest text-brandtextprimary;
 }
 
 label {
@@ -48,7 +48,7 @@ label {
 
 input,
 textarea {
-  @apply text-brandtextprimary border-brandsurface border-b bg-transparent outline-none transition duration-300;
+  @apply border-b border-brandsurface bg-transparent text-brandtextprimary outline-none transition duration-300;
 }
 
 input {
@@ -60,11 +60,11 @@ textarea {
 }
 
 .tabtitle {
-  @apply text-brandtextsecondary mb-5 text-xs uppercase tracking-widest;
+  @apply mb-5 text-xs uppercase tracking-widest text-brandtextsecondary;
 }
 
 .brand-btn {
-  @apply bg-brandprimary text-brandtextprimary hover:shadow-brandshadow transform rounded-md text-[0.6rem] uppercase tracking-[0.15rem] duration-300 hover:scale-[1.01] hover:shadow-md;
+  @apply transform rounded-md bg-brandprimary text-[0.6rem] uppercase tracking-[0.15rem] text-brandtextprimary duration-300 hover:scale-[1.01] hover:shadow-md hover:shadow-brandshadow;
 }
 
 .brand-bg-gradient {

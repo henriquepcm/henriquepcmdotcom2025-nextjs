@@ -85,7 +85,7 @@ export default function ErrorMessage({ error }: ErrorProps) {
         <p>Refresh the page to try again.</p>
         <button
           aria-label="Refresh the page"
-          className="mt-10 h-10 w-20 transform rounded-md border-[0.05rem] border-henriquepcmbasepurple bg-henriquepcmdarkpurple duration-300 hover:bg-henriquepcmbasepurple"
+          className="border-henriquepcmbasepurple bg-henriquepcmdarkpurple hover:bg-henriquepcmbasepurple mt-10 h-10 w-20 transform rounded-md border-[0.05rem] duration-300"
           onClick={handleRefresh}
         >
           Refresh

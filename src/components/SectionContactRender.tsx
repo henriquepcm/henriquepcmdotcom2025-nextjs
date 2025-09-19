@@ -68,14 +68,14 @@ export default function SectionContactRender({ data }: { data: Data }) {
                   <input
                     id="first-name"
                     name="first-name"
-                    className="focus:border-brandprimary border-brandborder peer w-full"
+                    className="peer w-full border-brandborder focus:border-brandprimary"
                     type="text"
                     disabled={isPending}
                     required
                   />
                   <label
                     htmlFor="first-name"
-                    className="peer-focus:text-brandprimary -translate-y-[3.6rem]"
+                    className="-translate-y-[3.6rem] peer-focus:text-brandprimary"
                   >
                     First Name
                   </label>
@@ -84,14 +84,14 @@ export default function SectionContactRender({ data }: { data: Data }) {
                   <input
                     id="second-name"
                     name="second-name"
-                    className="focus:border-brandprimary border-brandborder peer w-full"
+                    className="peer w-full border-brandborder focus:border-brandprimary"
                     type="text"
                     disabled={isPending}
                     required
                   />
                   <label
                     htmlFor="second-name"
-                    className="peer-focus:text-brandprimary -translate-y-[3.6rem]"
+                    className="-translate-y-[3.6rem] peer-focus:text-brandprimary"
                   >
                     Second Name
                   </label>
@@ -101,7 +101,7 @@ export default function SectionContactRender({ data }: { data: Data }) {
                 <input
                   id="email"
                   name="email"
-                  className="focus:border-brandprimary border-brandborder peer w-full"
+                  className="peer w-full border-brandborder focus:border-brandprimary"
                   type="email"
                   pattern="[^@\s]+@[^@\s]+\.[^@\s]+$"
                   title="e.g., user@example.com"
@@ -110,7 +110,7 @@ export default function SectionContactRender({ data }: { data: Data }) {
                 />
                 <label
                   htmlFor="email"
-                  className="peer-focus:text-brandprimary -translate-y-[3.6rem]"
+                  className="-translate-y-[3.6rem] peer-focus:text-brandprimary"
                 >
                   Email
                 </label>
@@ -119,11 +119,11 @@ export default function SectionContactRender({ data }: { data: Data }) {
                 <textarea
                   id="message"
                   name="message"
-                  className="focus:border-brandprimary border-brandborder required peer"
+                  className="required peer border-brandborder focus:border-brandprimary"
                 ></textarea>
                 <label
                   htmlFor="message"
-                  className="peer-focus:text-brandprimary -translate-y-[11rem]"
+                  className="-translate-y-[11rem] peer-focus:text-brandprimary"
                 >
                   Message
                 </label>
@@ -175,7 +175,7 @@ export default function SectionContactRender({ data }: { data: Data }) {
                 return (
                   <div
                     key={detail.id}
-                    className="border-brandborder flex h-12 w-full items-center justify-center gap-2 border-b"
+                    className="flex h-12 w-full items-center justify-center gap-2 border-b border-brandborder"
                   >
                     <div
                       dangerouslySetInnerHTML={{

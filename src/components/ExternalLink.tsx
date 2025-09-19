@@ -25,18 +25,18 @@ export default function ExternalLink({ label, icon, link }: ExternalLinkProps) {
       <a
         target="_blank"
         rel="noreferrer"
-        className="text-brandtextprimary group w-full transform duration-300"
+        className="group w-full transform text-brandtextprimary duration-300"
         href={`${link}`}
       >
         {/* @ts-expect-error bug with React Spring + TypeScript + Next.js 15 https://github.com/pmndrs/react-spring/issues/2332 */}
         <animated.div
           ref={refLink}
           style={styleExternalLink}
-          className="border-brandprimary hover:bg-brandsurface flex h-12 w-full transform items-center justify-center gap-2 rounded-md border p-2 duration-300"
+          className="flex h-12 w-full transform items-center justify-center gap-2 rounded-md border border-brandprimary p-2 duration-300 hover:bg-brandsurface"
         >
           <div
             dangerouslySetInnerHTML={{ __html: icon }}
-            className="text-brandprimary size-4 duration-300 group-hover:translate-x-1"
+            className="size-4 text-brandprimary duration-300 group-hover:translate-x-1"
           ></div>
 
           <div className="duration-300 group-hover:translate-x-2">{label}</div>
