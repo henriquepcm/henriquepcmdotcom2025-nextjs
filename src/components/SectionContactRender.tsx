@@ -46,7 +46,7 @@ export default function SectionContactRender({ data }: { data: Data }) {
   return (
     <section
       id="Contact"
-      className="flex min-h-screen w-full items-center justify-center bg-[url(/img/bg-light-radial.avif),url(/img/bg-light-1.avif),url(/img/bg-light-2.avif)] bg-no-repeat pt-28 [background-position:0%_25%,100%_33%,80%_100%]"
+      className="flex min-h-screen w-full items-center justify-center pt-28"
     >
       <div className="flex w-10/12 flex-col items-center justify-center gap-28 md:w-6/12 lg:w-8/12 lg:flex-row">
         <div className="flex h-full w-full flex-col items-center justify-center gap-40 lg:flex-row">
@@ -68,14 +68,14 @@ export default function SectionContactRender({ data }: { data: Data }) {
                   <input
                     id="first-name"
                     name="first-name"
-                    className="peer w-full focus:border-henriquepcmpink"
+                    className="focus:border-brandprimary border-brandborder peer w-full"
                     type="text"
                     disabled={isPending}
                     required
                   />
                   <label
                     htmlFor="first-name"
-                    className="-translate-y-[3.6rem] peer-focus:text-henriquepcmpink"
+                    className="peer-focus:text-brandprimary -translate-y-[3.6rem]"
                   >
                     First Name
                   </label>
@@ -84,14 +84,14 @@ export default function SectionContactRender({ data }: { data: Data }) {
                   <input
                     id="second-name"
                     name="second-name"
-                    className="peer w-full focus:border-henriquepcmpink"
+                    className="focus:border-brandprimary border-brandborder peer w-full"
                     type="text"
                     disabled={isPending}
                     required
                   />
                   <label
                     htmlFor="second-name"
-                    className="-translate-y-[3.6rem] peer-focus:text-henriquepcmpink"
+                    className="peer-focus:text-brandprimary -translate-y-[3.6rem]"
                   >
                     Second Name
                   </label>
@@ -101,7 +101,7 @@ export default function SectionContactRender({ data }: { data: Data }) {
                 <input
                   id="email"
                   name="email"
-                  className="peer w-full focus:border-henriquepcmpink"
+                  className="focus:border-brandprimary border-brandborder peer w-full"
                   type="email"
                   pattern="[^@\s]+@[^@\s]+\.[^@\s]+$"
                   title="e.g., user@example.com"
@@ -110,7 +110,7 @@ export default function SectionContactRender({ data }: { data: Data }) {
                 />
                 <label
                   htmlFor="email"
-                  className="-translate-y-[3.6rem] peer-focus:text-henriquepcmpink"
+                  className="peer-focus:text-brandprimary -translate-y-[3.6rem]"
                 >
                   Email
                 </label>
@@ -119,13 +119,11 @@ export default function SectionContactRender({ data }: { data: Data }) {
                 <textarea
                   id="message"
                   name="message"
-                  className="peer focus:border-henriquepcmpink"
-                  disabled={isPending}
-                  required
+                  className="focus:border-brandprimary border-brandborder required peer"
                 ></textarea>
                 <label
                   htmlFor="message"
-                  className="-translate-y-[11rem] peer-focus:text-henriquepcmpink"
+                  className="peer-focus:text-brandprimary -translate-y-[11rem]"
                 >
                   Message
                 </label>
@@ -141,14 +139,6 @@ export default function SectionContactRender({ data }: { data: Data }) {
               isFormSent ? "" : "hidden"
             } flex w-full flex-col items-center justify-center gap-5 transition-opacity duration-300 ease-in-out lg:w-4/6 2xl:w-3/6`}
           >
-            <Image
-              src="/img/illustration-message-sent-retina.avif"
-              width={597}
-              height={180}
-              className="w-10/12"
-              loading="lazy"
-              alt="Illustration of a desktop window confirming the message was successfully sent."
-            />
             <h2>Thanks for reaching out!</h2>
             <p className="text-center">
               Your message is on its way, and I&apos;ll get back to you as soon
@@ -185,7 +175,7 @@ export default function SectionContactRender({ data }: { data: Data }) {
                 return (
                   <div
                     key={detail.id}
-                    className="flex h-12 w-full items-center justify-center gap-2 border-b border-henriquepcmbasepurple"
+                    className="border-brandborder flex h-12 w-full items-center justify-center gap-2 border-b"
                   >
                     <div
                       dangerouslySetInnerHTML={{

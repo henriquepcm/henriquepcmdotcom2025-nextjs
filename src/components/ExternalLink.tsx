@@ -22,25 +22,26 @@ export default function ExternalLink({ label, icon, link }: ExternalLinkProps) {
 
   return (
     <>
-      {/* @ts-expect-error bug with React Spring + TypeScript + Next.js 15 https://github.com/pmndrs/react-spring/issues/2332 */}
-      <animated.div
-        ref={refLink}
-        style={styleExternalLink}
-        className="group flex h-12 w-full transform items-center justify-center gap-2 rounded-md border border-henriquepcmbasepurple p-2 duration-300 hover:border-henriquepcmpink"
+      <a
+        target="_blank"
+        rel="noreferrer"
+        className="text-brandtextprimary group w-full transform duration-300"
+        href={`${link}`}
       >
-        <div
-          dangerouslySetInnerHTML={{ __html: icon }}
-          className="size-4 text-henriquepcmpink duration-300 group-hover:translate-x-1"
-        ></div>
-        <a
-          target="_blank"
-          rel="noreferrer"
-          className="transform text-white duration-300 group-hover:translate-x-2"
-          href={`${link}`}
+        {/* @ts-expect-error bug with React Spring + TypeScript + Next.js 15 https://github.com/pmndrs/react-spring/issues/2332 */}
+        <animated.div
+          ref={refLink}
+          style={styleExternalLink}
+          className="border-brandprimary hover:bg-brandsurface flex h-12 w-full transform items-center justify-center gap-2 rounded-md border p-2 duration-300"
         >
-          {label}
-        </a>
-      </animated.div>
+          <div
+            dangerouslySetInnerHTML={{ __html: icon }}
+            className="text-brandprimary size-4 duration-300 group-hover:translate-x-1"
+          ></div>
+
+          <div className="duration-300 group-hover:translate-x-2">{label}</div>
+        </animated.div>
+      </a>
     </>
   );
 }

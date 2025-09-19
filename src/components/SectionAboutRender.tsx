@@ -22,7 +22,7 @@ export default function SectionAboutRender({ data }: { data: Data }) {
   return (
     <section
       id="About"
-      className="flex min-h-screen flex-row items-center justify-center bg-[url(/img/bg-light-radial.avif),url(/img/bg-light-1.avif),url(/img/bg-light-2.avif)] bg-no-repeat pt-28 [background-position:70%_40%,0%_0%,100%_50%]"
+      className="flex min-h-screen flex-row items-center justify-center py-28"
     >
       <div className="flex flex-row items-center justify-center gap-28">
         <div className="flex w-10/12 flex-col sm:w-8/12">

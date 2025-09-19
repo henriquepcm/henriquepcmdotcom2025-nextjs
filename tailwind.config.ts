@@ -9,12 +9,17 @@ export default {
   theme: {
     extend: {
       colors: {
-        henriquepcmdarkpurple: "var(--henriquepcm-dark-purple)",
-        henriquepcmbasepurple: "var(--henriquepcm-base-purple)",
-        henriquepcmlightpurple: "var(--henriquepcm-light-purple)",
-        henriquepcmpink: "var(--henriquepcm-pink)",
-        henriquepcmgreen: "var(--henriquepcm-green)",
-        henriquepcmorange: "var(--henriquepcm-orange)",
+        brandbackground: "var(--brand-background)",
+        brandsurface: "var(--brand-surface)",
+        brandprimary: "var(--brand-primary)",
+        brandtextprimary: "var(--brand-text-primary)",
+        brandtextsecondary: "var(--brand-text-secondary)",
+        brandsuccess: "var(--brand-success)",
+        brandwarning: "var(--brand-warning)",
+        branderror: "var(--brand-error)",
+        brandinfo: "var(--brand-info)",
+        brandborder: "var(--brand-border)",
+        brandshadow: "var(--brand-black)",
       },
     },
   },

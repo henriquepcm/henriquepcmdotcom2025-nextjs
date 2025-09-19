@@ -65,7 +65,7 @@ export default function SectionProjectsRender({ data }: { data: Data }) {
           <section
             id="Projects"
             key={projectID}
-            className="flex min-h-screen flex-col items-center justify-center bg-[url(/img/bg-light-radial.avif),url(/img/bg-light-1.avif),url(/img/bg-light-2.avif)] bg-no-repeat pt-28 [background-position:50%_10%,100%_70%,0%_0%]"
+            className="flex min-h-screen flex-col items-center justify-center py-28"
           >
             <div className="flex h-full w-10/12 flex-col items-end sm:w-8/12 lg:flex-row lg:gap-10">
               <div className="lg:w-3/6">

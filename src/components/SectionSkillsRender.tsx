@@ -64,7 +64,7 @@ export default function SectionSkillsRender({ data }: { data: Data }) {
   return (
     <section
       id="Skills"
-      className="flex min-h-screen flex-col items-center justify-center overflow-hidden bg-[url(/img/bg-light-radial.avif),url(/img/bg-light-1.avif),url(/img/bg-light-2.avif)] bg-no-repeat [background-position:0%_50%,0%_0%,50%_50%]"
+      className="flex min-h-screen flex-col items-center justify-center overflow-hidden"
     >
       <div className="h-fit w-10/12 sm:w-8/12">
         <div className="w-10/12 sm:w-8/12">

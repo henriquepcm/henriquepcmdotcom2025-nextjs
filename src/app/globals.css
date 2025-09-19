@@ -3,12 +3,23 @@
 @tailwind utilities;
 
 :root {
-  --henriquepcm-dark-purple: #522258;
-  --henriquepcm-base-purple: #6e2d76;
-  --henriquepcm-light-purple: #deb5e3;
-  --henriquepcm-pink: #ff0093;
-  --henriquepcm-green: #01c381;
-  --henriquepcm-orange: #ff9900;
+  --brand-white: #fff;
+  --brand-black: #000;
+
+  --brand-background: #37353e;
+  --brand-surface: #44444e;
+  --brand-primary: #ff0093;
+
+  --brand-text-primary: var(--brand-white);
+  --brand-text-secondary: #c2c0c9;
+
+  --brand-success: #01c381;
+  --brand-warning: #ff6500;
+  --brand-error: #ff204e;
+  --brand-info: #6eacda;
+
+  --brand-border: #646071;
+  --brand-shadow: var(--brand-black);
 }
 
 html {
@@ -16,19 +27,19 @@ html {
 }
 
 body {
-  @apply flex justify-center bg-henriquepcmdarkpurple bg-[radial-gradient(90rem_40rem_at_top,_#FF9900_25%,_#FF0093_80%,_#522258_100%)] text-xs leading-6 tracking-widest text-henriquepcmlightpurple;
+  @apply brand-bg-gradient text-brandtextsecondary flex justify-center text-xs leading-6 tracking-widest;
 }
 
 h1 {
-  @apply mb-3 text-2xl font-black uppercase text-white;
+  @apply text-brandtextprimary mb-3 text-2xl font-black uppercase;
 }
 
 h2 {
-  @apply text-xl font-bold leading-8 tracking-wide text-white;
+  @apply text-brandtextprimary text-xl font-bold leading-8 tracking-wide;
 }
 
 h3 {
-  @apply mb-2 text-xs font-bold tracking-widest text-white;
+  @apply text-brandtextprimary mb-2 text-xs font-bold tracking-widest;
 }
 
 label {
@@ -37,7 +48,7 @@ label {
 
 input,
 textarea {
-  @apply border-b border-henriquepcmbasepurple bg-transparent text-white outline-none transition duration-300;
+  @apply text-brandtextprimary border-brandsurface border-b bg-transparent outline-none transition duration-300;
 }
 
 input {
@@ -49,7 +60,20 @@ textarea {
 }
 
 .tabtitle {
-  @apply mb-5 text-xs uppercase tracking-widest text-henriquepcmlightpurple;
+  @apply text-brandtextsecondary mb-5 text-xs uppercase tracking-widest;
+}
+
+.brand-btn {
+  @apply bg-brandprimary text-brandtextprimary hover:shadow-brandshadow transform rounded-md text-[0.6rem] uppercase tracking-[0.15rem] duration-300 hover:scale-[1.01] hover:shadow-md;
+}
+
+.brand-bg-gradient {
+  background-image: linear-gradient(
+    190deg,
+    var(--brand-surface) 0%,
+    var(--brand-background) 37%,
+    var(--brand-surface) 75%
+  );
 }
 
 .grid-overlay {
@@ -85,7 +109,7 @@ ul > li > a::after {
   left: 0;
   width: 0; /* Initially hidden */
   height: 0.15rem;
-  background-color: var(--henriquepcm-pink); /* Border color */
+  background-color: var(--brand-primary); /* Border color */
   transition: width 0.3s ease-in-out;
 }
 
