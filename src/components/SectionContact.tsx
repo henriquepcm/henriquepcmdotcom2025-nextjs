@@ -3,6 +3,8 @@ import getGraphQLData from "@/utilities/getGraphQLData";
 import SectionContactRender from "./SectionContactRender";
 import { Data } from "@/types/contactTypes";
 
+export const revalidate = 60; // seconds
+
 const GET_CONTACT_DATA = gql`
   query Contact {
     page(id: "contact", idType: URI) {

@@ -3,6 +3,8 @@ import SectionAboutRender from "./SectionAboutRender";
 import { gql } from "@apollo/client";
 import { Data } from "@/types/aboutTypes";
 
+export const revalidate = 60; // seconds
+
 const GET_ABOUT_DATA = gql`
   query About {
     page(id: "about", idType: URI) {

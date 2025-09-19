@@ -3,6 +3,8 @@ import { gql } from "@apollo/client";
 import getGraphQLData from "@/utilities/getGraphQLData";
 import { Data } from "@/types/skillsType";
 
+export const revalidate = 60; // seconds
+
 const GET_SKILLS_DATA = gql`
   query Skill {
     page(id: "skills", idType: URI) {

@@ -4,6 +4,8 @@ import { gql } from "@apollo/client";
 import ErrorMessage from "./Error/ErrorMessage";
 import { Data } from "@/types/homeTypes";
 
+export const revalidate = 60; // seconds
+
 const GET_HOME_DATA = gql`
   query Home {
     page(id: "home", idType: URI) {

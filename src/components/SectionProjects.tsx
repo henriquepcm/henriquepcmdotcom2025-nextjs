@@ -3,6 +3,8 @@ import SectionProjectsRender from "./SectionProjectsRender";
 import getGraphQLData from "@/utilities/getGraphQLData";
 import { gql } from "@apollo/client";
 
+export const revalidate = 60; // seconds
+
 const GET_PROJECTS_DATA = gql`
   query Projects {
     page(id: "projects", idType: URI) {
