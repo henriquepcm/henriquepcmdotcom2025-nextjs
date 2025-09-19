@@ -3,8 +3,6 @@ import HeaderRender from "./HeaderRender";
 import { gql } from "@apollo/client";
 import { Data } from "@/types/headerTypes";
 
-export const revalidate = 60; // seconds
-
 const GET_HEADER_DATA = gql`
   query Header {
     page(id: "header", idType: URI) {

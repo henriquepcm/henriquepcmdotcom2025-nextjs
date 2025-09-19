@@ -11,7 +11,7 @@ export default async function getGraphQLData<T>(
   try {
     const { data } = await client.query({
       query: query,
-      fetchPolicy: "cache-first", // Ensures fresh data is fetched from the server
+      fetchPolicy: "network-only", // Ensures fresh data is fetched from the server
     });
 
     return data as T;

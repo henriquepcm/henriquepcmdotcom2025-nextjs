@@ -3,8 +3,6 @@ import FooterRender from "./FooterRender";
 import getGraphQLData from "@/utilities/getGraphQLData";
 import { Data } from "@/types/footerTypes";
 
-export const revalidate = 60; // seconds
-
 const GET_FOOTER_DATA = gql`
   query Footer {
     page(id: "footer", idType: URI) {

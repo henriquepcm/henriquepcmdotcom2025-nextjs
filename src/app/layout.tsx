@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 
+export const revalidate = 60; // seconds
+
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
