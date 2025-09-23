@@ -20,7 +20,7 @@ export default function MenuMobile({ items, button }: Menu) {
         aria-label="open the mobile menu"
         ref={menuIconRef}
         onClick={handleMenuVisibility}
-        className="hover:bg-brandaccent items-center justify-center p-1 duration-300 hover:rounded-full"
+        className="items-center justify-center p-1 duration-300 hover:rounded-full hover:bg-brandaccent"
       >
         <BurgerIcon className="size-6 text-brandtextprimary" />
       </button>

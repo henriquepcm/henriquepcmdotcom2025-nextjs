@@ -32,7 +32,7 @@ export default function ExternalLink({ label, icon, link }: ExternalLinkProps) {
         <animated.div
           ref={refLink}
           style={styleExternalLink}
-          className="hover:bg-brandaccent flex h-12 w-full transform items-center justify-center gap-2 rounded-md border border-brandprimary p-2 duration-300"
+          className="flex h-12 w-full transform items-center justify-center gap-2 rounded-md border border-brandprimary p-2 duration-300 hover:bg-brandaccent"
         >
           <div
             dangerouslySetInnerHTML={{ __html: icon }}

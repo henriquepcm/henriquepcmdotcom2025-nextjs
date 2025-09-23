@@ -7,7 +7,7 @@ export default function ButtonContact({ button }: { button: Button }) {
       className="brand-btn h-10 w-28 text-[0.6rem]"
     >
       <a
-        className="text-brandsecondary flex h-full w-full items-center justify-center"
+        className="flex h-full w-full items-center justify-center text-brandsecondary"
         href={button.link}
       >
         {button.label}
