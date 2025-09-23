@@ -5,21 +5,58 @@
 :root {
   --brand-white: #fff;
   --brand-black: #000;
-
-  --brand-background: #37353e;
-  --brand-surface: #44444e;
-  --brand-primary: #ff0093;
-
-  --brand-text-primary: var(--brand-white);
-  --brand-text-secondary: #c2c0c9;
-
   --brand-success: #01c381;
   --brand-warning: #ff6500;
   --brand-error: #ff204e;
   --brand-info: #6eacda;
+}
 
+[data-theme="dark-violet"] {
+  --brand-background: #522258;
+  --brand-surface: #6e2d76;
+  --brand-primary: #ff0093;
+  --brand-secondary: var(--brand-white);
+  --brand-accent: #8d3a98;
+  --brand-text-primary: var(--brand-white);
+  --brand-text-secondary: #deb5e3;
+  --brand-border: #8d3a98;
+  --brand-shadow: var(--brand-black);
+  --brand-overlay: rgba(48, 20, 51, 0.7);
+}
+
+[data-theme="near-black"] {
+  --brand-background: #37353e;
+  --brand-surface: #44444e;
+  --brand-primary: #ff0093;
+  --brand-secondary: var(--brand-white);
+  --brand-accent: #616170;
+  --brand-text-primary: var(--brand-white);
+  --brand-text-secondary: #c2c0c9;
   --brand-border: #646071;
   --brand-shadow: var(--brand-black);
+  --brand-overlay: rgba(34, 33, 39, 0.7);
+}
+
+[data-theme="wireframe"] {
+  --brand-background: #f4f3f7;
+  --brand-surface: #d0ceda;
+  --brand-primary: var(--brand-black);
+  --brand-secondary: var(--brand-white);
+  --brand-accent: var(--brand-white);
+  --brand-text-primary: var(--brand-black);
+  --brand-text-secondary: #5c5a65;
+  --brand-border: #c0becc;
+  --brand-shadow: var(--brand-black);
+  --brand-overlay: rgba(255, 255, 255, 0.7);
+}
+
+.brand-bg-gradient {
+  background-image: linear-gradient(
+    190deg,
+    var(--brand-surface) 0%,
+    var(--brand-background) 37%,
+    var(--brand-surface) 75%
+  );
 }
 
 html {
@@ -64,16 +101,7 @@ textarea {
 }
 
 .brand-btn {
-  @apply transform rounded-md bg-brandprimary text-[0.6rem] uppercase tracking-[0.15rem] text-brandtextprimary duration-300 hover:scale-[1.01] hover:shadow-md hover:shadow-brandshadow;
-}
-
-.brand-bg-gradient {
-  background-image: linear-gradient(
-    190deg,
-    var(--brand-surface) 0%,
-    var(--brand-background) 37%,
-    var(--brand-surface) 75%
-  );
+  @apply transform rounded-md bg-brandprimary text-[0.6rem] uppercase tracking-[0.15rem] text-brandsecondary duration-300 hover:scale-[1.01] hover:shadow-md hover:shadow-brandshadow;
 }
 
 .grid-overlay {

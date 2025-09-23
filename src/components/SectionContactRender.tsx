@@ -157,7 +157,7 @@ export default function SectionContactRender({ data }: { data: Data }) {
               />
 
               <div className="mb-5 flex flex-col items-center justify-center">
-                <div className="text-sm text-white">{name}</div>
+                <div className="text-sm">{name}</div>
                 <div className="text-center">{role}</div>
               </div>
               {socialButtons.map((button) => {

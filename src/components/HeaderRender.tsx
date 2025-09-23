@@ -29,10 +29,10 @@ export default function HeaderRender({ data }: { data: Data }) {
     <header>
       <div
         className={`fixed left-0 top-0 z-[99] flex w-full justify-center ${
-          isBeyondViewport && "bg-black bg-opacity-30 backdrop-blur-sm"
+          isBeyondViewport && "bg-brandoverlay backdrop-blur-sm"
         }`}
       >
-        <div className="relative flex h-20 w-10/12 max-w-[1920px] items-center justify-between">
+        <div className="relative flex h-20 w-10/12 max-w-[1600px] items-center justify-between">
           <Logo svgString={svgString} />
           <MenuMain items={sortedMenuItemList} button={buttonData} />
           <MenuMobile items={sortedMenuItemList} button={buttonData} />

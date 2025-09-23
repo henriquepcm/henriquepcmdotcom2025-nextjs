@@ -123,10 +123,10 @@ export default function HomeAnimation({ titles }: { titles: Titles }) {
           />
         </animated.div>
       </animated.div>
-      <div className="absolute z-50 mt-[26rem] flex w-[18.8rem] flex-col items-center text-center lg:w-full">
+      <div className="absolute z-50 mt-[26rem] flex w-[18.8rem] flex-col items-center text-center text-brandtextprimary lg:w-full">
         {/* @ts-expect-error bug with React Spring + TypeScript + Next.js 15 https://github.com/pmndrs/react-spring/issues/2332 */}
         <animated.h1 style={styleRole}>{titles.mainTitle}</animated.h1>
-        <div className="flex justify-center text-center uppercase leading-[1.5rem] tracking-[0.44rem] text-white">
+        <div className="flex justify-center text-center uppercase leading-[1.5rem] tracking-[0.44rem] text-brandtextsecondary">
           {/* @ts-expect-error bug with React Spring + TypeScript + Next.js 15 https://github.com/pmndrs/react-spring/issues/2332 */}
           <animated.div style={styleH1}>{titles.secondaryTitle}</animated.div>
         </div>

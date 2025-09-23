@@ -1,20 +1,26 @@
 import { Data } from "@/types/footerTypes";
+import ThemePicker from "./ThemePicker";
 
 export default function FooterRender({ data }: { data: Data }) {
   const icon = data.page.footer.icon;
   const description = data.page.footer.description;
 
   return (
-    <footer className="flex h-96 w-full items-end justify-center pb-10">
-      <div className="flex w-10/12 flex-col lg:w-8/12">
-        <div
-          dangerouslySetInnerHTML={{
-            __html: icon,
-          }}
-          className="mb-2 size-[1.1rem] text-white"
-        ></div>
-        <div>
-          {description}-{new Date().getFullYear()}.
+    <footer className="flex h-40 w-full justify-center">
+      <div className="flex w-10/12 max-w-[1600px] items-center justify-between">
+        <div className="flex w-8/12 flex-col">
+          <div
+            dangerouslySetInnerHTML={{
+              __html: icon,
+            }}
+            className="mb-2 size-[1.1rem] text-brandtextsecondary"
+          ></div>
+          <div>
+            {description}-{new Date().getFullYear()}.
+          </div>
+        </div>
+        <div className="relative flex w-4/12 items-center justify-end">
+          <ThemePicker />
         </div>
       </div>
     </footer>

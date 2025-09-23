@@ -20,7 +20,7 @@ export default function MenuMobile({ items, button }: Menu) {
         aria-label="open the mobile menu"
         ref={menuIconRef}
         onClick={handleMenuVisibility}
-        className="items-center justify-center p-1 duration-300 hover:rounded-full hover:bg-brandprimary"
+        className="hover:bg-brandaccent items-center justify-center p-1 duration-300 hover:rounded-full"
       >
         <BurgerIcon className="size-6 text-brandtextprimary" />
       </button>
@@ -35,7 +35,7 @@ export default function MenuMobile({ items, button }: Menu) {
       >
         <ul
           ref={menuRef}
-          className="flex flex-col justify-center gap-5 p-10 text-[0.6rem] uppercase tracking-[0.15rem] text-white"
+          className="flex flex-col justify-center gap-5 p-10 text-[0.6rem] uppercase tracking-[0.15rem] text-brandtextprimary"
         >
           {items.map((item) => {
             const excluded = ["Footer", "Header", "Contact"];

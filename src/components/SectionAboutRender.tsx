@@ -54,7 +54,7 @@ export default function SectionAboutRender({ data }: { data: Data }) {
                       dangerouslySetInnerHTML={{
                         __html: highlight.careerHighlights.icon,
                       }}
-                      className="mb-3 size-5 text-white"
+                      className="mb-3 size-5 text-brandtextprimary"
                     ></div>
                     {highlight.careerHighlights.description}
                   </li>
