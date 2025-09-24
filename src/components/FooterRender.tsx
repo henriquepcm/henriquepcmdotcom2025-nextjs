@@ -6,9 +6,9 @@ export default function FooterRender({ data }: { data: Data }) {
   const description = data.page.footer.description;
 
   return (
-    <footer className="flex h-40 w-full justify-center">
+    <footer className="mb-10 mt-56 flex h-40 w-full justify-center">
       <div className="flex w-10/12 max-w-[1600px] items-center justify-between">
-        <div className="flex w-8/12 flex-col">
+        <div className="flex w-6/12 flex-col">
           <div
             dangerouslySetInnerHTML={{
               __html: icon,
@@ -19,7 +19,7 @@ export default function FooterRender({ data }: { data: Data }) {
             {description}-{new Date().getFullYear()}.
           </div>
         </div>
-        <div className="relative flex w-4/12 items-center justify-end">
+        <div className="relative flex w-6/12 items-center justify-end">
           <ThemePicker />
         </div>
       </div>
