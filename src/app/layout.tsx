@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
+import { ThemeProvider } from "next-themes";
 
 export const revalidate = 60; // seconds
 
@@ -61,10 +62,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={inter.className} data-theme="wireframe">
+    // suppressHydrationWarning is needed because ThemeProvider causes a hydration mismatch with ThemePicker.tsx
+    // ThemeProvider is needed to prevent flicker on page load.
+    <html lang="en" className={inter.className} suppressHydrationWarning>
       <body>
-        {children}
-
+        <ThemeProvider attribute="data-theme" defaultTheme="dark-violet">
+          {children}
+        </ThemeProvider>
         <Script
           id="email-js"
           strategy="afterInteractive"

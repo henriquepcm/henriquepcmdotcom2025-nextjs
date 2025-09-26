@@ -1,5 +1,5 @@
 import { Data } from "@/types/homeTypes";
-import HomeAnimation from "./Animations/HomeAnimation";
+import HomeAnimation from "./animations/HomeAnimation";
 
 export default function SectionHomeRender({ data }: { data: Data }) {
   const titles = data.page.titles;

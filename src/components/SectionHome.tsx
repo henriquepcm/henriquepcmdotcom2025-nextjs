@@ -1,7 +1,7 @@
 import getGraphQLData from "@/utilities/getGraphQLData";
 import SectionHomeRender from "./SectionHomeRender";
 import { gql } from "@apollo/client";
-import ErrorMessage from "./Error/ErrorMessage";
+import ErrorMessage from "./error/ErrorMessage";
 import { Data } from "@/types/homeTypes";
 
 const GET_HOME_DATA = gql`
