@@ -1,7 +1,7 @@
 "use client";
 
 import ExternalLink from "./ExternalLink";
-import KiwiAppAnimation from "./animations/KiwiAppAnimation";
+import KiwiAppAnimation from "./Animations/KiwiAppAnimation";
 import { Data } from "@/types/aboutTypes";
 
 export default function SectionAboutRender({ data }: { data: Data }) {

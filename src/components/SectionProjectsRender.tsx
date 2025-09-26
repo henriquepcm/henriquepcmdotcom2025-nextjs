@@ -1,7 +1,7 @@
 "use client";
 
 import ExternalLink from "./ExternalLink";
-import ProjectAnimation from "./animations/ProjectAnimation";
+import ProjectAnimation from "./Animations/ProjectAnimation";
 import { Data } from "@/types/projectsTypes";
 
 export default function SectionProjectsRender({ data }: { data: Data }) {
