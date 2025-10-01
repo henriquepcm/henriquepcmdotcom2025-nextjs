@@ -15,7 +15,7 @@
   [data-theme="dark-violet"] {
     --brand-background: #522258;
     --brand-surface: #6e2d76;
-    --brand-primary: #ff0093;
+    --brand-primary: #d1007a;
     --brand-secondary: var(--brand-white);
     --brand-accent: #8d3a98;
     --brand-text-primary: var(--brand-white);
@@ -28,7 +28,7 @@
   [data-theme="near-black"] {
     --brand-background: #37353e;
     --brand-surface: #44444e;
-    --brand-primary: #ff0093;
+    --brand-primary: #d1007a;
     --brand-secondary: var(--brand-white);
     --brand-accent: #616170;
     --brand-text-primary: var(--brand-white);
