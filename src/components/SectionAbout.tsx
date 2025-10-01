@@ -1,4 +1,4 @@
-import getGraphQLData from "@/utilities/getGraphQLData";
+import getGraphQLData from "@/lib/getGraphQLData";
 import SectionAboutRender from "./SectionAboutRender";
 import { gql } from "@apollo/client";
 import { Data } from "@/types/aboutTypes";

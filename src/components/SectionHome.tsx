@@ -1,4 +1,4 @@
-import getGraphQLData from "@/utilities/getGraphQLData";
+import getGraphQLData from "@/lib/getGraphQLData";
 import SectionHomeRender from "./SectionHomeRender";
 import { gql } from "@apollo/client";
 import ErrorMessage from "./Error/ErrorMessage";
