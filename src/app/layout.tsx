@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
+import CookieConsentBanner from "@/components/CookieConsentBanner";
 
 export const revalidate = 60; // seconds
 
@@ -68,6 +69,7 @@ export default function RootLayout({
       <body>
         <ThemeProvider attribute="data-theme" defaultTheme="dark-violet">
           {children}
+          <CookieConsentBanner />
         </ThemeProvider>
         <Script
           id="email-js"
@@ -75,19 +77,6 @@ export default function RootLayout({
           type="text/javascript"
           src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
         ></Script>
-
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-E01V9872F7"
-          strategy="afterInteractive"
-        ></Script>
-        <Script id="google-analytics" strategy="afterInteractive">
-          {` window.dataLayer = window.dataLayer || [];
-                            function gtag() {
-                              dataLayer.push(arguments);
-                            }
-                            gtag("js", new Date());
-                            gtag("config", "G-E01V9872F7", { page_path: window.location.pathname,});`}
-        </Script>
       </body>
     </html>
   );

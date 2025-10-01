@@ -1,6 +1,6 @@
 import SectionSkillsRender from "./SectionSkillsRender";
 import { gql } from "@apollo/client";
-import getGraphQLData from "@/utilities/getGraphQLData";
+import getGraphQLData from "@/lib/getGraphQLData";
 import { Data } from "@/types/skillsType";
 
 const GET_SKILLS_DATA = gql`

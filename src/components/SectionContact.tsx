@@ -1,5 +1,5 @@
 import { gql } from "@apollo/client";
-import getGraphQLData from "@/utilities/getGraphQLData";
+import getGraphQLData from "@/lib/getGraphQLData";
 import SectionContactRender from "./SectionContactRender";
 import { Data } from "@/types/contactTypes";
 

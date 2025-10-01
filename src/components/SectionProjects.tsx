@@ -1,6 +1,6 @@
 import { Data } from "@/types/projectsTypes";
 import SectionProjectsRender from "./SectionProjectsRender";
-import getGraphQLData from "@/utilities/getGraphQLData";
+import getGraphQLData from "@/lib/getGraphQLData";
 import { gql } from "@apollo/client";
 
 const GET_PROJECTS_DATA = gql`
