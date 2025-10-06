@@ -69,7 +69,7 @@ export default function RootLayout({
     // ThemeProvider is needed to prevent flicker on page load.
     <html lang="en" className={inter.className} suppressHydrationWarning>
       <body>
-        <ThemeProvider attribute="data-theme" defaultTheme="dark-violet">
+        <ThemeProvider attribute="data-theme" defaultTheme="near-black">
           <div className="w-full max-w-[1920px]">
             <Header />
             <main>{children}</main>
