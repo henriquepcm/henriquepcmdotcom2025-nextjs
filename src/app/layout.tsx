@@ -67,7 +67,7 @@ export default function RootLayout({
     // ThemeProvider is needed to prevent flicker on page load.
     <html lang="en" className={inter.className} suppressHydrationWarning>
       <body>
-        <ThemeProvider attribute="data-theme" defaultTheme="dark-violet">
+        <ThemeProvider attribute="data-theme" defaultTheme="near-black">
           {children}
           <CookieConsentBanner />
         </ThemeProvider>
