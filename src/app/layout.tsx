@@ -4,6 +4,8 @@ import Script from "next/script";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
 import CookieConsentBanner from "@/components/CookieConsentBanner";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 export const revalidate = 60; // seconds
 
@@ -67,8 +69,12 @@ export default function RootLayout({
     // ThemeProvider is needed to prevent flicker on page load.
     <html lang="en" className={inter.className} suppressHydrationWarning>
       <body>
-        <ThemeProvider attribute="data-theme" defaultTheme="near-black">
-          {children}
+        <ThemeProvider attribute="data-theme" defaultTheme="dark-violet">
+          <div className="w-full max-w-[1920px]">
+            <Header />
+            <main>{children}</main>
+            <Footer />
+          </div>
           <CookieConsentBanner />
         </ThemeProvider>
         <Script
