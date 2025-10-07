@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   description:
     "Henrique Pochmann is a Front-end Developer and UI/UX Designer based in Porto Alegre, Brazil (LATAM), with over 10 years of experience. He specializes in working with modern technologies within the JavaScript ecosystem.",
   icons: {
-    icon: "img/henrique-pochmann-front-end-developer-ui-ux-designer-brazil.png",
+    icon: "/img/henrique-pochmann-front-end-developer-ui-ux-designer-brazil.png",
   },
   alternates: {
     canonical: "https://henriquepcm.com/",
