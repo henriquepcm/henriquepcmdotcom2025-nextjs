@@ -7,8 +7,8 @@ import Link from "next/link";
 
 export default async function SingleBlogPost() {
   return (
-    <div className="mt-36 flex items-center justify-center">
-      <article className="flex w-10/12 flex-col">
+    <div className="mt-36 flex w-full items-center justify-center">
+      <article className="flex w-10/12 flex-col xl:w-6/12">
         <header>
           <nav aria-label="Breadcrum">
             <ol className="flex items-center gap-4 text-[0.6rem]">
@@ -59,15 +59,13 @@ export default async function SingleBlogPost() {
             </ol>
           </nav>
 
-          <h1 className="mt-8 text-3xl font-bold normal-case">
-            Implementing a theme switcher with Next.js and TailwindCSS
+          <h1 className="mt-8 text-3xl font-bold normal-case leading-normal tracking-normal">
+            Title ~50–60 characters: How I Built a Theme Switcher with Next.js
+            and TailwindCSS
           </h1>
-          <p className="mt-4 text-base font-light leading-loose">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
-            vitae risus nunc. Cras viverra ut turpis ut lacinia. Aenean iaculis
-            venenatis urna, ut euismod arcu bibendum nec. Quisque vehicula
-            pellentesque neque, maximus tristique nisl efficitur ut. Proin a
-            mauris vel augue vehicula rutrum. Phasellus non est magna.
+          <p className="mt-4 text-xl leading-loose tracking-normal">
+            Subtext, ~120–160 characters: A walkthrough of how I designed a
+            smooth dark/light theme experience using Tailwind and Next.js.
           </p>
           <div className="mt-8 flex items-center gap-8 text-[0.6rem]">
             <div className="flex items-center gap-2">
@@ -105,7 +103,10 @@ export default async function SingleBlogPost() {
             ></Image>
           </figure>
         </header>
-        <section className="mt-8 flex flex-col gap-8 text-sm leading-loose">
+        <section className="mt-8 flex flex-col gap-8 text-base leading-loose tracking-normal">
+          <h2 className="text-2xl font-bold normal-case tracking-normal">
+            Suspendisse malesuada, ipsum gravida lacinia interdum
+          </h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam id
             hendrerit tortor. Quisque pretium mauris vel massa placerat
@@ -140,6 +141,9 @@ export default async function SingleBlogPost() {
             justo. Donec et rutrum nunc, vel gravida sem. Vestibulum suscipit
             commodo mattis.
           </p>
+          <h3 className="text-xl font-bold normal-case tracking-normal">
+            Suspendisse malesuada, ipsum gravida lacinia interdum
+          </h3>
           <p>
             Nullam molestie ultrices dolor, quis maximus lorem ornare nec.
             Aliquam sollicitudin rutrum massa, vitae tempus eros sagittis id.
@@ -151,6 +155,13 @@ export default async function SingleBlogPost() {
             tincidunt laoreet. Cras suscipit eros a arcu pharetra porttitor. Sed
             fringilla mauris et dui condimentum malesuada.
           </p>
+          <blockquote className="border-l border-brandtextprimary p-5 text-xl font-medium leading-loose text-brandtextprimary sm:ml-5">
+            <p>
+              “Design is not just what it looks like and feels like. Design is
+              how it works.”
+            </p>
+            <cite>— Steve Jobs</cite>
+          </blockquote>
           <p>
             Sed in mi sem. In et magna dapibus, blandit enim et, pulvinar magna.
             Quisque in pellentesque lectus, quis fermentum velit. In hac
@@ -158,8 +169,29 @@ export default async function SingleBlogPost() {
             tempor feugiat lorem. Suspendisse potenti. Suspendisse lorem enim,
             tincidunt at egestas vitae, sollicitudin sit amet odio.
           </p>
+          <h3 className="text-xl font-bold normal-case tracking-normal">
+            Suspendisse malesuada, ipsum gravida lacinia interdum
+          </h3>
+          <p>
+            Sed in mi sem. In et magna dapibus, blandit enim et, pulvinar magna.
+            Quisque in pellentesque lectus, quis fermentum velit. In hac
+            habitasse platea dictumst. Pellentesque dui ex, porta eu purus et,
+            tempor feugiat lorem. Suspendisse potenti. Suspendisse lorem enim,
+            tincidunt at egestas vitae, sollicitudin sit amet odio.
+          </p>
+          <ul className="w-fit list-disc sm:ml-10">
+            <li className="border-b-[0.01rem] border-brandtextsecondary p-4">
+              <strong>Whitespace:</strong> gives content room to breathe.
+            </li>
+            <li className="border-b-[0.01rem] border-brandtextsecondary p-4">
+              <strong>Consistency:</strong> builds trust and predictability.
+            </li>
+            <li className="border-b-[0.01rem] border-brandtextsecondary p-4">
+              <strong>Contrast:</strong> directs attention effectively.
+            </li>
+          </ul>
         </section>
-        <footer>post footer infor here</footer>
+        <footer className="mt-24">post footer infor here</footer>
       </article>
     </div>
   );
