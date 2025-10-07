@@ -1,5 +1,7 @@
+import CalendarIcon from "@/components/icons/CalendarIcon";
 import ChevronIcon from "@/components/icons/ChevronIcon";
 import HomeIcon from "@/components/icons/HomeIcon";
+import UserCircleIcon from "@/components/icons/UserCircleIcon";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -41,6 +43,19 @@ export default async function SingleBlogPost() {
                   <ChevronIcon />
                 </div>
               </li>
+              <li>
+                <Link
+                  className="transform border-transparent pb-1 text-brandtextprimary duration-300 hover:border-b-2 hover:border-brandprimary"
+                  href="/blog"
+                >
+                  Frontend
+                </Link>
+              </li>
+              <li aria-hidden="true">
+                <div className="size-3 -rotate-90 text-brandtextprimary opacity-30">
+                  <ChevronIcon />
+                </div>
+              </li>
             </ol>
           </nav>
 
@@ -55,11 +70,30 @@ export default async function SingleBlogPost() {
             mauris vel augue vehicula rutrum. Phasellus non est magna.
           </p>
           <div className="mt-8 flex items-center gap-8 text-[0.6rem]">
-            <p>
-              Published: Jan 23, 2025 at 10:30 AM • Updated: Feb 10, 2025 at
-              4:45 PM
-            </p>
-            <p>Author: Henrique Pochmann</p>
+            <div className="flex items-center gap-2">
+              <div className="size-[0.875rem] text-brandtextprimary opacity-30">
+                <CalendarIcon />
+              </div>
+              <p>
+                Published:{" "}
+                <span className="text-brandtextprimary">
+                  Jan 23, 2025 at 10:30 AM
+                </span>{" "}
+                • Updated:{" "}
+                <span className="text-brandtextprimary">
+                  Feb 10, 2025 at 4:45 PM
+                </span>
+              </p>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="size-4 text-brandtextprimary opacity-30">
+                <UserCircleIcon />
+              </div>
+              <p>
+                Author:{" "}
+                <span className="text-brandtextprimary">Henrique Pochmann</span>
+              </p>
+            </div>
           </div>
           <figure>
             <Image
