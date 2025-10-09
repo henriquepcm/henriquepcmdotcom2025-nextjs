@@ -1,3 +1,4 @@
+import ArrowPath from "@/components/icons/ArrowPath";
 import CalendarIcon from "@/components/icons/CalendarIcon";
 import ChevronIcon from "@/components/icons/ChevronIcon";
 import HomeIcon from "@/components/icons/HomeIcon";
@@ -67,39 +68,49 @@ export default async function SingleBlogPost() {
             Subtext, ~120–160 characters: A walkthrough of how I designed a
             smooth dark/light theme experience using Tailwind and Next.js.
           </p>
-          <div className="mt-8 flex items-center gap-8 text-[0.6rem]">
-            <div className="flex items-center gap-2">
-              <div className="size-[0.875rem] text-brandtextprimary opacity-30">
+          <div className="mt-8 flex flex-col justify-between gap-4 md:flex-row">
+            <div className="flex gap-2 text-start">
+              <div className="mt-1 flex size-[0.875rem] text-brandtextprimary opacity-30">
                 <CalendarIcon />
               </div>
-              <p>
-                Published:{" "}
-                <span className="text-brandtextprimary">
-                  Jan 23, 2025 at 10:30 AM
-                </span>{" "}
-                • Updated:{" "}
-                <span className="text-brandtextprimary">
-                  Feb 10, 2025 at 4:45 PM
-                </span>
-              </p>
+              <div className="flex items-center gap-1 md:flex-col md:items-start md:gap-0 2xl:flex-row 2xl:gap-1">
+                <div>Published: </div>
+                <div className="leading-5 text-brandtextprimary 2xl:leading-6">
+                  Jan 23, 2025 10:30 AM
+                </div>
+              </div>
             </div>
-            <div className="flex items-center gap-2">
-              <div className="size-4 text-brandtextprimary opacity-30">
+            <div className="flex gap-2 text-start">
+              <div className="mt-1 flex size-[0.875rem] text-brandtextprimary opacity-30">
+                <ArrowPath />
+              </div>
+              <div className="flex items-center gap-1 md:flex-col md:items-start md:gap-0 2xl:flex-row 2xl:gap-1">
+                <div>Updated: </div>
+                <div className="leading-5 text-brandtextprimary 2xl:leading-6">
+                  Jan 23, 2025 10:30 AM
+                </div>
+              </div>
+            </div>
+
+            <div className="flex gap-2 text-start">
+              <div className="mt-1 flex size-[0.875rem] text-brandtextprimary opacity-30">
                 <UserCircleIcon />
               </div>
-              <p>
-                Author:{" "}
-                <span className="text-brandtextprimary">Henrique Pochmann</span>
-              </p>
+              <div className="flex items-center gap-1 md:flex-col md:items-start md:gap-0 2xl:flex-row 2xl:gap-1">
+                <div>Author: </div>
+                <div className="leading-5 text-brandtextprimary 2xl:leading-6">
+                  Henrique Pochmann
+                </div>
+              </div>
             </div>
           </div>
-          <figure>
+          <figure className="aspect-[600/630] w-full overflow-hidden md:aspect-[1200/630]">
             <Image
               alt="featured image"
               src="/img/placeholder-featured-image-1600x630.png"
-              width={1600}
+              width={1200}
               height={630}
-              className="mt-8 w-full"
+              className="mt-8 h-full w-full object-cover object-right"
             ></Image>
           </figure>
         </header>
