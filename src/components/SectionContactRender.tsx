@@ -5,6 +5,8 @@ import ExternalLink from "./ExternalLink";
 import { useSendEmail } from "../hooks/useSendEmail";
 import Image from "next/image";
 import { Data } from "@/types/contactTypes";
+import { useEffect, useRef, useState } from "react";
+import Script from "next/script";
 
 export default function SectionContactRender({ data }: { data: Data }) {
   // ––––– Derived Data –––––––––––––––––––––––––
@@ -43,11 +45,39 @@ export default function SectionContactRender({ data }: { data: Data }) {
   // ––––– Form Data –––––––––––––––––––––––––
   const { form, isFormSent, isPending, sendEmail } = useSendEmail();
 
+  // ––––– Lazy Loading Form Script –––––––––––––––––––––––––
+  const ref = useRef<HTMLFormElement>(null);
+  const [isFormVisible, setIsFormVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting && !isFormVisible) {
+        setIsFormVisible(true);
+      }
+    });
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+    return () => {
+      observer.disconnect();
+    };
+  }, [isFormVisible]);
+
   return (
     <section
       id="Contact"
+      ref={ref}
       className="flex min-h-screen w-full items-center justify-center pt-28"
     >
+      {isFormVisible && (
+        <Script
+          id="email-js"
+          strategy="afterInteractive"
+          type="text/javascript"
+          src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+        ></Script>
+      )}
       <div className="flex w-10/12 flex-col items-center justify-center gap-28 md:w-6/12 lg:w-8/12 lg:flex-row">
         <div className="flex h-full w-full flex-col items-center justify-center gap-40 lg:flex-row">
           <div
