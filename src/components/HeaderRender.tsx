@@ -5,6 +5,8 @@ import { useBeyondViewport } from "../hooks/useBeyondViewport";
 import Logo from "./Logo";
 import MenuMain from "./MenuMain";
 import MenuMobile from "./MenuMobile";
+import BlogLogo from "./BlogLogo";
+import { usePathname } from "next/navigation";
 
 export default function HeaderRender({ data }: { data: Data }) {
   const { isBeyondViewport } = useBeyondViewport();
@@ -21,6 +23,10 @@ export default function HeaderRender({ data }: { data: Data }) {
     link: data.page.header.buttonLink,
   };
 
+  //—————— Blog Config —————————————————————
+  const pathname = usePathname();
+  const isBlog = pathname.startsWith("/blog");
+
   if (!data) {
     return <div>Loading...</div>;
   }
@@ -33,7 +39,10 @@ export default function HeaderRender({ data }: { data: Data }) {
         }`}
       >
         <div className="relative flex h-20 w-10/12 max-w-[1600px] items-center justify-between">
-          <Logo svgString={svgString} />
+          <div className="flex items-center gap-4">
+            <Logo svgString={svgString} />
+            {isBlog && <BlogLogo />}
+          </div>
           <MenuMain items={sortedMenuItemList} button={buttonData} />
           <MenuMobile items={sortedMenuItemList} button={buttonData} />
         </div>
