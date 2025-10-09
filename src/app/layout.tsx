@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import Script from "next/script";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
 import CookieConsentBanner from "@/components/CookieConsentBanner";
@@ -77,12 +76,6 @@ export default function RootLayout({
           </div>
           <CookieConsentBanner />
         </ThemeProvider>
-        <Script
-          id="email-js"
-          strategy="afterInteractive"
-          type="text/javascript"
-          src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
-        ></Script>
       </body>
     </html>
   );
