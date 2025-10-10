@@ -14,7 +14,7 @@ const GET_FOOTER_DATA = gql`
   }
 `;
 
-export default async function Footer() {
+export default async function Footer({ theme }: { theme: string }) {
   try {
     const data = await getGraphQLData<Data>(GET_FOOTER_DATA);
 
@@ -23,7 +23,7 @@ export default async function Footer() {
       throw new Error("Missing footer data");
     }
 
-    return <FooterRender data={data} />;
+    return <FooterRender data={data} theme={theme} />;
   } catch (error) {
     console.error("Error loading footer data", error);
     return <div>Error loading footer data.</div>;

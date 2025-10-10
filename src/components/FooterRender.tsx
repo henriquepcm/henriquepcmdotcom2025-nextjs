@@ -1,7 +1,12 @@
 import { Data } from "@/types/footerTypes";
 import ThemePicker from "./ThemePicker";
 
-export default function FooterRender({ data }: { data: Data }) {
+type FooterRenderProps = {
+  data: Data;
+  theme: string;
+};
+
+export default function FooterRender({ data, theme }: FooterRenderProps) {
   const icon = data.page.footer.icon;
   const description = data.page.footer.description;
 
@@ -20,7 +25,7 @@ export default function FooterRender({ data }: { data: Data }) {
           </div>
         </div>
         <div className="relative flex w-6/12 items-center justify-end">
-          <ThemePicker />
+          <ThemePicker theme={theme} />
         </div>
       </div>
     </footer>

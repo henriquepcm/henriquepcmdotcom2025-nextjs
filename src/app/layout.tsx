@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "next-themes";
+
 import CookieConsentBanner from "@/components/CookieConsentBanner";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { cookies } from "next/headers";
 
 export const revalidate = 60; // seconds
 
@@ -58,24 +59,23 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const cookieStore = await cookies();
+  const theme = cookieStore.get("theme")?.value || "near-black";
+
   return (
-    // suppressHydrationWarning is needed because ThemeProvider causes a hydration mismatch with ThemePicker.tsx
-    // ThemeProvider is needed to prevent flicker on page load.
-    <html lang="en" className={inter.className} suppressHydrationWarning>
+    <html lang="en" className={inter.className} data-theme={theme}>
       <body>
-        <ThemeProvider attribute="data-theme" defaultTheme="near-black">
-          <div className="w-full max-w-[1920px]">
-            <Header />
-            <main>{children}</main>
-            <Footer />
-          </div>
-          <CookieConsentBanner />
-        </ThemeProvider>
+        <div className="w-full max-w-[1920px]">
+          <Header />
+          <main>{children}</main>
+          <Footer theme={theme} />
+        </div>
+        <CookieConsentBanner />
       </body>
     </html>
   );

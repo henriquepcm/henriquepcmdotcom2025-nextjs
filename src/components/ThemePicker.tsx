@@ -1,18 +1,12 @@
 "use client";
-import { useTheme } from "next-themes";
 import ChevronIcon from "./icons/ChevronIcon";
 import ThemeListItem from "./ThemeListItem";
 import { useEffect, useState } from "react";
-import { Spinner } from "./icons/Spinner";
 
-export default function ThemePicker() {
-  //————— next-themes hook ————————————————————
-  const { theme, setTheme } = useTheme();
-
+export default function ThemePicker({ theme }: { theme: string }) {
   //————— States ————————————————————
   const [isThemePickerOpen, setIsThemePickerOpen] = useState(false);
   const [selectedTheme, setSelectedTheme] = useState(theme);
-  const [mounted, setMounted] = useState(false);
 
   //————— List of available themes ————————————————————
   // Add the color palette to globals.css before updating this list.
@@ -24,34 +18,25 @@ export default function ThemePicker() {
   }
 
   function handleThemePicked(theme: string) {
-    setTheme(theme);
     setSelectedTheme(theme);
     handleThemePickerVisibility();
   }
+
+  //————— Effects ————————————————————
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", selectedTheme);
+
+    const cookieConsent = localStorage.getItem("cookieConsent");
+
+    if (cookieConsent === "accepted") {
+      document.cookie = `theme=${selectedTheme}; path=/; max-age=${60 * 60 * 24 * 30}; Secure; SameSite=Lax`; //max-age: cookie valid for 30 days.
+    }
+  }, [selectedTheme]);
 
   //————— Styles ————————————————————
   const arrowDirectionStyles = isThemePickerOpen ? "rotate-180" : "rotate-0";
   const btnDefaultClasses =
     "h-12 w-32 transform rounded-md border border-brandprimary p-3 text-[0.6rem] text-brandprimary duration-500 hover:bg-brandaccent";
-
-  //————— Handle Hydration Mismatch ————————————————————
-  // Intentional to prevent flicker on page load.
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted)
-    return (
-      <button
-        disabled
-        aria-controls="theme-menu"
-        id="theme-button"
-        className={`${btnDefaultClasses} flex items-center justify-center opacity-30`}
-      >
-        <Spinner className="size-6 animate-spin" />
-      </button>
-    );
-  //—————
 
   return (
     <>
