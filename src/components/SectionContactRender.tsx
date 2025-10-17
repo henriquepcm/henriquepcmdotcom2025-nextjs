@@ -44,6 +44,13 @@ export default function SectionContactRender({ data }: { data: Data }) {
 
   // ––––– Form Data –––––––––––––––––––––––––
   const { form, isFormSent, isPending, sendEmail } = useSendEmail();
+  const [companyInput, setCompanyInput] = useState("");
+
+  // ––––– Spam Prevention –––––––––––––––––––––––––
+  function handleSendEmail(e: React.FormEvent<HTMLFormElement>) {
+    if (companyInput !== "") return;
+    sendEmail(e);
+  }
 
   // ––––– Lazy Loading Form Script –––––––––––––––––––––––––
   const ref = useRef<HTMLFormElement>(null);
@@ -90,7 +97,7 @@ export default function SectionContactRender({ data }: { data: Data }) {
 
             <form
               ref={form}
-              onSubmit={sendEmail}
+              onSubmit={handleSendEmail}
               className="mt-10 flex flex-col gap-5"
             >
               <div className="flex gap-10">
@@ -124,6 +131,21 @@ export default function SectionContactRender({ data }: { data: Data }) {
                     className="-translate-y-[3.6rem] peer-focus:text-brandprimary"
                   >
                     Second Name
+                  </label>
+                </div>
+                <div className="company-input flex w-full flex-col">
+                  <input
+                    id="company"
+                    name="company"
+                    className="peer w-full border-brandborder focus:border-brandprimary"
+                    type="text"
+                    onChange={(e) => setCompanyInput(e.target.value)}
+                  />
+                  <label
+                    htmlFor="company"
+                    className="-translate-y-[3.6rem] peer-focus:text-brandprimary"
+                  >
+                    Company
                   </label>
                 </div>
               </div>
