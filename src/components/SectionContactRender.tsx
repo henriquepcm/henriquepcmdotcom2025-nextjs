@@ -44,11 +44,16 @@ export default function SectionContactRender({ data }: { data: Data }) {
 
   // ––––– Form Data –––––––––––––––––––––––––
   const { form, isFormSent, isPending, sendEmail } = useSendEmail();
-  const [companyInput, setCompanyInput] = useState("");
 
-  // ––––– Spam Prevention –––––––––––––––––––––––––
+  // ––––– Spam Prevention Config –––––––––––––––––––––––––
+  const [companyInput, setCompanyInput] = useState("");
+  const timeFormLoaded = useRef(Date.now());
+
   function handleSendEmail(e: React.FormEvent<HTMLFormElement>) {
-    if (companyInput !== "") return;
+    const timeNow = Date.now();
+
+    if (companyInput !== "") return; // Users won't see the this input, just bots can fill it out.
+    if (timeNow - timeFormLoaded.current < 5000) return; // 5000 = 5 seconds // catch bots filling the form under five seconds
     sendEmail(e);
   }
 
