@@ -108,6 +108,25 @@
   }
 }
 
+/* Blog Post Table of Contents */
+@layer utilities {
+  aside nav ul ul a {
+    @apply pl-4;
+  }
+
+  aside nav ul ul ul a {
+    @apply pl-8;
+  }
+
+  aside a {
+    @apply w-full transform border-2 border-transparent p-2 text-brandtextprimary duration-300 hover:border-l-2 hover:border-l-brandprimary hover:text-brandprimary;
+  }
+
+  aside ul li {
+    @apply w-full pt-4;
+  }
+}
+
 .grid-overlay {
   position: fixed;
   top: 0;
@@ -137,14 +156,14 @@
 }
 
 /* Main menu effect */
-ul > li > a {
+.main-menu > ul > li > a {
   position: relative;
   display: inline-block;
   padding: 10px;
   transition: transform 0.3s ease;
 }
 
-ul > li > a::after {
+.main-menu > ul > li > a::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -155,6 +174,6 @@ ul > li > a::after {
   transition: width 0.3s ease-in-out;
 }
 
-ul > li > a:hover::after {
+.main-menu > ul > li > a:hover::after {
   width: 100%;
 }

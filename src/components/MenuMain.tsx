@@ -5,7 +5,7 @@ export default function MenuMain({ items, button }: Menu) {
   return (
     <nav
       aria-label="Website main menu"
-      className="hidden flex-row items-center md:gap-5 lg:flex lg:gap-10"
+      className="main-menu hidden flex-row items-center md:gap-5 lg:flex lg:gap-10"
     >
       <ul className="flex flex-row text-[0.6rem] uppercase tracking-[0.15rem] text-brandtextprimary md:gap-5 lg:gap-10">
         {items.map((item) => {

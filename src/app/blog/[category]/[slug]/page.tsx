@@ -1,6 +1,7 @@
 import ArrowPath from "@/components/icons/ArrowPath";
 import CalendarIcon from "@/components/icons/CalendarIcon";
 import ChevronIcon from "@/components/icons/ChevronIcon";
+import DocumentIcon from "@/components/icons/DocumentIcon";
 import HomeIcon from "@/components/icons/HomeIcon";
 import UserCircleIcon from "@/components/icons/UserCircleIcon";
 import Image from "next/image";
@@ -114,95 +115,150 @@ export default async function SingleBlogPost() {
             ></Image>
           </figure>
         </header>
-        <section className="mt-8 flex flex-col gap-8 text-base leading-loose tracking-normal">
-          <h2 className="text-2xl font-bold normal-case tracking-normal">
-            Suspendisse malesuada, ipsum gravida lacinia interdum
-          </h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam id
-            hendrerit tortor. Quisque pretium mauris vel massa placerat
-            fermentum. Vivamus tellus ante, aliquam ut sodales at, vehicula non
-            arcu. In lorem est, blandit non bibendum a, scelerisque ullamcorper
-            enim. Integer tempus metus nisl, ut semper purus sagittis in.
-            Suspendisse sit amet suscipit sapien. Suspendisse malesuada, ipsum
-            gravida lacinia interdum, ex est consectetur ipsum, id pulvinar urna
-            est venenatis sem.
-          </p>
-          <p>
-            Etiam malesuada odio vitae condimentum feugiat. Vivamus feugiat
-            ipsum eu rutrum hendrerit. Integer ut augue eget lorem efficitur
-            pharetra. Nullam feugiat, metus et tincidunt cursus, odio quam
-            sodales urna, quis placerat metus magna id metus. In vel dictum
-            metus. Etiam a eros velit. Maecenas volutpat mi rhoncus lorem
-            maximus aliquam. Aliquam vitae ligula at risus posuere elementum at
-            vel libero. Quisque in iaculis velit. Quisque mattis quam quis eros
-            sodales, non maximus turpis gravida. Proin sagittis rutrum
-            fermentum.
-          </p>
-          <p>
-            Sed dapibus justo et finibus varius. Integer quis dolor ut lectus
-            fringilla venenatis. Quisque eget purus sem. Nulla consequat ante
-            non hendrerit vehicula. Sed eu tortor magna. Aliquam justo mauris,
-            consequat nec ultricies in, lobortis non lorem. Nullam nunc velit,
-            lacinia vitae velit eget, feugiat sodales lacus. Mauris interdum
-            diam sit amet pellentesque interdum. Duis pellentesque libero neque,
-            non auctor lacus ultricies sit amet. Maecenas in molestie sapien.
-            Donec ut pellentesque magna, at pulvinar ante. Suspendisse potenti.
-            Curabitur ac suscipit nulla, non vehicula libero. Donec id fermentum
-            justo. Donec et rutrum nunc, vel gravida sem. Vestibulum suscipit
-            commodo mattis.
-          </p>
-          <h3 className="text-xl font-bold normal-case tracking-normal">
-            Suspendisse malesuada, ipsum gravida lacinia interdum
-          </h3>
-          <p>
-            Nullam molestie ultrices dolor, quis maximus lorem ornare nec.
-            Aliquam sollicitudin rutrum massa, vitae tempus eros sagittis id.
-            Nulla dictum et tortor non finibus. Nulla leo ex, luctus sed eros
-            quis, faucibus placerat purus. Curabitur eu ante dignissim mi porta
-            eleifend. Curabitur viverra eu velit sed gravida. Morbi at tellus
-            ipsum. Sed convallis dapibus purus nec pharetra. Sed condimentum
-            rhoncus eleifend. Pellentesque vestibulum ante sit amet lacus
-            tincidunt laoreet. Cras suscipit eros a arcu pharetra porttitor. Sed
-            fringilla mauris et dui condimentum malesuada.
-          </p>
-          <blockquote className="border-l border-brandtextprimary p-5 text-xl font-medium leading-loose text-brandtextprimary sm:ml-5">
-            <p>
-              “Design is not just what it looks like and feels like. Design is
-              how it works.”
-            </p>
-            <cite>— Steve Jobs</cite>
-          </blockquote>
-          <p>
-            Sed in mi sem. In et magna dapibus, blandit enim et, pulvinar magna.
-            Quisque in pellentesque lectus, quis fermentum velit. In hac
-            habitasse platea dictumst. Pellentesque dui ex, porta eu purus et,
-            tempor feugiat lorem. Suspendisse potenti. Suspendisse lorem enim,
-            tincidunt at egestas vitae, sollicitudin sit amet odio.
-          </p>
-          <h3 className="text-xl font-bold normal-case tracking-normal">
-            Suspendisse malesuada, ipsum gravida lacinia interdum
-          </h3>
-          <p>
-            Sed in mi sem. In et magna dapibus, blandit enim et, pulvinar magna.
-            Quisque in pellentesque lectus, quis fermentum velit. In hac
-            habitasse platea dictumst. Pellentesque dui ex, porta eu purus et,
-            tempor feugiat lorem. Suspendisse potenti. Suspendisse lorem enim,
-            tincidunt at egestas vitae, sollicitudin sit amet odio.
-          </p>
-          <ul className="w-fit list-disc sm:ml-10">
-            <li className="border-b-[0.01rem] border-brandtextsecondary p-4">
-              <strong>Whitespace:</strong> gives content room to breathe.
-            </li>
-            <li className="border-b-[0.01rem] border-brandtextsecondary p-4">
-              <strong>Consistency:</strong> builds trust and predictability.
-            </li>
-            <li className="border-b-[0.01rem] border-brandtextsecondary p-4">
-              <strong>Contrast:</strong> directs attention effectively.
-            </li>
-          </ul>
-        </section>
-        <footer className="mt-24">post footer infor here</footer>
+        <div className="mt-8 flex w-full justify-between">
+          <div className="w-4/6">
+            <section className="flex w-full flex-col gap-8 text-base leading-loose tracking-normal">
+              <h2 className="text-2xl font-bold normal-case tracking-normal">
+                Suspendisse malesuada, ipsum gravida lacinia interdum
+              </h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+                id hendrerit tortor. Quisque pretium mauris vel massa placerat
+                fermentum. Vivamus tellus ante, aliquam ut sodales at, vehicula
+                non arcu. In lorem est, blandit non bibendum a, scelerisque
+                ullamcorper enim. Integer tempus metus nisl, ut semper purus
+                sagittis in. Suspendisse sit amet suscipit sapien. Suspendisse
+                malesuada, ipsum gravida lacinia interdum, ex est consectetur
+                ipsum, id pulvinar urna est venenatis sem.
+              </p>
+              <p>
+                Etiam malesuada odio vitae condimentum feugiat. Vivamus feugiat
+                ipsum eu rutrum hendrerit. Integer ut augue eget lorem efficitur
+                pharetra. Nullam feugiat, metus et tincidunt cursus, odio quam
+                sodales urna, quis placerat metus magna id metus. In vel dictum
+                metus. Etiam a eros velit. Maecenas volutpat mi rhoncus lorem
+                maximus aliquam. Aliquam vitae ligula at risus posuere elementum
+                at vel libero. Quisque in iaculis velit. Quisque mattis quam
+                quis eros sodales, non maximus turpis gravida. Proin sagittis
+                rutrum fermentum.
+              </p>
+              <p>
+                Sed dapibus justo et finibus varius. Integer quis dolor ut
+                lectus fringilla venenatis. Quisque eget purus sem. Nulla
+                consequat ante non hendrerit vehicula. Sed eu tortor magna.
+                Aliquam justo mauris, consequat nec ultricies in, lobortis non
+                lorem. Nullam nunc velit, lacinia vitae velit eget, feugiat
+                sodales lacus. Mauris interdum diam sit amet pellentesque
+                interdum. Duis pellentesque libero neque, non auctor lacus
+                ultricies sit amet. Maecenas in molestie sapien. Donec ut
+                pellentesque magna, at pulvinar ante. Suspendisse potenti.
+                Curabitur ac suscipit nulla, non vehicula libero. Donec id
+                fermentum justo. Donec et rutrum nunc, vel gravida sem.
+                Vestibulum suscipit commodo mattis.
+              </p>
+              <h3 className="text-xl font-bold normal-case tracking-normal">
+                Suspendisse malesuada, ipsum gravida lacinia interdum
+              </h3>
+              <p>
+                Nullam molestie ultrices dolor, quis maximus lorem ornare nec.
+                Aliquam sollicitudin rutrum massa, vitae tempus eros sagittis
+                id. Nulla dictum et tortor non finibus. Nulla leo ex, luctus sed
+                eros quis, faucibus placerat purus. Curabitur eu ante dignissim
+                mi porta eleifend. Curabitur viverra eu velit sed gravida. Morbi
+                at tellus ipsum. Sed convallis dapibus purus nec pharetra. Sed
+                condimentum rhoncus eleifend. Pellentesque vestibulum ante sit
+                amet lacus tincidunt laoreet. Cras suscipit eros a arcu pharetra
+                porttitor. Sed fringilla mauris et dui condimentum malesuada.
+              </p>
+              <blockquote className="border-l border-brandtextprimary p-5 text-xl font-medium leading-loose text-brandtextprimary sm:ml-5">
+                <p>
+                  “Design is not just what it looks like and feels like. Design
+                  is how it works.”
+                </p>
+                <cite>— Steve Jobs</cite>
+              </blockquote>
+              <p>
+                Sed in mi sem. In et magna dapibus, blandit enim et, pulvinar
+                magna. Quisque in pellentesque lectus, quis fermentum velit. In
+                hac habitasse platea dictumst. Pellentesque dui ex, porta eu
+                purus et, tempor feugiat lorem. Suspendisse potenti. Suspendisse
+                lorem enim, tincidunt at egestas vitae, sollicitudin sit amet
+                odio.
+              </p>
+              <h3 className="text-xl font-bold normal-case tracking-normal">
+                Suspendisse malesuada, ipsum gravida lacinia interdum
+              </h3>
+              <p>
+                Sed in mi sem. In et magna dapibus, blandit enim et, pulvinar
+                magna. Quisque in pellentesque lectus, quis fermentum velit. In
+                hac habitasse platea dictumst. Pellentesque dui ex, porta eu
+                purus et, tempor feugiat lorem. Suspendisse potenti. Suspendisse
+                lorem enim, tincidunt at egestas vitae, sollicitudin sit amet
+                odio.
+              </p>
+              <ul className="w-fit list-disc sm:ml-10">
+                <li className="border-b-[0.01rem] border-brandtextsecondary p-4">
+                  <strong>Whitespace:</strong> gives content room to breathe.
+                </li>
+                <li className="border-b-[0.01rem] border-brandtextsecondary p-4">
+                  <strong>Consistency:</strong> builds trust and predictability.
+                </li>
+                <li className="border-b-[0.01rem] border-brandtextsecondary p-4">
+                  <strong>Contrast:</strong> directs attention effectively.
+                </li>
+              </ul>
+            </section>
+            <footer className="mt-24">post footer infor here</footer>
+          </div>
+          <aside className="hidden lg:flex lg:w-2/6">
+            <nav aria-label="Table of contents" className="w-full pl-10">
+              <div className="flex items-center gap-2 border-b-[0.1rem] border-brandsurface pb-2">
+                <div className="size-4 text-brandtextprimary opacity-30">
+                  <DocumentIcon />
+                </div>
+                <div>Table of Contents</div>
+              </div>
+              <ul>
+                <li>
+                  <a href="#introduction">Introduction</a>
+                </li>
+                <li>
+                  <a href="#getting-started">Getting Started</a>
+                  <ul>
+                    <li>
+                      <a href="#installation">Installation</a>
+                    </li>
+                    <li>
+                      <a href="#configuration">Configuration</a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#advanced-topics">Advanced Topics</a>
+                  <ul>
+                    <li>
+                      <a href="#performance">Performance</a>
+                      <ul>
+                        <li>
+                          <a href="#installation">Installation</a>
+                        </li>
+                        <li>
+                          <a href="#configuration">Configuration</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="#security">Security</a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#conclusion">Conclusion</a>
+                </li>
+              </ul>
+            </nav>
+          </aside>
+        </div>
       </article>
     </div>
   );
