@@ -109,22 +109,32 @@
 }
 
 /* Blog Post Table of Contents */
-@layer utilities {
-  aside nav ul ul a {
-    @apply pl-4;
-  }
+.toc ol {
+  counter-reset: section;
+  padding-left: 2rem;
+}
 
-  aside nav ul ul ul a {
-    @apply pl-8;
-  }
+.toc ol ol {
+  padding-left: 2rem;
+}
 
-  aside a {
-    @apply w-full transform border-2 border-transparent p-2 text-brandtextprimary duration-300 hover:border-l-2 hover:border-l-brandprimary hover:text-brandprimary;
-  }
+.toc li {
+  counter-increment: section;
+  margin-top: 2rem;
+}
 
-  aside ul li {
-    @apply w-full pt-4;
-  }
+.toc li::before {
+  content: counters(section, ".") ". ";
+}
+
+.toc a {
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
+}
+
+.toc a:hover {
+  color: var(--brand-primary);
 }
 
 .grid-overlay {

@@ -10,7 +10,7 @@ import Link from "next/link";
 export default async function SingleBlogPost() {
   return (
     <div className="mt-36 flex w-full items-center justify-center">
-      <article className="flex w-10/12 flex-col xl:w-6/12">
+      <article className="flex w-11/12 flex-col xl:w-8/12">
         <header>
           <nav aria-label="Breadcrum">
             <ol className="flex items-center gap-4 text-[0.6rem]">
@@ -116,10 +116,10 @@ export default async function SingleBlogPost() {
           </figure>
         </header>
         <div className="mt-8 flex w-full justify-between">
-          <div className="w-4/6">
+          <div className="w-full lg:w-10/12 lg:pr-10">
             <section className="flex w-full flex-col gap-8 text-base leading-loose tracking-normal">
               <h2 className="text-2xl font-bold normal-case tracking-normal">
-                Suspendisse malesuada, ipsum gravida lacinia interdum
+                The ubiquity that made Log4Shell a perfect storm
               </h2>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
@@ -157,7 +157,7 @@ export default async function SingleBlogPost() {
                 Vestibulum suscipit commodo mattis.
               </p>
               <h3 className="text-xl font-bold normal-case tracking-normal">
-                Suspendisse malesuada, ipsum gravida lacinia interdum
+                A vulnerability that scored a perfect 10
               </h3>
               <p>
                 Nullam molestie ultrices dolor, quis maximus lorem ornare nec.
@@ -210,7 +210,7 @@ export default async function SingleBlogPost() {
             </section>
             <footer className="mt-24">post footer infor here</footer>
           </div>
-          <aside className="hidden lg:flex lg:w-2/6">
+          <aside className="sticky top-40 hidden self-start lg:flex lg:w-4/12">
             <nav aria-label="Table of contents" className="w-full pl-10">
               <div className="flex items-center gap-2 border-b-[0.1rem] border-brandsurface pb-2">
                 <div className="size-4 text-brandtextprimary opacity-30">
@@ -218,44 +218,59 @@ export default async function SingleBlogPost() {
                 </div>
                 <div>Table of Contents</div>
               </div>
-              <ul>
+              <ol className="toc">
                 <li>
-                  <a href="#introduction">Introduction</a>
+                  <a href="#introduction">
+                    The ubiquity that made Log4Shell a perfect storm
+                  </a>
                 </li>
                 <li>
-                  <a href="#getting-started">Getting Started</a>
-                  <ul>
+                  <a href="#getting-started">
+                    A vulnerability that scored a perfect 10
+                  </a>
+                  <ol>
                     <li>
-                      <a href="#installation">Installation</a>
+                      <a href="#installation">
+                        The human cost of maintaining critical infrastructure
+                      </a>
                     </li>
                     <li>
-                      <a href="#configuration">Configuration</a>
+                      <a href="#configuration">
+                        How the GitHub Secure Open Source Fund is strengthening
+                        security
+                      </a>
                     </li>
-                  </ul>
+                  </ol>
                 </li>
                 <li>
-                  <a href="#advanced-topics">Advanced Topics</a>
-                  <ul>
+                  <a href="#advanced-topics">
+                    Technical lessons: Building security by default
+                  </a>
+                  <ol>
                     <li>
-                      <a href="#performance">Performance</a>
-                      <ul>
+                      <a href="#performance">
+                        Industry-wide lessons for sustainable open source
+                      </a>
+                      <ol>
                         <li>
-                          <a href="#installation">Installation</a>
+                          <a href="#installation">
+                            Your role in securing the software supply chain
+                          </a>
                         </li>
                         <li>
-                          <a href="#configuration">Configuration</a>
+                          <a href="#configuration">The path forward</a>
                         </li>
-                      </ul>
+                      </ol>
                     </li>
                     <li>
                       <a href="#security">Security</a>
                     </li>
-                  </ul>
+                  </ol>
                 </li>
                 <li>
                   <a href="#conclusion">Conclusion</a>
                 </li>
-              </ul>
+              </ol>
             </nav>
           </aside>
         </div>
