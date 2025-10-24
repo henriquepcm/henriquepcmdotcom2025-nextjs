@@ -4,8 +4,6 @@ import getHTMLHeadings from "@/lib/getHTMLHeadings";
 export default function TableOfContents({ content }: { content: string }) {
   const topics = getHTMLHeadings(content);
 
-  console.log("topics", topics);
-
   return (
     <aside className="sticky top-40 hidden self-start lg:flex lg:w-4/12">
       <nav aria-label="Table of contents" className="w-full pl-10">
