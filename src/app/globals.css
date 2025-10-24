@@ -80,6 +80,10 @@
     @apply mb-2 text-xs font-bold tracking-widest text-brandtextprimary;
   }
 
+  h4 {
+    @apply text-brandtextprimary;
+  }
+
   label {
     @apply text-[0.6rem] uppercase tracking-widest;
   }
@@ -95,6 +99,35 @@
 
   textarea {
     @apply h-40 resize-none pt-2;
+  }
+
+  /* Blog headings */
+  article h1 {
+    @apply mt-8 text-3xl font-bold normal-case leading-normal tracking-normal;
+  }
+
+  article h2 {
+    @apply text-2xl font-bold normal-case tracking-normal;
+  }
+
+  article h3 {
+    @apply text-xl font-bold normal-case tracking-normal;
+  }
+
+  article h4 {
+    @apply text-xl font-normal normal-case tracking-normal;
+  }
+
+  article blockquote {
+    @apply border-l border-brandtextprimary p-5 text-xl font-medium leading-loose text-brandtextprimary sm:ml-5;
+  }
+
+  article ul {
+    @apply w-fit list-disc sm:ml-10;
+  }
+
+  article ul li {
+    @apply border-brandtextsecondary p-4;
   }
 }
 

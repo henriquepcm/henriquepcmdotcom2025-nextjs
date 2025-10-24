@@ -1,0 +1,52 @@
+import ArrowPath from "@/components/icons/ArrowPath";
+import CalendarIcon from "@/components/icons/CalendarIcon";
+import UserCircleIcon from "@/components/icons/UserCircleIcon";
+
+type MetaProps = {
+  meta: {
+    author: string;
+    published: string;
+    updated: string;
+  };
+};
+
+export default function Meta({ meta }: MetaProps) {
+  return (
+    <div className="mt-8 flex flex-col justify-between gap-4 md:flex-row">
+      <div className="flex gap-2 text-start">
+        <div className="mt-1 flex size-[0.875rem] text-brandtextprimary opacity-30">
+          <CalendarIcon />
+        </div>
+        <div className="flex items-center gap-1 md:flex-col md:items-start md:gap-0 2xl:flex-row 2xl:gap-1">
+          <div>Published: </div>
+          <div className="leading-5 text-brandtextprimary 2xl:leading-6">
+            {meta.published}
+          </div>
+        </div>
+      </div>
+      <div className="flex gap-2 text-start">
+        <div className="mt-1 flex size-[0.875rem] text-brandtextprimary opacity-30">
+          <ArrowPath />
+        </div>
+        <div className="flex items-center gap-1 md:flex-col md:items-start md:gap-0 2xl:flex-row 2xl:gap-1">
+          <div>Updated: </div>
+          <div className="leading-5 text-brandtextprimary 2xl:leading-6">
+            {meta.updated}
+          </div>
+        </div>
+      </div>
+
+      <div className="flex gap-2 text-start">
+        <div className="mt-1 flex size-[0.875rem] text-brandtextprimary opacity-30">
+          <UserCircleIcon />
+        </div>
+        <div className="flex items-center gap-1 md:flex-col md:items-start md:gap-0 2xl:flex-row 2xl:gap-1">
+          <div>Author: </div>
+          <div className="leading-5 text-brandtextprimary 2xl:leading-6">
+            {meta.author}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
