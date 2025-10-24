@@ -7,11 +7,12 @@ const client = new ApolloClient({
 
 export default async function getGraphQLData<T>(
   query: DocumentNode,
+  variables?: Record<string, string>,
 ): Promise<T> {
   try {
     const { data } = await client.query({
       query: query,
-      fetchPolicy: "network-only", // Ensures fresh data is fetched from the server
+      variables,
     });
 
     return data as T;
