@@ -1,6 +1,9 @@
 import DocumentIcon from "@/components/icons/DocumentIcon";
+import getHTMLHeadings from "@/lib/getHTMLHeadings";
 
-export default function TableOfContents() {
+export default function TableOfContents({ content }: { content: string }) {
+  const topics = getHTMLHeadings(content);
+
   return (
     <aside className="sticky top-40 hidden self-start lg:flex lg:w-4/12">
       <nav aria-label="Table of contents" className="w-full pl-10">
@@ -10,7 +13,31 @@ export default function TableOfContents() {
           </div>
           <div>Table of Contents</div>
         </div>
+
         <ol className="toc">
+          {topics.map((topic) => {
+            if (topic.level === 2) {
+              return (
+                <li key={topic.id}>
+                  <a href={`#${topic.id}`}>{topic.text}</a>
+                </li>
+              );
+            }
+            if (topic.level === 3) {
+              return (
+                <li key={topic.id}>
+                  <ol>
+                    <li>
+                      <a href={`#${topic.id}`}>{topic.text}</a>
+                    </li>
+                  </ol>
+                </li>
+              );
+            }
+          })}
+        </ol>
+
+        {/*  <ol className="toc">
           <li>
             <a href="#introduction">
               The ubiquity that made Log4Shell a perfect storm
@@ -62,7 +89,7 @@ export default function TableOfContents() {
           <li>
             <a href="#conclusion">Conclusion</a>
           </li>
-        </ol>
+        </ol> */}
       </nav>
     </aside>
   );
