@@ -15,7 +15,7 @@ export default function Content({ content }: { content: string }) {
           ></div>
         </section>
       </div>
-      <TableOfContents />
+      <TableOfContents content={content} />
     </div>
   );
 }
