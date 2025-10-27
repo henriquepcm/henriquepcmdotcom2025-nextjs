@@ -4,6 +4,7 @@ import { visit } from "unist-util-visit";
 
 export default function getHTMLHeadings(html: string) {
   const headings: { text: string; id: string; level: number }[] = [];
+  const useIDs = new Set();
 
   const tree = unified().use(rehypeParse, { fragment: true }).parse(html);
 
@@ -14,11 +15,25 @@ export default function getHTMLHeadings(html: string) {
         .map((child) => child.value)
         .join("");
 
+      // Generate the ID for each heading based on its text
       const id =
         (node.properties?.id as string) ||
         text.toLowerCase().replace(/\s+/g, "-");
 
-      headings.push({ text, id, level: parseInt(node.tagName.slice(1)) });
+      // Provide a unique ID in case subtitles have the same exact text
+      let uniqueID = id;
+      let counter = 1;
+      while (useIDs.has(uniqueID)) {
+        uniqueID = `${id}-${counter++}`;
+      }
+
+      useIDs.add(uniqueID);
+
+      headings.push({
+        text,
+        id: uniqueID,
+        level: parseInt(node.tagName.slice(1)),
+      });
     }
   });
 
