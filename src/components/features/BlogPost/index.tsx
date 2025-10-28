@@ -11,7 +11,7 @@ import Title from "./Title";
 export default function BlogPost({ children }: { children: React.ReactNode }) {
   return (
     <div className="mt-36 flex w-full items-center justify-center">
-      <article className="flex w-11/12 flex-col xl:w-8/12">{children}</article>
+      <article className="flex w-10/12 flex-col xl:w-8/12">{children}</article>
     </div>
   );
 }
