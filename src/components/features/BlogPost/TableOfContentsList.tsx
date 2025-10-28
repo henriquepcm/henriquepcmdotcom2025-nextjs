@@ -8,6 +8,7 @@ export default function TableOfContentsList({
   if (!headings || headings.length === 0) return null;
 
   return (
+    //Edit styles on globals.css
     <ol className="toc">
       {headings.map((heading) => {
         return (

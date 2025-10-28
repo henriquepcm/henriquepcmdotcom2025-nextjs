@@ -162,7 +162,7 @@
 
 .toc li {
   counter-increment: section;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 .toc li::before {
