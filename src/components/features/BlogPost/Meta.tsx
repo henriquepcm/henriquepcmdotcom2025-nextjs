@@ -1,3 +1,4 @@
+import formatDateAndTime from "@/app/utils/formatDateAndTime";
 import ArrowPath from "@/components/icons/ArrowPath";
 import CalendarIcon from "@/components/icons/CalendarIcon";
 import UserCircleIcon from "@/components/icons/UserCircleIcon";
@@ -11,6 +12,9 @@ type MetaProps = {
 };
 
 export default function Meta({ meta }: MetaProps) {
+  const formattedPublished = formatDateAndTime(meta.published);
+  const formattedUpdated = formatDateAndTime(meta.updated);
+
   return (
     <div className="mt-8 flex flex-col justify-between gap-4 md:flex-row">
       <div className="flex gap-2 text-start">
@@ -20,7 +24,7 @@ export default function Meta({ meta }: MetaProps) {
         <div className="flex items-center gap-1 md:flex-col md:items-start md:gap-0 2xl:flex-row 2xl:gap-1">
           <div>Published: </div>
           <div className="leading-5 text-brandtextprimary 2xl:leading-6">
-            {meta.published}
+            {formattedPublished}
           </div>
         </div>
       </div>
@@ -31,7 +35,7 @@ export default function Meta({ meta }: MetaProps) {
         <div className="flex items-center gap-1 md:flex-col md:items-start md:gap-0 2xl:flex-row 2xl:gap-1">
           <div>Updated: </div>
           <div className="leading-5 text-brandtextprimary 2xl:leading-6">
-            {meta.updated}
+            {formattedUpdated}
           </div>
         </div>
       </div>
