@@ -13,6 +13,7 @@ export default async function getGraphQLData<T>(
     const { data } = await client.query({
       query: query,
       variables,
+      fetchPolicy: "network-only",
     });
 
     return data as T;

@@ -70,9 +70,9 @@ type Data = {
 export default async function SingleBlogPage({ params }: { params: Params }) {
   const { slug } = await params;
 
-  const data = await getGraphQLData<Data>(GET_BLOG_POST_DATA, { slug });
-
   try {
+    const data = await getGraphQLData<Data>(GET_BLOG_POST_DATA, { slug });
+
     const formattedData = {
       category: data.post.categories.nodes[0].name,
       title: data.post.title,

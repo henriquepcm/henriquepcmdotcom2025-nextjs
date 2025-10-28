@@ -101,7 +101,16 @@
     @apply h-40 resize-none pt-2;
   }
 
-  /* Blog headings */
+  /********** Blog headings ************/
+  article h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply scroll-mt-28; /* Add extra space so headings don't get hidden under the site menu */
+  }
+
   article h1 {
     @apply mt-8 text-3xl font-bold normal-case leading-normal tracking-normal;
   }
