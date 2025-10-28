@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
+import scrollbar from "tailwind-scrollbar";
 
-export default {
+const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -26,5 +27,10 @@ export default {
       },
     },
   },
-  plugins: [],
-} satisfies Config;
+  plugins: [scrollbar],
+  variants: {
+    scrollbar: ["rounded"], // enables color + rounded styles
+  },
+};
+
+export default config;
