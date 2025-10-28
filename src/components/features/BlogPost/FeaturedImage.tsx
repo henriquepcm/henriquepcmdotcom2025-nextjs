@@ -2,6 +2,10 @@ import Image from "next/image";
 
 const WP_URL = process.env.NEXT_PUBLIC_WP_URL;
 
+if (!WP_URL) {
+  throw new Error("NEXT_PUBLIC_WP_URL is not defined");
+}
+
 type FeaturedImageProps = {
   image: {
     altText: string;
