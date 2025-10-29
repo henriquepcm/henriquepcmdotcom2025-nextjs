@@ -12,14 +12,12 @@ export default function TableOfContentsList({
     <ol className="toc">
       {headings.map((heading) => {
         return (
-          <>
-            <li key={heading.id}>
-              <a href={`#${heading.id}`}>{heading.text}</a>
-              {heading.children && (
-                <TableOfContentsList headings={heading.children} />
-              )}
-            </li>
-          </>
+          <li key={heading.id}>
+            <a href={`#${heading.id}`}>{heading.text}</a>
+            {heading.children && (
+              <TableOfContentsList headings={heading.children} />
+            )}
+          </li>
         );
       })}
     </ol>
