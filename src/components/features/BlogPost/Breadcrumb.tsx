@@ -37,6 +37,7 @@ export default function Breadcrumb({ category }: { category: string }) {
             <ChevronIcon />
           </div>
         </li>
+
         <li>
           <Link
             className="transform border-transparent pb-1 text-brandtextprimary duration-300 hover:border-b-2 hover:border-brandprimary"
