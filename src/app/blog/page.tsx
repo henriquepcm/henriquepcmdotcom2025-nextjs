@@ -1,7 +1,37 @@
 import ErrorMessage from "@/components/Error/ErrorMessage";
 import Blog from "@/components/features/Blog/Blog";
+import { FormattedPosts } from "@/components/features/Blog/Types";
 import getGraphQLData from "@/lib/getGraphQLData";
 import { gql } from "@apollo/client";
+
+type Posts = {
+  posts: {
+    nodes: PostsNodes[];
+  };
+};
+
+type PostsNodes = {
+  id: string;
+  title: string;
+  slug: string;
+  subtitle: {
+    subtitle: string;
+  };
+  categories: {
+    nodes: CategoriesNodes[];
+  };
+  featuredImage: {
+    node: {
+      altText: string;
+      filePath: string;
+    };
+  };
+};
+
+type CategoriesNodes = {
+  name: string;
+  slug: string;
+};
 
 const GET_BLOG_POSTS = gql`
   {
@@ -32,9 +62,9 @@ const GET_BLOG_POSTS = gql`
 
 export default async function BlogHome() {
   try {
-    const posts = await getGraphQLData(GET_BLOG_POSTS);
+    const posts = await getGraphQLData<Posts>(GET_BLOG_POSTS);
 
-    const formattedPosts = posts.posts.nodes.map((post) => ({
+    const formattedPosts: FormattedPosts[] = posts.posts.nodes.map((post) => ({
       id: post.id,
       title: post.title,
       subtitle: post.subtitle.subtitle,

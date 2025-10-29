@@ -1,9 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
+import { FormattedPosts } from "./Types";
 
 const WP_URL = process.env.NEXT_PUBLIC_WP_URL;
 
-export default function Blog({ posts }) {
+export default function Blog({ posts }: { posts: FormattedPosts[] }) {
   return (
     <div className="mt-36 flex w-full items-center justify-center">
       <div className="w-10/12">
