@@ -1,6 +1,6 @@
 import { Heading } from "./Types";
 
-export default function TableOfContentsList({
+export default function BlogPostTableOfContentsList({
   headings,
 }: {
   headings: Heading[];
@@ -15,7 +15,7 @@ export default function TableOfContentsList({
           <li key={heading.id}>
             <a href={`#${heading.id}`}>{heading.text}</a>
             {heading.children && (
-              <TableOfContentsList headings={heading.children} />
+              <BlogPostTableOfContentsList headings={heading.children} />
             )}
           </li>
         );

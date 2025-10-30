@@ -1,9 +1,13 @@
 import DocumentIcon from "@/components/icons/DocumentIcon";
-import getHTMLHeadings from "@/lib/getHTMLHeadings";
-import TableOfContentsList from "./TableOfContentsList";
+import getHTMLHeadings from "@/features/blog/lib/getHTMLHeadings";
 import { Heading } from "./Types";
+import BlogPostTableOfContentsList from "./BlogPostTableOfContentsList";
 
-export default function TableOfContents({ content }: { content: string }) {
+export default function BlogPostTableOfContents({
+  content,
+}: {
+  content: string;
+}) {
   const headings = getHTMLHeadings(content);
 
   // –––––– Get Headings (h1, h2, h3) nested correctly to loop over –––––––––––––––––
@@ -34,7 +38,7 @@ export default function TableOfContents({ content }: { content: string }) {
           </div>
           <div>Table of Contents</div>
         </div>
-        <TableOfContentsList headings={headingsNested} />
+        <BlogPostTableOfContentsList headings={headingsNested} />
       </nav>
     </aside>
   );

@@ -1,4 +1,4 @@
-import BlogPostPage from "@/components/BlogPostPage";
+import BlogPost from "@/features/blog/components/BlogPost/BlogPost";
 import getGraphQLData from "@/lib/getGraphQLData";
 import { gql } from "@apollo/client";
 import { notFound } from "next/navigation";
@@ -89,7 +89,7 @@ export default async function SingleBlogPage({ params }: { params: Params }) {
       content: data.post.content,
     };
 
-    return <BlogPostPage data={formattedData} />;
+    return <BlogPost data={formattedData} />;
   } catch (error) {
     console.error("Error loading blog post data", error);
     notFound();
