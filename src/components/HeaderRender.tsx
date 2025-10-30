@@ -5,7 +5,7 @@ import { useBeyondViewport } from "../hooks/useBeyondViewport";
 import Logo from "./Logo";
 import MenuMain from "./MenuMain";
 import MenuMobile from "./MenuMobile";
-import BlogLogo from "./BlogLogo";
+import BlogLogo from "../features/blog/components/Blog/BlogLogo";
 import { usePathname } from "next/navigation";
 
 export default function HeaderRender({ data }: { data: Data }) {

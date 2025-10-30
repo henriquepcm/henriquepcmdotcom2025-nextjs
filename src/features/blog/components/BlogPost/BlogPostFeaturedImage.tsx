@@ -13,7 +13,7 @@ type FeaturedImageProps = {
   };
 };
 
-export default function FeaturedImage({ image }: FeaturedImageProps) {
+export default function BlogPostFeaturedImage({ image }: FeaturedImageProps) {
   return (
     <figure className="aspect-[600/630] w-full overflow-hidden md:aspect-[1200/630]">
       <Image

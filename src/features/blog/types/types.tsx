@@ -1,4 +1,4 @@
-export type FormattedPosts = {
+export type FormattedPostType = {
   id: string;
   title: string;
   subtitle: string;
@@ -11,4 +11,14 @@ export type FormattedPosts = {
     altText: string;
     filePath: string;
   };
+};
+
+export type ImageType = {
+  altText: string;
+  filePath: string;
+};
+
+export type CategoryType = {
+  slug: string;
+  name: string;
 };

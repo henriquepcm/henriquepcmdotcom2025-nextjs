@@ -11,7 +11,7 @@ type MetaProps = {
   };
 };
 
-export default function Meta({ meta }: MetaProps) {
+export default function BlogPostMeta({ meta }: MetaProps) {
   const formattedPublished = formatDateAndTime(meta.published);
   const formattedUpdated = formatDateAndTime(meta.updated);
 

@@ -1,7 +1,11 @@
-import addAnchorsToHeadings from "@/lib/addAnchorsToHeadings";
-import TableOfContents from "./TableOfContents";
+import addAnchorsToHeadings from "@/features/blog/lib/addAnchorsToHeadings";
+import TableOfContents from "./BlogPostTableOfContents";
 
-export default async function Content({ content }: { content: string }) {
+export default async function BlogPostContent({
+  content,
+}: {
+  content: string;
+}) {
   const contentWithAnchors = await addAnchorsToHeadings(content);
 
   return (
