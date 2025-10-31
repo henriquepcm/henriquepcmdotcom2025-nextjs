@@ -2,6 +2,7 @@ import { Titles } from "./shared/sharedTypes";
 
 export type HighlightNode = {
   id: string;
+  menuOrder: number;
   careerHighlights: {
     icon: string;
     description: string;
