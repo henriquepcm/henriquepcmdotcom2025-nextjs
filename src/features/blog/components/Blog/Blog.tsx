@@ -1,10 +1,12 @@
 import { FormattedPostType } from "../../types/types";
+import Breadcrumb from "../Breadcrumb/Breadcrumb";
 import BlogCard from "../PostCard/PostCard";
 
 export default function BlogPage({ posts }: { posts: FormattedPostType[] }) {
   return (
     <div className="mt-36 flex w-full items-center justify-center">
       <div className="w-10/12">
+        <Breadcrumb />
         <h1 className="mt-8 text-3xl font-bold normal-case leading-normal tracking-normal">
           Frontend Development, UI/UX Design, Digital Culture, and more
         </h1>

@@ -13,7 +13,12 @@ export default function BlogPostTableOfContentsList({
       {headings.map((heading) => {
         return (
           <li key={heading.id}>
-            <a href={`#${heading.id}`}>{heading.text}</a>
+            <a
+              className="transform border-b-2 border-transparent pb-1 text-brandtextprimary duration-300 hover:border-b-2 hover:border-brandprimary"
+              href={`#${heading.id}`}
+            >
+              {heading.text}
+            </a>
             {heading.children && (
               <BlogPostTableOfContentsList headings={heading.children} />
             )}

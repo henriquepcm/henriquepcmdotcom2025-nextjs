@@ -1,6 +1,7 @@
 import rehypeParse from "rehype-parse";
 import { unified } from "unified";
 import { visit } from "unist-util-visit";
+import { slugify } from "./slugify";
 
 export default function getHTMLHeadings(html: string) {
   const headings: { text: string; id: string; level: number }[] = [];
@@ -16,9 +17,7 @@ export default function getHTMLHeadings(html: string) {
         .join("");
 
       // Generate the ID for each heading based on its text
-      const id =
-        (node.properties?.id as string) ||
-        text.toLowerCase().replace(/\s+/g, "-");
+      const id = (node.properties?.id as string) || slugify(text);
 
       // Provide a unique ID in case subtitles have the same exact text
       let uniqueID = id;

@@ -29,6 +29,8 @@ export default function BlogPostTableOfContents({
     }
   }
 
+  if (headings.length === 0) return null;
+
   return (
     <aside className="sticky top-28 hidden max-h-[66vh] self-start overflow-y-auto pr-2 scrollbar-thin scrollbar-track-transparent scrollbar-thumb-brandborder lg:flex lg:w-4/12">
       <nav aria-label="Table of contents" className="w-full pl-10">
