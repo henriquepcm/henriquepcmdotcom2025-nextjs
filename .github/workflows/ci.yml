@@ -11,8 +11,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      NEXT_PUBLIC_WP_URL: ${{ secrets.NEXT_PUBLIC_WP_URL }}
 
     steps:
       - name: Checkout code
@@ -37,3 +35,5 @@ jobs:
 
       - name: Build project
         run: npm run build
+        env:
+          NEXT_PUBLIC_WP_URL: ${{ secrets.NEXT_PUBLIC_WP_URL }}
