@@ -7,7 +7,7 @@ export default function BlogLogo() {
       className="space-x-2 text-2xl font-semibold tracking-normal"
     >
       <span>/</span>
-      <span className="text-brandtextprimary">Blog</span>
+      <span className="font-bold text-brandtextprimary">blog</span>
     </Link>
   );
 }

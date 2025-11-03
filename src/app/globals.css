@@ -169,16 +169,6 @@
   content: counters(section, ".") ". ";
 }
 
-.toc a {
-  transition:
-    transform 0.3s ease,
-    color 0.3s ease;
-}
-
-.toc a:hover {
-  color: var(--brand-primary);
-}
-
 .grid-overlay {
   position: fixed;
   top: 0;

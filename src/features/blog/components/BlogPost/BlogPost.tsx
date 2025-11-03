@@ -7,7 +7,7 @@ import BlogPostSubtitle from "./BlogPostSubtitle";
 import BlogPostTableOfContents from "./BlogPostTableOfContents";
 import BlogPostText from "./BlogPostText";
 import BlogPostTitle from "./BlogPostTitle";
-import Breadcrumb from "./Breadcrumb";
+import Breadcrumb from "../Breadcrumb/Breadcrumb";
 
 type BlogPostProps = {
   data: {
@@ -31,7 +31,7 @@ export default function BlogPost({ data }: BlogPostProps) {
   return (
     <BlogPost.Root>
       <BlogPost.Header>
-        <BlogPost.Breadcrumb category={data.category} />
+        <Breadcrumb slug="Blog" />
         <BlogPost.Title title={data.title} />
         <BlogPost.Subtitle subtitle={data.subtitle} />
         <BlogPost.Meta meta={data.meta} />
