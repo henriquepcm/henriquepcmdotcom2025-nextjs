@@ -33,7 +33,9 @@ jobs:
       - name: Prettier check
         run: npx prettier --check "src/**/*.{ts,tsx,js,jsx,json,css,md}"
 
+      # Conditionally skip build for Dependabot PRs
       - name: Build project
+        if: github.actor != 'dependabot[bot]'
         run: npm run build
         env:
           NEXT_PUBLIC_WP_URL: ${{ secrets.NEXT_PUBLIC_WP_URL }}
