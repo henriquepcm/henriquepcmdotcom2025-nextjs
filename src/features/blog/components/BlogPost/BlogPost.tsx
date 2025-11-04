@@ -28,10 +28,16 @@ type BlogPostProps = {
 };
 
 export default function BlogPost({ data }: BlogPostProps) {
+  const breadcrumbItems = [
+    { label: "Home", href: "/" },
+    { label: "Blog", href: "/blog" },
+    { label: data.title, href: `/blog/${data.category}/${data.title}` },
+  ];
+
   return (
     <BlogPost.Root>
       <BlogPost.Header>
-        <Breadcrumb slug="Blog" />
+        <Breadcrumb items={breadcrumbItems} />
         <BlogPost.Title title={data.title} />
         <BlogPost.Subtitle subtitle={data.subtitle} />
         <BlogPost.Meta meta={data.meta} />
