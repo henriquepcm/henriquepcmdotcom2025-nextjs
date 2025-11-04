@@ -68,7 +68,12 @@ export default async function RootLayout({
   const theme = cookieStore.get("theme")?.value || "near-black";
 
   return (
-    <html lang="en" className={inter.className} data-theme={theme}>
+    <html
+      lang="en"
+      className={inter.className}
+      data-theme={theme}
+      data-scroll-behavior="smooth"
+    >
       <body>
         <div className="w-full max-w-[1920px]">
           <Header />
