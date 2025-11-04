@@ -9,7 +9,6 @@ import PostCardTitle from "./PostCardTitle";
 export default function PostCard({ post }: { post: FormattedPostType }) {
   return (
     <PostCard.Root>
-      <PostCard.Category category={post.category} />
       <PostCard.Link postSlug={post.slug}>
         <PostCard.Image image={post.image} />
         <PostCard.Title title={post.title} />
