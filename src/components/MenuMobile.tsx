@@ -2,11 +2,18 @@ import { useState, useRef } from "react";
 import { useOutsideClick } from "../hooks/useOutsideClick";
 import { BurgerIcon } from "./icons/BurgerIcon";
 import { Menu } from "@/types/headerTypes";
+import useIsBlog from "@/hooks/useIsBlog";
+import Link from "next/link";
 
 export default function MenuMobile({ items, button }: Menu) {
   const [isMobileMenuVisible, setIsMobileMenuVisible] = useState(false);
+
   const menuRef = useRef<HTMLUListElement | null>(null);
   const menuIconRef = useRef<HTMLButtonElement | null>(null);
+
+  const isBlog = useIsBlog();
+
+  const contactUrl = isBlog ? `/#${button.link}` : `#${button.link}`;
 
   function handleMenuVisibility() {
     setIsMobileMenuVisible((prev) => !prev);
@@ -39,31 +46,33 @@ export default function MenuMobile({ items, button }: Menu) {
         >
           {items.map((item) => {
             const excluded = ["Footer", "Header", "Contact"];
+            const url = isBlog ? `/#${item.title}` : `#${item.title}`;
 
             if (excluded.includes(item.title)) {
               return null;
             }
             return (
               <li key={item.id}>
-                <a
+                <Link
                   onClick={handleMenuVisibility}
                   className="block"
-                  href={`#${item.title}`}
+                  href={url}
                   aria-label={`Go to the ${item.title} section"`}
                 >
                   {item.title}
-                </a>
+                </Link>
               </li>
             );
           })}
           <li>
-            <a
+            <Link
               onClick={handleMenuVisibility}
               className="block"
-              href={button.link}
+              href={contactUrl}
+              aria-label="Go to the contact form"
             >
               {button.label}
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>
