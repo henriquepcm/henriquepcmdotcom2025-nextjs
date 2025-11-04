@@ -1,17 +1,26 @@
 import { Button } from "@/types/headerTypes";
+import Link from "next/link";
 
-export default function ButtonContact({ button }: { button: Button }) {
+type ButtonContactProps = {
+  button: Button;
+  isBlog: boolean;
+};
+
+export default function ButtonContact({ button, isBlog }: ButtonContactProps) {
+  const url = isBlog ? `/#${button.link}` : `#${button.link}`;
+
   return (
     <div
       aria-label="Go to contact form"
       className="brand-btn h-10 w-28 text-[0.6rem]"
     >
-      <a
+      <Link
+        aria-label="Go to contact form"
         className="flex h-full w-full items-center justify-center text-brandsecondary"
-        href={button.link}
+        href={url}
       >
         {button.label}
-      </a>
+      </Link>
     </div>
   );
 }

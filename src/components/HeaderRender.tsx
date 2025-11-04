@@ -6,7 +6,7 @@ import Logo from "./Logo";
 import MenuMain from "./MenuMain";
 import MenuMobile from "./MenuMobile";
 import BlogLogo from "../features/blog/components/Blog/BlogLogo";
-import { usePathname } from "next/navigation";
+import useIsBlog from "@/hooks/useIsBlog";
 
 export default function HeaderRender({ data }: { data: Data }) {
   const { isBeyondViewport } = useBeyondViewport();
@@ -23,9 +23,7 @@ export default function HeaderRender({ data }: { data: Data }) {
     link: data.page.header.buttonLink,
   };
 
-  //—————— Blog Config —————————————————————
-  const pathname = usePathname();
-  const isBlog = pathname.startsWith("/blog");
+  const isBlog = useIsBlog();
 
   if (!data) {
     return <div>Loading...</div>;
