@@ -36,7 +36,7 @@ export default function ExternalLink({ label, icon, link }: ExternalLinkProps) {
         >
           <div
             dangerouslySetInnerHTML={{ __html: icon }}
-            className="size-4 text-brandprimary duration-300 group-hover:translate-x-1"
+            className="size-4 text-brandtextsecondary duration-300 group-hover:translate-x-1"
           ></div>
 
           <div className="duration-300 group-hover:translate-x-2">{label}</div>

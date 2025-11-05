@@ -14,7 +14,7 @@ export default function BlogPostTableOfContentsList({
         return (
           <li key={heading.id}>
             <a
-              className="transform border-b-2 border-transparent pb-1 text-brandtextprimary duration-300 hover:border-b-2 hover:border-brandprimary"
+              className="transform border-b-2 border-transparent pb-1 duration-300 hover:border-b-2 hover:border-brandprimary hover:text-brandtextprimary"
               href={`#${heading.id}`}
             >
               {heading.text}

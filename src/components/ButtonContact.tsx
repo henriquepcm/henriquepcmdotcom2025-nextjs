@@ -16,7 +16,7 @@ export default function ButtonContact({ button, isBlog }: ButtonContactProps) {
     >
       <Link
         aria-label="Go to contact form"
-        className="flex h-full w-full items-center justify-center text-brandsecondary"
+        className="flex h-full w-full items-center justify-center font-bold text-brandsecondary"
         href={url}
       >
         {button.label}

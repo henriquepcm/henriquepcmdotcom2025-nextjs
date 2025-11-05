@@ -65,7 +65,7 @@
   }
 
   body {
-    @apply brand-bg-gradient flex justify-center text-xs leading-6 tracking-widest text-brandtextsecondary;
+    @apply brand-bg-gradient flex justify-center text-xs leading-6 tracking-wider text-brandtextsecondary;
   }
 
   h1 {
@@ -101,7 +101,7 @@
     @apply h-40 resize-none pt-2;
   }
 
-  /********** Blog headings ************/
+  /********** Blog Styles ************/
   article h1,
   h2,
   h3,
@@ -112,7 +112,7 @@
   }
 
   article h1 {
-    @apply mt-8 text-3xl font-bold normal-case leading-normal tracking-normal;
+    @apply mt-8 text-3xl normal-case leading-normal tracking-normal;
   }
 
   article h2 {
@@ -137,6 +137,13 @@
 
   article ul li {
     @apply border-brandtextsecondary p-4;
+  }
+
+  article section a {
+    @apply transform border-b-2 border-brandprimary p-1 duration-300;
+  }
+  article section a:hover {
+    @apply bg-brandbackground text-brandtextprimary;
   }
 }
 
