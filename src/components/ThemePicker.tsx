@@ -25,12 +25,7 @@ export default function ThemePicker({ theme }: { theme: string }) {
   //————— Effects ————————————————————
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", selectedTheme);
-
-    const cookieConsent = localStorage.getItem("cookieConsent");
-
-    if (cookieConsent === "accepted") {
-      document.cookie = `theme=${selectedTheme}; path=/; max-age=${60 * 60 * 24 * 30}; Secure; SameSite=Lax`; //max-age: cookie valid for 30 days.
-    }
+    document.cookie = `theme=${selectedTheme}; path=/; max-age=${60 * 60 * 24 * 30}; Secure; SameSite=Lax`; //max-age: cookie valid for 30 days.
   }, [selectedTheme]);
 
   //————— Styles ————————————————————
