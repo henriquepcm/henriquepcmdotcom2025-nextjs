@@ -75,9 +75,9 @@ export default async function RootLayout({
       data-scroll-behavior="smooth"
     >
       <body>
-        <div className="w-full max-w-[1920px]">
+        <div className="flex w-full max-w-[1920px] flex-col items-center justify-center">
           <Header />
-          <main>{children}</main>
+          <main className="w-full">{children}</main>
           <Footer theme={theme} />
         </div>
         <CookieConsentBanner />
