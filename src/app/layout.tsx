@@ -10,78 +10,76 @@ import { cookies } from "next/headers";
 export const revalidate = 60; // seconds
 
 const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
+    subsets: ["latin"],
+    display: "swap",
 });
 
 export const metadata: Metadata = {
-  title:
-    "Freelance Frontend Developer & UI/UX Designer in Porto Alegre, Brazil (LATAM)",
-  description:
-    "Henrique Pochmann is a Front-end Developer and UI/UX Designer based in Porto Alegre, Brazil (LATAM), with over 10 years of experience. He specializes in working with modern technologies within the JavaScript ecosystem.",
-  icons: {
-    icon: "/img/henrique-pochmann-front-end-developer-ui-ux-designer-brazil.png",
-  },
-  alternates: {
-    canonical: "https://henriquepcm.com/",
-  },
-  robots: "index, follow",
+    title: "Freelance Frontend Developer & UI/UX Designer in Porto Alegre, Brazil (LATAM)",
+    description:
+        "Henrique Pochmann is a Front-end Developer and UI/UX Designer based in Porto Alegre, Brazil (LATAM), with over 10 years of experience. He specializes in working with modern technologies within the JavaScript ecosystem.",
+    icons: {
+        icon: "/img/henrique-pochmann-front-end-developer-ui-ux-designer-brazil.png",
+    },
+    alternates: {
+        canonical: "https://henriquepcm.com/",
+    },
+    robots: "index, follow",
 
-  keywords:
-    "Henrique Pochmann, front-end, ui/ux, developer, designer, Porto Alegre, Brazil, LATAM",
-  publisher: "Henrique Pochmann",
-  openGraph: {
-    title: "Front-end Developer & UI/UX Designer in Brazil (LATAM)",
-    description:
-      "Henrique Pochmann is a Front-end Developer and UI/UX Designer based in Porto Alegre, Brazil (LATAM), with over 10 years of experience. He specializes in working with modern technologies within the JavaScript ecosystem.",
-    url: "https://henriquepcm.com",
-    siteName: "henriquepcm.com",
-    images: [
-      {
-        url: "https://henriquepcm.com/img/henrique-pochmann-frontend-developer.jpg",
-        width: 4800,
-        height: 2520,
-        alt: "",
-      },
-    ],
-    locale: "en_US",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title:
-      "Front-end Developer & UI/UX Designer in Porto Alegre, Brazil (LATAM)",
-    description:
-      "Henrique Pochmann is a Front-end Developer and UI/UX Designer based in Porto Alegre, Brazil (LATAM), with over 10 years of experience. He specializes in working with modern technologies within the JavaScript ecosystem.",
-    images: [
-      "https://henriquepcm.com/img/henrique-pochmann-frontend-developer.jpg",
-    ],
-  },
+    keywords:
+        "Henrique Pochmann, front-end, ui/ux, developer, designer, Porto Alegre, Brazil, LATAM",
+    publisher: "Henrique Pochmann",
+    openGraph: {
+        title: "Front-end Developer & UI/UX Designer in Brazil (LATAM)",
+        description:
+            "Henrique Pochmann is a Front-end Developer and UI/UX Designer based in Porto Alegre, Brazil (LATAM), with over 10 years of experience. He specializes in working with modern technologies within the JavaScript ecosystem.",
+        url: "https://henriquepcm.com",
+        siteName: "henriquepcm.com",
+        images: [
+            {
+                url: "https://henriquepcm.com/img/henrique-pochmann-frontend-developer.jpg",
+                width: 4800,
+                height: 2520,
+                alt: "",
+            },
+        ],
+        locale: "en_US",
+        type: "website",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Front-end Developer & UI/UX Designer in Porto Alegre, Brazil (LATAM)",
+        description:
+            "Henrique Pochmann is a Front-end Developer and UI/UX Designer based in Porto Alegre, Brazil (LATAM), with over 10 years of experience. He specializes in working with modern technologies within the JavaScript ecosystem.",
+        images: [
+            "https://henriquepcm.com/img/henrique-pochmann-frontend-developer.jpg",
+        ],
+    },
 };
 
 export default async function RootLayout({
-  children,
+    children,
 }: Readonly<{
-  children: React.ReactNode;
+    children: React.ReactNode;
 }>) {
-  const cookieStore = await cookies();
-  const theme = cookieStore.get("theme")?.value || "near-black";
+    const cookieStore = await cookies();
+    const theme = cookieStore.get("theme")?.value || "near-black";
 
-  return (
-    <html
-      lang="en"
-      className={inter.className}
-      data-theme={theme}
-      data-scroll-behavior="smooth"
-    >
-      <body>
-        <div className="flex w-full max-w-[1920px] flex-col items-center justify-center">
-          <Header />
-          <main className="w-full">{children}</main>
-          <Footer theme={theme} />
-        </div>
-        <CookieConsentBanner />
-      </body>
-    </html>
-  );
+    return (
+        <html
+            lang="en"
+            className={inter.className}
+            data-theme={theme}
+            data-scroll-behavior="smooth"
+        >
+            <body>
+                <div className="flex w-full max-w-[1920px] flex-col items-center justify-center">
+                    <Header />
+                    <main className="w-full">{children}</main>
+                    <Footer theme={theme} />
+                </div>
+                <CookieConsentBanner />
+            </body>
+        </html>
+    );
 }

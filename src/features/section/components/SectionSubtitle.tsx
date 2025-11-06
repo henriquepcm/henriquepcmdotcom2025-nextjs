@@ -1,7 +1,7 @@
 export default function SectionSubtitle({
-  children,
+    children,
 }: {
-  children: React.ReactNode;
+    children: React.ReactNode;
 }) {
-  return <p className="mb-5">{children}</p>;
+    return <p className="mb-5">{children}</p>;
 }

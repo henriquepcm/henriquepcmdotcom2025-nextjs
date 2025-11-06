@@ -1,7 +1,7 @@
 export default function PostCardRoot({
-  children,
+    children,
 }: {
-  children: React.ReactNode;
+    children: React.ReactNode;
 }) {
-  return <li className="space-y-1">{children}</li>;
+    return <li className="space-y-1">{children}</li>;
 }

@@ -1,7 +1,7 @@
 export default function BlogPostHeader({
-  children,
+    children,
 }: {
-  children: React.ReactNode;
+    children: React.ReactNode;
 }) {
-  return <header>{children}</header>;
+    return <header>{children}</header>;
 }

@@ -1,11 +1,13 @@
 export default function BlogPostRoot({
-  children,
+    children,
 }: {
-  children: React.ReactNode;
+    children: React.ReactNode;
 }) {
-  return (
-    <div className="mt-36 flex w-full items-center justify-center">
-      <article className="flex w-10/12 flex-col xl:w-8/12">{children}</article>
-    </div>
-  );
+    return (
+        <div className="mt-36 flex w-full items-center justify-center">
+            <article className="flex w-10/12 flex-col xl:w-8/12">
+                {children}
+            </article>
+        </div>
+    );
 }

@@ -1,12 +1,12 @@
 type Footer = {
-  description: string;
-  icon: string;
+    description: string;
+    icon: string;
 };
 
 type Page = {
-  footer: Footer;
+    footer: Footer;
 };
 
 export type Data = {
-  page: Page;
+    page: Page;
 };

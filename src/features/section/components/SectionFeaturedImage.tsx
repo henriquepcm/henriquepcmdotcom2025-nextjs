@@ -1,7 +1,7 @@
 export default function SectionFeaturedImage({
-  children,
+    children,
 }: {
-  children: React.ReactNode;
+    children: React.ReactNode;
 }) {
-  return <div className="lg:w-3/6">{children}</div>;
+    return <div className="lg:w-3/6">{children}</div>;
 }

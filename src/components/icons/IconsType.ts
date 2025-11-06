@@ -1,3 +1,3 @@
 export type IconType = {
-  className?: string;
+    className?: string;
 };

@@ -1,7 +1,7 @@
 export default function SectionTitle({
-  children,
+    children,
 }: {
-  children: React.ReactNode;
+    children: React.ReactNode;
 }) {
-  return <h2 className="mb-5">{children}</h2>;
+    return <h2 className="mb-5">{children}</h2>;
 }
