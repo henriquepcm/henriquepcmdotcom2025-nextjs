@@ -7,15 +7,15 @@ import PostCardSubtitle from "./PostCardSubtitle";
 import PostCardTitle from "./PostCardTitle";
 
 export default function PostCard({ post }: { post: FormattedPostType }) {
-  return (
-    <PostCard.Root>
-      <PostCard.Link postSlug={post.slug}>
-        <PostCard.Image image={post.image} />
-        <PostCard.Title title={post.title} />
-        <PostCard.Subtitle subtitle={post.subtitle} />
-      </PostCard.Link>
-    </PostCard.Root>
-  );
+    return (
+        <PostCard.Root>
+            <PostCard.Link postSlug={post.slug}>
+                <PostCard.Image image={post.image} />
+                <PostCard.Title title={post.title} />
+                <PostCard.Subtitle subtitle={post.subtitle} />
+            </PostCard.Link>
+        </PostCard.Root>
+    );
 }
 
 PostCard.Root = PostCardRoot;

@@ -1,9 +1,9 @@
 import { Titles } from "./shared/sharedTypes";
 
 export type PageObj = {
-  titles: Titles;
+    titles: Titles;
 };
 
 export type Data = {
-  page: PageObj;
+    page: PageObj;
 };
