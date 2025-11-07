@@ -61,6 +61,8 @@ const GET_BLOG_POSTS = gql`
 `;
 
 export default async function BlogHome() {
+    const page = "Blog Home";
+
     try {
         const posts = await getGraphQLData<Posts>(GET_BLOG_POSTS);
 
@@ -83,6 +85,8 @@ export default async function BlogHome() {
 
         return <Blog posts={formattedPosts} />;
     } catch (error) {
-        return <ErrorMessage error={error} />;
+        const message = `Error loading data for: ${page}`;
+        console.error(message, error);
+        return <ErrorMessage message={message} />;
     }
 }

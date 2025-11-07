@@ -19,6 +19,8 @@ export default async function getGraphQLData<T>(
         return data as T;
     } catch (error) {
         console.error("Error executing query:", error);
-        throw new Error("Error executing query");
+        const message =
+            error instanceof Error ? error.message : "Unknown error";
+        throw new Error(`Error executing query: ${message}`);
     }
 }
