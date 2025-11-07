@@ -40,7 +40,7 @@ export default async function SectionAboutContainer() {
 
         return <SectionAbout sectionData={sectionData} />;
     } catch (error) {
-        const message = `We could load the data for: "${section}"`;
+        const message = `We couldn't load the data for: "${section}"`;
         console.error(message, error);
         return <ErrorMessage message={message} />;
     }
