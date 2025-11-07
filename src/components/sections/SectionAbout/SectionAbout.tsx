@@ -7,21 +7,21 @@ export default function SectionAbout({
 }: {
     sectionData: SectionData;
 }) {
+    const { id, name, titles, button, text, infoBlockList } = sectionData;
+
     return (
-        <Section id={sectionData.id}>
+        <Section id={id}>
             <Section.Container className="flex w-10/12 flex-col gap-10 lg:flex-row">
                 <Section.Area className="lg:w-3/6">
-                    <Section.Name name={sectionData.name} />
-                    <Section.Title>{sectionData.titles.title}</Section.Title>
-                    <Section.Subtitle>
-                        {sectionData.titles.subtitle}
-                    </Section.Subtitle>
+                    <Section.Name name={name} />
+                    <Section.Title>{titles.title}</Section.Title>
+                    <Section.Subtitle>{titles.subtitle}</Section.Subtitle>
 
                     <Section.ExternalLinkButton
-                        label={sectionData.button.label}
-                        link={sectionData.button.link}
+                        label={button.label}
+                        link={button.link}
                         className="w-5/6 md:w-3/6 lg:w-4/6 xl:w-4/6 2xl:w-3/6"
-                        icon={sectionData.button.icon}
+                        icon={button.icon}
                     />
                 </Section.Area>
                 <Section.Area className="mt-5 lg:w-3/6">
@@ -29,9 +29,9 @@ export default function SectionAbout({
                 </Section.Area>
             </Section.Container>
             <Section.Container className="mt-10 flex w-10/12 flex-col gap-10">
-                <Section.Text>{sectionData.text}</Section.Text>
+                <Section.Text>{text}</Section.Text>
                 <Section.InfoBlockList className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
-                    {sectionData.infoBlockList.map((infoBlockItem) => {
+                    {infoBlockList.map((infoBlockItem) => {
                         return (
                             <Section.InfoBlockItem key={infoBlockItem.id}>
                                 <Section.Icon
