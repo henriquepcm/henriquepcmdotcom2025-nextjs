@@ -16,6 +16,7 @@ const GET_HOME_DATA = gql`
 `;
 
 export default async function SectionHome() {
+    const section = "Home Section";
     try {
         const data = await getGraphQLData<Data>(GET_HOME_DATA);
 
@@ -26,6 +27,8 @@ export default async function SectionHome() {
 
         return <SectionHomeRender data={data} />;
     } catch (error) {
-        return <ErrorMessage error={error} />;
+        const message = `Error loading about data for: ${section}`;
+        console.error(message, error);
+        return <ErrorMessage message={message} />;
     }
 }
