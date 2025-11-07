@@ -19,7 +19,7 @@ export default function Section({ id, children }: SectionProps) {
     return (
         <section
             id={id}
-            className="flex h-screen w-full flex-col items-center py-28"
+            className="flex min-h-screen flex-col items-center justify-center py-28"
         >
             {children}
         </section>
