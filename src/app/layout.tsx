@@ -14,10 +14,17 @@ const inter = Inter({
     display: "swap",
 });
 
+const title = "UI/UX Developer in Porto Alegre, Brazil, LATAM";
+
+const description =
+    "Henrique Pochmann is a UI/UX Developer based in Porto Alegre, Brazil, with over 10 years of experience.";
+
+const imgUrl =
+    "https://henriquepcm.com/img/henrique-pochmann-frontend-developer.jpg";
+
 export const metadata: Metadata = {
-    title: "Freelance Frontend Developer & UI/UX Designer in Porto Alegre, Brazil (LATAM)",
-    description:
-        "Henrique Pochmann is a Front-end Developer and UI/UX Designer based in Porto Alegre, Brazil (LATAM), with over 10 years of experience. He specializes in working with modern technologies within the JavaScript ecosystem.",
+    title,
+    description,
     icons: {
         icon: "/img/henrique-pochmann-front-end-developer-ui-ux-designer-brazil.png",
     },
@@ -30,14 +37,13 @@ export const metadata: Metadata = {
         "Henrique Pochmann, front-end, ui/ux, developer, designer, Porto Alegre, Brazil, LATAM",
     publisher: "Henrique Pochmann",
     openGraph: {
-        title: "Front-end Developer & UI/UX Designer in Brazil (LATAM)",
-        description:
-            "Henrique Pochmann is a Front-end Developer and UI/UX Designer based in Porto Alegre, Brazil (LATAM), with over 10 years of experience. He specializes in working with modern technologies within the JavaScript ecosystem.",
+        title,
+        description,
         url: "https://henriquepcm.com",
         siteName: "henriquepcm.com",
         images: [
             {
-                url: "https://henriquepcm.com/img/henrique-pochmann-frontend-developer.jpg",
+                url: imgUrl,
                 width: 4800,
                 height: 2520,
                 alt: "",
@@ -48,12 +54,9 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "Front-end Developer & UI/UX Designer in Porto Alegre, Brazil (LATAM)",
-        description:
-            "Henrique Pochmann is a Front-end Developer and UI/UX Designer based in Porto Alegre, Brazil (LATAM), with over 10 years of experience. He specializes in working with modern technologies within the JavaScript ecosystem.",
-        images: [
-            "https://henriquepcm.com/img/henrique-pochmann-frontend-developer.jpg",
-        ],
+        title,
+        description,
+        images: [imgUrl],
     },
 };
 
