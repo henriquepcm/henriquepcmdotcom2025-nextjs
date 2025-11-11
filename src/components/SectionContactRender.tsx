@@ -135,7 +135,7 @@ export default function SectionContactRender({ data }: { data: Data }) {
                                         htmlFor="second-name"
                                         className="-translate-y-[3.6rem] peer-focus:text-brandprimary"
                                     >
-                                        Second Name
+                                        Last Name
                                     </label>
                                 </div>
                                 <div className="company-input flex w-full flex-col">
