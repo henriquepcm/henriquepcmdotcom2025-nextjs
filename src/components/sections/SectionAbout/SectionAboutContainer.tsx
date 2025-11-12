@@ -22,7 +22,7 @@ export default async function SectionAboutContainer() {
             "menuOrder",
         );
 
-        const sectionData = {
+        const sectionAboutData = {
             id: data.page.title,
             name: data.page.title,
             titles: {
@@ -38,7 +38,7 @@ export default async function SectionAboutContainer() {
             infoBlockList: infoBlockListSorted,
         };
 
-        return <SectionAbout sectionData={sectionData} />;
+        return <SectionAbout data={sectionAboutData} />;
     } catch (error) {
         const message = `We couldn't load the data for: "${section}"`;
         console.error(message, error);
