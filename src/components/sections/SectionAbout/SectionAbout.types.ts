@@ -1,4 +1,4 @@
-export type SectionData = {
+export type SectionAboutData = {
     id: string;
     name: string;
     titles: {

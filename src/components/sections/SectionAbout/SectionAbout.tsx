@@ -1,11 +1,11 @@
 import KiwiAppAnimation from "@/components/Animations/KiwiAppAnimation";
 import Section from "@/features/section/components/Section";
-import { SectionData } from "./SectionAbout.types";
+import { SectionAboutData } from "./SectionAbout.types";
 
 export default function SectionAbout({
     sectionData,
 }: {
-    sectionData: SectionData;
+    sectionData: SectionAboutData;
 }) {
     const { id, name, titles, button, text, infoBlockList } = sectionData;
 
