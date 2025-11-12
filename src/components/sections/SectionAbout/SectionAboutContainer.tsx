@@ -23,7 +23,7 @@ export default async function SectionAboutContainer() {
         );
 
         const sectionAboutData = {
-            id: data.page.title,
+            sectionId: data.page.title,
             name: data.page.title,
             titles: {
                 title: data.page.titles.mainTitle,
