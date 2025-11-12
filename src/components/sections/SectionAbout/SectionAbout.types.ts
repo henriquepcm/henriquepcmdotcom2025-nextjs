@@ -1,5 +1,5 @@
 export type SectionAboutData = {
-    id: string;
+    sectionId: string;
     name: string;
     titles: {
         title: string;
