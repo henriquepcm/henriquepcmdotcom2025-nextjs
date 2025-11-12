@@ -3,10 +3,10 @@ import Section from "@/features/section/components/Section";
 import { SectionAboutData } from "./SectionAbout.types";
 
 export default function SectionAbout({ data }: { data: SectionAboutData }) {
-    const { id, name, titles, button, text, infoBlockList } = data;
+    const { sectionId, name, titles, button, text, infoBlockList } = data;
 
     return (
-        <Section id={id}>
+        <Section id={sectionId}>
             <Section.Container className="flex w-10/12 flex-col gap-10 lg:flex-row">
                 <Section.Area className="lg:w-3/6">
                     <Section.Name name={name} />
