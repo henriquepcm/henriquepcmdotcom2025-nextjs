@@ -1,10 +1,6 @@
 import { useSpring, useInView, animated } from "@react-spring/web";
 import Image from "next/image";
 
-type ProjectAnimationProps = {
-    project: "bills" | "stocks";
-};
-
 const projectImages = {
     bills: {
         desktopHomeScreen: {
@@ -36,7 +32,12 @@ const projectImages = {
     },
 };
 
-export default function ProjectAnimation({ project }: ProjectAnimationProps) {
+export default function ProjectAnimation({ id }: { id: string }) {
+    //Project IDs
+    // bills: "cG9zdDo1OQ=="
+    // stocks: "cG9zdDo1OA=="
+    const project = id === "cG9zdDo1OQ==" ? "bills" : "stocks";
+
     const image = projectImages[project];
 
     const [refProject, inViewProject] = useInView({
@@ -95,10 +96,7 @@ export default function ProjectAnimation({ project }: ProjectAnimationProps) {
     return (
         <>
             {/* @ts-expect-error bug with React Spring + TypeScript + Next.js 15 https://github.com/pmndrs/react-spring/issues/2332 */}
-            <animated.div
-                ref={refProject}
-                className="relative flex h-[30rem] items-center justify-center lg:h-[20rem] lg:items-end"
-            >
+            <animated.div ref={refProject} className="relative">
                 <div className="md:w-5/6 lg:w-full">
                     <div>
                         {/* @ts-expect-error bug with React Spring + TypeScript + Next.js 15 https://github.com/pmndrs/react-spring/issues/2332 */}
