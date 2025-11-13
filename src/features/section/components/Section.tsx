@@ -9,6 +9,7 @@ import SectionTitle from "./SectionTitle";
 import SectionInfoBlockItem from "./SectionInfoBlockItem";
 import SectionIcon from "./Section.Icon";
 import SectionInfoBlockList from "./SectionInfoBlockList";
+import SectionInfoBlockItemTitle from "./SectionInfoBlockItemTitle";
 
 type SectionProps = {
     id: string;
@@ -37,3 +38,4 @@ Section.Area = SectionArea;
 Section.InfoBlockItem = SectionInfoBlockItem;
 Section.Icon = SectionIcon;
 Section.InfoBlockList = SectionInfoBlockList;
+Section.InfoBlockItemTitle = SectionInfoBlockItemTitle;

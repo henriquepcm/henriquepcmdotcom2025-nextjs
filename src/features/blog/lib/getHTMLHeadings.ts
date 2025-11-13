@@ -1,7 +1,7 @@
 import rehypeParse from "rehype-parse";
 import { unified } from "unified";
 import { visit } from "unist-util-visit";
-import { slugify } from "./slugify";
+import { slugify } from "../../../lib/slugify";
 
 export default function getHTMLHeadings(html: string) {
     const headings: { text: string; id: string; level: number }[] = [];

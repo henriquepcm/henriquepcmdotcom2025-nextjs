@@ -4,7 +4,7 @@ import type { Root, Element, Text } from "hast";
 import rehypeStringify from "rehype-stringify";
 import { unified } from "unified";
 import { visit } from "unist-util-visit";
-import { slugify } from "./slugify";
+import { slugify } from "../../../lib/slugify";
 
 export default async function addAnchorsToHeadings(html: string) {
     const schema = structuredClone(defaultSchema);
