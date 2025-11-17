@@ -44,7 +44,7 @@ export default function SkillCard({ icon, label }: SkillCardProps) {
                 style={styleCard}
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
-                className="group flex h-[6.25rem] w-[11.25rem] flex-col rounded-md border border-brandborder bg-brandsurface duration-300 ease-in-out hover:translate-y-2 hover:scale-95 hover:bg-brandaccent"
+                className="group flex h-[5.75rem] w-[10.75rem] flex-col rounded-md border border-brandborder bg-brandsurface duration-300 ease-in-out hover:translate-y-2 hover:scale-95 hover:bg-brandaccent sm:h-[6.25rem] sm:w-[11.25rem]"
             >
                 <div
                     dangerouslySetInnerHTML={{ __html: icon }}
