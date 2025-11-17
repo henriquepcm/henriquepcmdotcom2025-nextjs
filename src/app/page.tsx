@@ -1,13 +1,13 @@
 import SectionAboutContainer from "@/components/sections/SectionAbout/SectionAboutContainer";
 import SectionContact from "@/components/SectionContact";
-import SectionHome from "@/components/SectionHome";
 import SectionSkills from "@/components/SectionSkills";
 import SectionProjectsContainer from "@/components/sections/SectionProject/SectionProjectsContainer";
+import SectionHomeContainer from "@/components/sections/SectionHome/SectionHomeContainer";
 
 export default async function App() {
     return (
         <>
-            <SectionHome />
+            <SectionHomeContainer />
             <SectionAboutContainer />
             <SectionProjectsContainer />
             <SectionSkills />
