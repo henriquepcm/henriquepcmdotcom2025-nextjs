@@ -1,5 +1,5 @@
+import ThemePicker from "@/features/theme-picker/components/ThemePicker";
 import { Data } from "@/types/footerTypes";
-import ThemePicker from "./ThemePicker";
 
 type FooterRenderProps = {
     data: Data;
