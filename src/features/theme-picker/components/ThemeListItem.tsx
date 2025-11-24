@@ -1,4 +1,4 @@
-import CheckedIcon from "./icons/CheckedIcon";
+import CheckedIcon from "@/components/icons/CheckedIcon";
 
 type ThemeListItemProps = {
     onClick: () => void;

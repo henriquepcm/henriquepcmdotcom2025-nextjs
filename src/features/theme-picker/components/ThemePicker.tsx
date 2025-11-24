@@ -1,5 +1,5 @@
 "use client";
-import ChevronIcon from "./icons/ChevronIcon";
+import ChevronIcon from "@/components/icons/ChevronIcon";
 import ThemeListItem from "./ThemeListItem";
 import { useEffect, useState } from "react";
 
@@ -7,6 +7,9 @@ export default function ThemePicker({ theme }: { theme: string }) {
     //————— States ————————————————————
     const [isThemePickerOpen, setIsThemePickerOpen] = useState(false);
     const [selectedTheme, setSelectedTheme] = useState(theme);
+
+    //————— Derived States ————————————————————
+    const resolvedTheme = selectedTheme || "";
 
     //————— List of available themes ————————————————————
     // Add the color palette to globals.css before updating this list.
@@ -30,8 +33,6 @@ export default function ThemePicker({ theme }: { theme: string }) {
 
     //————— Styles ————————————————————
     const arrowDirectionStyles = isThemePickerOpen ? "rotate-180" : "rotate-0";
-    const btnDefaultClasses =
-        "h-12 w-32 transform rounded-md border border-brandprimary p-3 text-[0.6rem] text-brandprimary duration-500 hover:bg-brandaccent";
 
     return (
         <>
@@ -41,11 +42,11 @@ export default function ThemePicker({ theme }: { theme: string }) {
                 aria-haspopup="true"
                 aria-expanded={isThemePickerOpen}
                 aria-controls="theme-menu"
-                className={`${btnDefaultClasses}`}
+                className="h-12 w-32 transform rounded-md border border-brandprimary p-3 text-[0.6rem] text-brandprimary duration-500 hover:bg-brandaccent"
             >
                 <div className="flex items-center justify-between">
                     <div className="text-start text-brandtextprimary">
-                        {!selectedTheme ? "" : selectedTheme}
+                        {resolvedTheme}
                     </div>
                     <div>
                         <span
