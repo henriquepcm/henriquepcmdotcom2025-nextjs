@@ -1,9 +1,9 @@
 import { useState, useRef } from "react";
-import { useOutsideClick } from "../hooks/useOutsideClick";
-import { BurgerIcon } from "./icons/BurgerIcon";
 import { Menu } from "@/types/headerTypes";
 import useIsBlog from "@/hooks/useIsBlog";
 import Link from "next/link";
+import { useOutsideClick } from "./hooks/useOutsideClick";
+import { BurgerIcon } from "./BurgerIcon";
 
 export default function MenuMobile({ items, button }: Menu) {
     const [isMobileMenuVisible, setIsMobileMenuVisible] = useState(false);

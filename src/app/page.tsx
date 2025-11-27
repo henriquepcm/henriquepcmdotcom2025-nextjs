@@ -1,8 +1,8 @@
-import SectionAboutContainer from "@/components/sections/SectionAbout/SectionAboutContainer";
-import SectionProjectsContainer from "@/components/sections/SectionProjects/SectionProjectsContainer";
-import SectionHomeContainer from "@/components/sections/SectionHome/SectionHomeContainer";
-import SectionSkillsContainer from "@/components/sections/SectionSkills/SectionSkillsContainer";
+import SectionAboutContainer from "@/features/about/SectionAboutContainer";
+import SectionProjectsContainer from "@/features/projects/SectionProjectsContainer";
+import SectionSkillsContainer from "@/features/skills/SectionSkillsContainer";
 import SectionContactContainer from "@/features/contact/SectionContactContainer";
+import SectionHomeContainer from "@/features/home/SectionHomeContainer";
 
 export default async function App() {
     return (

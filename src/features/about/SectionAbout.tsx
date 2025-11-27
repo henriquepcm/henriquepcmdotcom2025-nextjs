@@ -1,4 +1,4 @@
-import KiwiAppAnimation from "@/components/Animations/KiwiAppAnimation";
+import SectionAboutAnimation from "@/features/about/SectionAboutAnimation";
 import Section from "@/features/section/components/Section";
 import { SectionAboutData } from "./SectionAbout.types";
 
@@ -21,7 +21,7 @@ export default function SectionAbout({ data }: { data: SectionAboutData }) {
                     />
                 </Section.Area>
                 <Section.Area className="mt-5 lg:w-3/6">
-                    <KiwiAppAnimation />
+                    <SectionAboutAnimation />
                 </Section.Area>
             </Section.Container>
             <Section.Container className="mt-10 flex w-10/12 flex-col gap-10">

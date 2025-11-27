@@ -1,6 +1,4 @@
-import { IconType } from "./IconsType";
-
-export const BurgerIcon = ({ className }: IconType) => (
+export const BurgerIcon = ({ className }: { className: string }) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"

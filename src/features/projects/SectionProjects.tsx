@@ -1,5 +1,5 @@
 "use client";
-import ProjectAnimation from "@/components/Animations/ProjectAnimation";
+import ProjectAnimation from "@/features/projects/SectionProjectsAnimations";
 import Section from "@/features/section/components/Section";
 import { Projects } from "./SectionProjects.types";
 
