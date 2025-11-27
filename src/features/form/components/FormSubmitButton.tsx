@@ -1,4 +1,4 @@
-import { Spinner } from "@/components/icons/Spinner";
+import { Spinner } from "./Spinner";
 
 export default function ContactFormSubmitButton({
     isPending,

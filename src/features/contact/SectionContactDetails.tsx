@@ -1,4 +1,4 @@
-import ExternalLink from "@/components/ExternalLink";
+import ExternalLink from "@/components/ui/ExternalLink";
 import Image from "next/image";
 import { UserUi } from "./SectionContact.types";
 

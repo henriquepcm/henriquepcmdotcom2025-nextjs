@@ -1,9 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import CookieIcon from "./icons/CookieIcon";
+
 import loadGoogleAnalytics from "@/lib/getGoogleAnalytics";
-import CookieBiteIcon from "./icons/CookieBiteIcon";
+import CookieIcon from "./CookieIcon";
+import CookieBiteIcon from "./CookieBiteIcon";
 
 type CookieConsentDecision = "accepted" | "declined";
 

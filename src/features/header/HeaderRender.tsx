@@ -1,12 +1,12 @@
 "use client";
 
 import { Data } from "@/types/headerTypes";
-import { useBeyondViewport } from "../hooks/useBeyondViewport";
+import { useBeyondViewport } from "../../hooks/useBeyondViewport";
+import BlogLogo from "../blog/components/Blog/BlogLogo";
+import useIsBlog from "@/hooks/useIsBlog";
 import Logo from "./Logo";
 import MenuMain from "./MenuMain";
 import MenuMobile from "./MenuMobile";
-import BlogLogo from "../features/blog/components/Blog/BlogLogo";
-import useIsBlog from "@/hooks/useIsBlog";
 
 export default function HeaderRender({ data }: { data: Data }) {
     const { isBeyondViewport } = useBeyondViewport();

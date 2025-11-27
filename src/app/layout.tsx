@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
-import CookieConsentBanner from "@/components/CookieConsentBanner";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import Header from "@/features/header/Header";
+import Footer from "@/features/footer/Footer";
 import { cookies } from "next/headers";
+import CookieConsentBanner from "@/features/cookie-banner/CookieConsentBanner";
 
 export const revalidate = 60; // seconds
 
