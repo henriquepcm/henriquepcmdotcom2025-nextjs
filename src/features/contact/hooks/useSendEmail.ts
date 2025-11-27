@@ -2,8 +2,8 @@ import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 
 export const useSendEmail = () => {
-    const form = useRef<HTMLFormElement | null>(null);
-    const [isFormSent, setIsFormSent] = useState(false);
+    const ref = useRef<HTMLFormElement | null>(null);
+    const [isSent, setIsSent] = useState(false);
     const [isPending, setIsPending] = useState(false);
 
     const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
@@ -15,14 +15,14 @@ export const useSendEmail = () => {
         const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
         const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
 
-        if (form.current && serviceId && templateId && publicKey) {
+        if (ref.current && serviceId && templateId && publicKey) {
             emailjs
-                .sendForm(serviceId, templateId, form.current, {
+                .sendForm(serviceId, templateId, ref.current, {
                     publicKey: publicKey,
                 })
                 .then(
                     () => {
-                        setIsFormSent(true);
+                        setIsSent(true);
                         setIsPending(false);
                     },
                     (error) => {
@@ -32,5 +32,5 @@ export const useSendEmail = () => {
         }
     };
 
-    return { form, isFormSent, isPending, sendEmail };
+    return { form: { isPending, ref, sendEmail, isSent } };
 };
