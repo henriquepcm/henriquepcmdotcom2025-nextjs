@@ -54,3 +54,10 @@ export type ContactUi = {
     section: SectionUi;
     user: UserUi;
 };
+
+export type FormType = {
+    isPending: boolean;
+    isSent: boolean;
+    ref: React.RefObject<HTMLFormElement | null>;
+    sendEmail: (e: React.FormEvent<HTMLFormElement>) => void;
+};
