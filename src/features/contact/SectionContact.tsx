@@ -22,9 +22,8 @@ export default function SectionContact({ contact }: { contact: ContactUi }) {
                         <ContactForm form={form} />
                     </Section.Area>
                 )}
-
                 {form.isSent && <ContactFormSuccessMessage />}
-                <Section.Area className="flex w-full flex-col items-center justify-center gap-5 px-20 md:px-60 lg:w-3/12 lg:px-0">
+                <Section.Area className="flex w-full flex-col items-center justify-center gap-5 px-16 md:px-60 lg:w-3/12 lg:px-0">
                     <SectionContactDetails user={contact.user} />
                 </Section.Area>
             </Section.Container>
