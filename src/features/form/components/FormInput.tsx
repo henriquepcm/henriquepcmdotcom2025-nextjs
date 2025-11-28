@@ -1,15 +1,12 @@
-type ContactFormInputProps = {
+type ContactFormInputProps = React.InputHTMLAttributes<HTMLInputElement> & {
     id: string;
     label: string;
-    isDisabled: boolean;
-    isRequired: boolean;
 };
 
 export default function ContactFormInput({
     id,
     label,
-    isDisabled,
-    isRequired,
+    ...props
 }: ContactFormInputProps) {
     return (
         <div className="flex w-full flex-col">
@@ -18,8 +15,7 @@ export default function ContactFormInput({
                 name={id}
                 className="peer border-brandborder focus:border-brandprimary"
                 type="text"
-                disabled={isDisabled}
-                required={isRequired}
+                {...props}
             />
             <label
                 htmlFor={id}

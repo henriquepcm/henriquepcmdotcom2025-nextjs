@@ -18,35 +18,30 @@ export default function ContactForm({ form }: { form: FormType }) {
 
     return (
         <Form form={form} onSubmit={handleSubmit}>
-            <div className="flex gap-10">
+            <div className="flex flex-col gap-5 md:flex-row md:gap-10">
                 <Form.Input
-                    isDisabled={isPending}
-                    isRequired={true}
                     id="first-name"
                     label="First Name"
+                    required
+                    disabled={isPending}
                 />
                 <Form.Input
                     id="last-name"
                     label="Last Name"
-                    isDisabled={isPending}
-                    isRequired={false}
+                    disabled={isPending}
                 />
             </div>
-            {/* Hidden honeypot */}
-            <div className="company-input flex w-full flex-col">
-                <input
+            {/* Hidden honeypot – class "company-input" hides de field from screens.  */}
+            <div
+                className="company-input flex w-full flex-col"
+                aria-hidden="true"
+            >
+                <Form.Input
                     id="company"
-                    name="company"
-                    className="peer w-full border-brandborder focus:border-brandprimary"
-                    type="text"
+                    label="Company"
                     onChange={(e) => setCompanyInput(e.target.value)}
+                    tabIndex={-1}
                 />
-                <label
-                    htmlFor="company"
-                    className="-translate-y-[3.6rem] peer-focus:text-brandprimary"
-                >
-                    Company
-                </label>
             </div>
             <Form.EmailInput
                 id="email"
