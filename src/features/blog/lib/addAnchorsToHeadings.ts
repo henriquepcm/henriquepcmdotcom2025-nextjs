@@ -1,10 +1,10 @@
 import rehypeParse from "rehype-parse";
 import rehypeSanitize, { defaultSchema } from "rehype-sanitize";
-import type { Root, Element, Text } from "hast";
 import rehypeStringify from "rehype-stringify";
 import { unified } from "unified";
 import { visit } from "unist-util-visit";
 import { slugify } from "../../../lib/slugify";
+import type { Root, Element, Text } from "hast";
 
 export default async function addAnchorsToHeadings(html: string) {
     const schema = structuredClone(defaultSchema);

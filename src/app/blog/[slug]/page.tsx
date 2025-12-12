@@ -1,7 +1,7 @@
+import { notFound } from "next/navigation";
+import { gql } from "@apollo/client";
 import BlogPost from "@/features/blog/components/BlogPost/BlogPost";
 import getGraphQLData from "@/lib/getGraphQLData";
-import { gql } from "@apollo/client";
-import { notFound } from "next/navigation";
 
 const GET_BLOG_POST_DATA = gql`
     query BlogPost($slug: ID!) {

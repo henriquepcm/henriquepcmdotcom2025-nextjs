@@ -1,7 +1,7 @@
 "use client";
 
-import { useSpring, useInView, animated } from "@react-spring/web";
 import Image from "next/image";
+import { useSpring, useInView, animated } from "@react-spring/web";
 
 export default function KiwiAppAnimation() {
     const [refPhone, inViewPhone] = useInView({

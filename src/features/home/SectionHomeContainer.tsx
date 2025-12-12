@@ -1,7 +1,7 @@
 import ErrorMessage from "@/components/Error/ErrorMessage";
 import getGraphQLData from "@/lib/getGraphQLData";
-import { GET_HOME_DATA } from "./SectionHome.query";
 import SectionHome from "./SectionHome";
+import { GET_HOME_DATA } from "./SectionHome.query";
 import { HomeApiResponse } from "./SectionHome.types";
 
 export default async function SectionHomeContainer() {

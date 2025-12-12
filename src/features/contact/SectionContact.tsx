@@ -1,10 +1,10 @@
 "use client";
 import Section from "@/features/section/components/Section";
-import SectionContactDetails from "./SectionContactDetails";
-import { ContactUi } from "./SectionContact.types";
 import ContactForm from "./ContactForm";
-import { useSendEmail } from "./hooks/useSendEmail";
 import ContactFormSuccessMessage from "./ContactFormSuccessMessage";
+import { useSendEmail } from "./hooks/useSendEmail";
+import { ContactUi } from "./SectionContact.types";
+import SectionContactDetails from "./SectionContactDetails";
 
 export default function SectionContact({ contact }: { contact: ContactUi }) {
     const { id, name, title } = contact.section;

@@ -1,6 +1,6 @@
-import Form from "../form/components/Form";
 import { useSpamGuard } from "./hooks/useSpamGuard";
 import { FormType } from "./SectionContact.types";
+import Form from "../form/components/Form";
 
 export default function ContactForm({ form }: { form: FormType }) {
     // ––––– Form –––––––––––––––––––––––––

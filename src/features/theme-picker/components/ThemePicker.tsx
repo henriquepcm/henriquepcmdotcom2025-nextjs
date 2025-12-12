@@ -1,7 +1,7 @@
 "use client";
+import { useEffect, useState } from "react";
 import ChevronIcon from "@/components/icons/ChevronIcon";
 import ThemeListItem from "./ThemeListItem";
-import { useEffect, useState } from "react";
 
 export default function ThemePicker({ theme }: { theme: string }) {
     //————— States ————————————————————

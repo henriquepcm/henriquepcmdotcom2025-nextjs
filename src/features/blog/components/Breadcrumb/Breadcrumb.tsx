@@ -1,6 +1,6 @@
+import Link from "next/link";
 import ChevronIcon from "@/components/icons/ChevronIcon";
 import HomeIcon from "@/components/icons/HomeIcon";
-import Link from "next/link";
 
 type Item = {
     label: string;

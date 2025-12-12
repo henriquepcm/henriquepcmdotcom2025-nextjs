@@ -1,5 +1,5 @@
-import { Button } from "@/types/headerTypes";
 import Link from "next/link";
+import { Button } from "@/types/headerTypes";
 
 type ButtonContactProps = {
     button: Button;

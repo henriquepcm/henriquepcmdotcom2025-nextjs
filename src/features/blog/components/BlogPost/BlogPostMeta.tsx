@@ -1,7 +1,7 @@
-import formatDateAndTime from "@/app/utils/formatDateAndTime";
 import ArrowPath from "@/components/icons/ArrowPath";
 import CalendarIcon from "@/components/icons/CalendarIcon";
 import UserCircleIcon from "@/components/icons/UserCircleIcon";
+import formatDateAndTime from "@/app/utils/formatDateAndTime";
 
 type MetaProps = {
     meta: {
