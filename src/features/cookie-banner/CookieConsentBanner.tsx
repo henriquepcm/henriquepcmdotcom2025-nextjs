@@ -3,8 +3,8 @@
 import { useEffect, useState } from "react";
 
 import loadGoogleAnalytics from "@/lib/getGoogleAnalytics";
-import CookieIcon from "./CookieIcon";
 import CookieBiteIcon from "./CookieBiteIcon";
+import CookieIcon from "./CookieIcon";
 
 type CookieConsentDecision = "accepted" | "declined";
 

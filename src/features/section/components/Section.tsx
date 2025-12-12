@@ -1,15 +1,15 @@
+import SectionIcon from "./Section.Icon";
+import SectionArea from "./SectionArea";
 import SectionContainer from "./SectionContainer";
 import SectionExternalLinkButton from "./SectionExternalLinkButton";
 import SectionFeaturedImage from "./SectionFeaturedImage";
-import SectionArea from "./SectionArea";
+import SectionInfoBlockItem from "./SectionInfoBlockItem";
+import SectionInfoBlockItemTitle from "./SectionInfoBlockItemTitle";
+import SectionInfoBlockList from "./SectionInfoBlockList";
 import SectionName from "./SectionName";
 import SectionSubtitle from "./SectionSubtitle";
 import SectionText from "./SectionText";
 import SectionTitle from "./SectionTitle";
-import SectionInfoBlockItem from "./SectionInfoBlockItem";
-import SectionIcon from "./Section.Icon";
-import SectionInfoBlockList from "./SectionInfoBlockList";
-import SectionInfoBlockItemTitle from "./SectionInfoBlockItemTitle";
 
 type SectionProps = {
     id: string;

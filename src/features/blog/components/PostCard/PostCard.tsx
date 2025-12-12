@@ -1,10 +1,10 @@
-import { FormattedPostType } from "../../types/types";
 import PostCardCategory from "./PostCardCategory";
 import PostCardImage from "./PostCardImage";
 import PostCardLink from "./PostCardLink";
 import PostCardRoot from "./PostCardRoot";
 import PostCardSubtitle from "./PostCardSubtitle";
 import PostCardTitle from "./PostCardTitle";
+import { FormattedPostType } from "../../types/types";
 
 export default function PostCard({ post }: { post: FormattedPostType }) {
     return (

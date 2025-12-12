@@ -1,8 +1,8 @@
-import getGraphQLData from "@/lib/getGraphQLData";
-import { GET_PROJECTS_DATA } from "./SectionProjects.query";
-import SectionProjects from "./SectionProjects";
 import ErrorMessage from "@/components/Error/ErrorMessage";
+import getGraphQLData from "@/lib/getGraphQLData";
 import { slugify } from "@/lib/slugify";
+import SectionProjects from "./SectionProjects";
+import { GET_PROJECTS_DATA } from "./SectionProjects.query";
 import { DataApiResponse } from "./SectionProjects.types";
 
 export default async function SectionProjectsContainer() {

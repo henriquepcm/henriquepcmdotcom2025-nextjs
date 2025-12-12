@@ -1,7 +1,7 @@
-import getGraphQLData from "@/lib/getGraphQLData";
-import { GET_SKILLS_DATA } from "./SectionSkills.query";
-import SectionSkills from "./SectionSkills";
 import ErrorMessage from "@/components/Error/ErrorMessage";
+import getGraphQLData from "@/lib/getGraphQLData";
+import SectionSkills from "./SectionSkills";
+import { GET_SKILLS_DATA } from "./SectionSkills.query";
 import { SectionSkillsDataApi } from "./SectionSkills.types";
 
 export default async function SectionSkillsContainer() {

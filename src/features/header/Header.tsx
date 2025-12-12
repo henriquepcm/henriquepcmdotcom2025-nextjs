@@ -1,6 +1,6 @@
+import { gql } from "@apollo/client";
 import getGraphQLData from "@/lib/getGraphQLData";
 import HeaderRender from "./HeaderRender";
-import { gql } from "@apollo/client";
 import { Data } from "@/types/headerTypes";
 
 const GET_HEADER_DATA = gql`

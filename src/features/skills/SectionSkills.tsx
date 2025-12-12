@@ -1,6 +1,6 @@
 import Section from "@/features/section/components/Section";
-import SkillCard from "./SkillCard";
 import { SectionSkillsDataUi } from "./SectionSkills.types";
+import SkillCard from "./SkillCard";
 
 export default function SectionSkills({
     sectionSkills,

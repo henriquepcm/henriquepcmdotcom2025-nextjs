@@ -1,9 +1,9 @@
+import ErrorMessage from "@/components/Error/ErrorMessage";
+import sortByKey from "@/app/utils/sortByProperty";
 import getGraphQLData from "@/lib/getGraphQLData";
-import { Data } from "@/types/aboutTypes";
 import SectionAbout from "./SectionAbout";
 import { GET_ABOUT_DATA } from "./SectionAbout.query";
-import sortByKey from "@/app/utils/sortByProperty";
-import ErrorMessage from "@/components/Error/ErrorMessage";
+import { Data } from "@/types/aboutTypes";
 
 export default async function SectionAboutContainer() {
     const section = "About Section";

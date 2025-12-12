@@ -1,8 +1,8 @@
+import { gql } from "@apollo/client";
 import ErrorMessage from "@/components/Error/ErrorMessage";
 import Blog from "@/features/blog/components/Blog/Blog";
 import { FormattedPostType } from "@/features/blog/types/types";
 import getGraphQLData from "@/lib/getGraphQLData";
-import { gql } from "@apollo/client";
 
 type Posts = {
     posts: {

@@ -1,6 +1,6 @@
 "use client";
-import { useSpring, useInView, animated } from "@react-spring/web";
 import Image from "next/image";
+import { useSpring, useInView, animated } from "@react-spring/web";
 import { HomeTitles } from "./SectionHome.types";
 
 export default function HomeAnimation({ titles }: { titles: HomeTitles }) {

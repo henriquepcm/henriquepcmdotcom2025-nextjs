@@ -1,7 +1,7 @@
+import ErrorMessage from "@/components/Error/ErrorMessage";
 import getGraphQLData from "@/lib/getGraphQLData";
 import SectionContact from "./SectionContact";
 import { GET_CONTACT_DATA } from "./SectionContact.query";
-import ErrorMessage from "@/components/Error/ErrorMessage";
 import { ContactApiResponse } from "./SectionContact.types";
 
 export default async function SectionContactContainer() {

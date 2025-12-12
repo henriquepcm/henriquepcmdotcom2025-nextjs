@@ -1,5 +1,5 @@
-import ExternalLink from "@/components/ui/ExternalLink";
 import Image from "next/image";
+import ExternalLink from "@/components/ui/ExternalLink";
 import { UserUi } from "./SectionContact.types";
 
 export default function SectionContactDetails({ user }: { user: UserUi }) {

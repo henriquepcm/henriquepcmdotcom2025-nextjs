@@ -1,7 +1,7 @@
 import DocumentIcon from "@/components/icons/DocumentIcon";
 import getHTMLHeadings from "@/features/blog/lib/getHTMLHeadings";
-import { Heading } from "./Types";
 import BlogPostTableOfContentsList from "./BlogPostTableOfContentsList";
+import { Heading } from "./Types";
 
 export default function BlogPostTableOfContents({
     content,

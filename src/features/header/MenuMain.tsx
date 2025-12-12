@@ -1,7 +1,7 @@
-import { Menu } from "@/types/headerTypes";
-import ButtonContact from "./ButtonContact";
 import Link from "next/link";
 import useIsBlog from "@/hooks/useIsBlog";
+import ButtonContact from "./ButtonContact";
+import { Menu } from "@/types/headerTypes";
 
 export default function MenuMain({ items, button }: Menu) {
     const isBlog = useIsBlog();

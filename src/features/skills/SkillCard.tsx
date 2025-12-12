@@ -1,6 +1,6 @@
 "use client";
-import { useSpring, useInView, animated } from "@react-spring/web";
 import { useState } from "react";
+import { useSpring, useInView, animated } from "@react-spring/web";
 
 interface SkillCardProps {
     icon: string;
