@@ -13,10 +13,10 @@ const inter = Inter({
     display: "swap",
 });
 
-const title = "UI/UX Engineer in Porto Alegre, Brazil, LATAM";
+const title = "Frontend Developer & Product Designer in Brazil";
 
 const description =
-    "Henrique Pochmann is a UI/UX Engineer based in Porto Alegre, Brazil, with over 10 years of experience.";
+    "Henrique Pochmann is a Frontend Developer & Product Designer in Brazil, with over 10 years of experience.";
 
 const imgUrl =
     "https://henriquepcm.com/img/henrique-pochmann-frontend-developer.jpg";
@@ -32,8 +32,7 @@ export const metadata: Metadata = {
     },
     robots: "index, follow",
 
-    keywords:
-        "Henrique Pochmann, front-end, ui/ux, developer, designer, Porto Alegre, Brazil, LATAM",
+    keywords: "Henrique Pochmann, frontend developer, product designer, Brazil",
     publisher: "Henrique Pochmann",
     openGraph: {
         title,
