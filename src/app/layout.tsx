@@ -13,10 +13,10 @@ const inter = Inter({
     display: "swap",
 });
 
-const title = "Frontend Developer & Product Designer in Brazil";
+const title = "Product Designer & Developer in Brazil";
 
 const description =
-    "Henrique Pochmann is a Frontend Developer & Product Designer in Brazil, with over 10 years of experience.";
+    "Henrique Pochmann is Product Designer & Developer based in Brazil, with over 10 years of experience.";
 
 const imgUrl =
     "https://henriquepcm.com/img/henrique-pochmann-frontend-developer.jpg";
