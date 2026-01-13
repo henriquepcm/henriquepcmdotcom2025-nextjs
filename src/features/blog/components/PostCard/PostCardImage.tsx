@@ -16,6 +16,7 @@ export default function PostCardImage({ image }: { image: ImageType }) {
                 width={766}
                 height={402}
                 className="transition duration-300 group-hover:scale-105"
+                unoptimized
             />
         </div>
     );
