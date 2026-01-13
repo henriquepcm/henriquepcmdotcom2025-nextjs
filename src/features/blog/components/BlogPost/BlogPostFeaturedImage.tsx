@@ -23,7 +23,6 @@ export default function BlogPostFeaturedImage({ image }: FeaturedImageProps) {
                 width={1200}
                 height={630}
                 className="mt-8 h-full w-full object-cover object-right"
-                unoptimized
             ></Image>
         </figure>
     );
