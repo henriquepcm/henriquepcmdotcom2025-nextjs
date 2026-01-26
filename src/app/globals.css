@@ -118,6 +118,9 @@
     article h2 {
         @apply border-b-[0.05rem] border-brandtextsecondary pb-2 text-[1.75rem] font-bold leading-[2.18rem] tracking-normal;
     }
+    article h2:first-of-type {
+        @apply mt-0; /* Remove margin top for the first heading to align with table of content in bigger screens */
+    }
 
     article h3 {
         @apply text-[1.5rem] font-semibold leading-[1.87rem] tracking-normal;
@@ -140,11 +143,11 @@
     }
 
     article ul {
-        @apply w-fit list-disc sm:ml-10;
+        @apply w-fit list-disc;
     }
 
     article ol {
-        @apply w-fit list-decimal sm:ml-10;
+        @apply w-fit list-decimal;
     }
 
     article ul li {
@@ -184,7 +187,6 @@
 /* Blog Post Table of Contents */
 .toc ol {
     counter-reset: section;
-    padding-left: 2rem;
 }
 
 .toc ol ol {
