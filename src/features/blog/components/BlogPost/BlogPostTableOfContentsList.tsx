@@ -9,7 +9,7 @@ export default function BlogPostTableOfContentsList({
 
     return (
         //Edit styles on globals.css
-        <ol className="toc">
+        <ul className="toc list-none">
             {headings.map((heading) => {
                 return (
                     <li key={heading.id}>
@@ -27,6 +27,6 @@ export default function BlogPostTableOfContentsList({
                     </li>
                 );
             })}
-        </ol>
+        </ul>
     );
 }
