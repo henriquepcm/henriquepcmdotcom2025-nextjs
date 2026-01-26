@@ -16,7 +16,7 @@ export default function BlogPostMeta({ meta }: MetaProps) {
     const formattedUpdated = formatDateAndTime(meta.updated);
 
     return (
-        <div className="mt-8 flex flex-col justify-between gap-4 md:flex-row">
+        <div className="mt-5 flex flex-col justify-between gap-2 md:flex-row">
             <div className="flex gap-2 text-start">
                 <div className="mt-1 flex size-[0.875rem] text-brandtextprimary opacity-30">
                     <CalendarIcon />
