@@ -190,7 +190,8 @@
 }
 
 .toc li ul {
-    margin-bottom: 1rem;
+    margin: 1rem 1rem 1rem 0.1rem;
+
     padding-left: 1rem;
 }
 

@@ -9,7 +9,7 @@ export default function BlogPostTableOfContentsList({
 
     return (
         //Edit styles on globals.css
-        <ul className="toc list-none">
+        <ul className="toc mt-4 list-none">
             {headings.map((heading) => {
                 return (
                     <li key={heading.id}>
