@@ -185,21 +185,17 @@
 }
 
 /* Blog Post Table of Contents */
-.toc ol {
-    counter-reset: section;
+.toc ul {
+    list-style-type: none;
 }
 
-.toc ol ol {
-    padding-left: 2rem;
+.toc li ul {
+    margin-bottom: 1rem;
+    padding-left: 1rem;
 }
 
 .toc li {
-    counter-increment: section;
-    margin-top: 1rem;
-}
-
-.toc li::before {
-    content: counters(section, ".") ". ";
+    margin-top: rem;
 }
 
 .grid-overlay {

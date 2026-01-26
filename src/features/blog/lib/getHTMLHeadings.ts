@@ -10,7 +10,7 @@ export default function getHTMLHeadings(html: string) {
     const tree = unified().use(rehypeParse, { fragment: true }).parse(html);
 
     visit(tree, "element", (node) => {
-        if (/^h[1-6]$/.test(node.tagName)) {
+        if (/^h[2-3]$/.test(node.tagName)) {
             const text = (node.children || [])
                 .filter((child) => child.type === "text")
                 .map((child) => child.value)
