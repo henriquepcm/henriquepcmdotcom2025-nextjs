@@ -18,7 +18,6 @@ export const GET_ABOUT_DATA = gql`
         careerHighlights {
             nodes {
                 id
-                menuOrder
                 careerHighlights {
                     icon
                     description
