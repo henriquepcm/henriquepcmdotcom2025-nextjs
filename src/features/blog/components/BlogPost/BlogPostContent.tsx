@@ -18,7 +18,7 @@ export default async function BlogPostContent({
                     ></div>
                 </section>
             </div>
-            <TableOfContents content={content} />
+            <TableOfContents content={contentWithAnchors} />
         </div>
     );
 }
