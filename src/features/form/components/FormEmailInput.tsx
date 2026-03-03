@@ -16,7 +16,7 @@ export default function ContactFormEmailInput({
             <input
                 id={id}
                 name={id}
-                className="peer w-full border-brandborder focus:border-brandprimary"
+                className="peer w-full border-brandborder focus:border-brandtextprimary"
                 type="email"
                 pattern="[^@\s]+@[^@\s]+\.[^@\s]+$"
                 title="e.g., user@example.com"
@@ -25,7 +25,7 @@ export default function ContactFormEmailInput({
             />
             <label
                 htmlFor={id}
-                className="-translate-y-[3.6rem] peer-focus:text-brandprimary"
+                className="-translate-y-[3.6rem] peer-focus:text-brandtextprimary"
             >
                 {label}
             </label>

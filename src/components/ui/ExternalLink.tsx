@@ -34,7 +34,7 @@ export default function ExternalLink({ site }: { site: Site }) {
                 <animated.div
                     ref={refLink}
                     style={styleExternalLink}
-                    className="flex h-12 w-full transform items-center justify-center gap-2 rounded-md border border-brandprimary p-2 duration-300 hover:bg-brandaccent"
+                    className="flex h-12 w-full transform items-center justify-center gap-2 rounded-md border border-brandborder p-2 duration-300 hover:bg-brandaccent"
                 >
                     {icon && (
                         <div

@@ -11,7 +11,7 @@ export default function SectionContactDetails({ user }: { user: UserUi }) {
                 src="/img/front-end-developer-ui-ux-designer-brazil-latam-henrique-pochmann.avif"
                 width={121}
                 height={121}
-                className="min-w-24 rounded-full border-[0.35rem]"
+                className="min-w-24 rounded-full border-[0.35rem] border-white"
                 loading="lazy"
                 alt="Avatar showing the face of the front-end developer and UI/UX designer in Brazil, Latam, Henrique Pochmann"
             />

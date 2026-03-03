@@ -9,12 +9,12 @@ export default function BlogPostTableOfContentsList({
 
     return (
         //Edit styles on globals.css
-        <ul className="toc mt-4 list-none">
+        <ul className="toc mt-5 list-none">
             {headings.map((heading) => {
                 return (
                     <li key={heading.id}>
                         <a
-                            className="transform border-b-2 border-transparent pb-1 duration-300 hover:border-b-2 hover:border-brandprimary hover:text-brandtextprimary"
+                            className="transform border-b-2 border-transparent duration-300 hover:text-brandtextprimary hover:underline"
                             href={`#${heading.id}`}
                         >
                             {heading.text}

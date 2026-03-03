@@ -13,7 +13,7 @@ export default function ThemePicker({ theme }: { theme: string }) {
 
     //————— List of available themes ————————————————————
     // Add the color palette to globals.css before updating this list.
-    const themeList = ["dark-violet", "near-black", "wireframe"];
+    const themeList = ["dark-violet", "near-black", "original"];
 
     //————— Event Handlers ————————————————————
     function handleThemePickerVisibility() {
