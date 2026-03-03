@@ -27,37 +27,28 @@
 
     [data-theme="near-black"] {
         --brand-background: #37353e;
-        --brand-surface: #44444e;
+        --brand-surface: #2c2a32;
         --brand-primary: #d1007a;
         --brand-secondary: var(--brand-white);
-        --brand-accent: #616170;
-        --brand-text-primary: var(--brand-white);
-        --brand-text-secondary: #c2c0c9;
-        --brand-border: #646071;
+        --brand-accent: #2c2a32;
+        --brand-text-primary: #fff;
+        --brand-text-secondary: #afaeb2;
+        --brand-border: #5f5d65;
         --brand-shadow: var(--brand-black);
         --brand-overlay: rgba(34, 33, 39, 0.7);
     }
 
-    [data-theme="wireframe"] {
-        --brand-background: #f4f3f7;
-        --brand-surface: #d0ceda;
-        --brand-primary: var(--brand-black);
+    [data-theme="original"] {
+        --brand-background: #dee5ea;
+        --brand-surface: #eff2f4;
+        --brand-primary: #486377;
         --brand-secondary: var(--brand-white);
-        --brand-accent: var(--brand-white);
-        --brand-text-primary: var(--brand-black);
+        --brand-accent: #bdcbd4;
+        --brand-text-primary: #24323b;
         --brand-text-secondary: #5c5a65;
-        --brand-border: #c0becc;
+        --brand-border: #bdcbd4;
         --brand-shadow: var(--brand-black);
         --brand-overlay: rgba(255, 255, 255, 0.7);
-    }
-
-    .brand-bg-gradient {
-        background-image: linear-gradient(
-            190deg,
-            var(--brand-surface) 0%,
-            var(--brand-background) 37%,
-            var(--brand-surface) 75%
-        );
     }
 
     html {
@@ -65,7 +56,7 @@
     }
 
     body {
-        @apply brand-bg-gradient flex justify-center text-xs leading-6 tracking-wider text-brandtextsecondary;
+        @apply flex justify-center bg-brandbackground text-xs leading-6 tracking-wider text-brandtextsecondary;
     }
 
     h1 {
@@ -116,7 +107,7 @@
     }
 
     article h2 {
-        @apply border-b-[0.05rem] border-brandtextsecondary pb-2 text-[1.75rem] font-bold leading-[2.18rem] tracking-normal;
+        @apply pb-2 text-[1.75rem] font-bold leading-[2.18rem] tracking-normal;
     }
     article h2:first-of-type {
         @apply mt-0; /* Remove margin top for the first heading to align with table of content in bigger screens */
@@ -155,10 +146,10 @@
     }
 
     article section a {
-        @apply transform border-b border-brandtextsecondary p-1 pb-1 leading-10 duration-300;
+        @apply transform border-b-[0.0625rem] border-dotted border-brandtextsecondary p-1 pb-1 font-bold leading-10 text-brandtextprimary duration-300;
     }
     article section a:hover {
-        @apply rounded-md border-brandbackground bg-brandprimary p-1 text-brandtextprimary;
+        @apply rounded-md border-solid border-brandborder bg-brandsurface p-1 text-brandtextsecondary;
     }
 
     article table {
@@ -180,7 +171,7 @@
     }
 
     .brand-btn {
-        @apply transform rounded-md bg-brandprimary text-[0.6rem] uppercase tracking-[0.15rem] text-brandsecondary duration-300 hover:scale-[1.01] hover:shadow-md hover:shadow-brandshadow;
+        @apply transform rounded-md bg-brandprimary text-[0.6rem] uppercase tracking-[0.15rem] text-brandsecondary duration-300 hover:scale-[1.01] hover:font-bold hover:shadow-md hover:shadow-brandshadow;
     }
 }
 
@@ -190,14 +181,9 @@
 }
 
 .toc li ul {
-    list-style-type: disc;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    list-style-type: none;
     padding-left: 1rem;
-}
-
-.toc li {
-    margin-top: rem;
+    margin-top: 0;
 }
 
 .grid-overlay {

@@ -22,7 +22,7 @@ export default function BlogPostMeta({ meta }: MetaProps) {
                     <CalendarIcon />
                 </div>
                 <div className="flex items-center gap-1 md:flex-col md:items-start md:gap-0 2xl:flex-row 2xl:gap-1">
-                    <div>Published: </div>
+                    <div className="font-bold">Published: </div>
                     <div className="leading-5 text-brandtextprimary 2xl:leading-6">
                         {formattedPublished}
                     </div>
@@ -33,7 +33,7 @@ export default function BlogPostMeta({ meta }: MetaProps) {
                     <ArrowPath />
                 </div>
                 <div className="flex items-center gap-1 md:flex-col md:items-start md:gap-0 2xl:flex-row 2xl:gap-1">
-                    <div>Updated: </div>
+                    <div className="font-bold">Updated: </div>
                     <div className="leading-5 text-brandtextprimary 2xl:leading-6">
                         {formattedUpdated}
                     </div>
@@ -45,7 +45,7 @@ export default function BlogPostMeta({ meta }: MetaProps) {
                     <UserCircleIcon />
                 </div>
                 <div className="flex items-center gap-1 md:flex-col md:items-start md:gap-0 2xl:flex-row 2xl:gap-1">
-                    <div>Author: </div>
+                    <div className="font-bold">Author: </div>
                     <div className="leading-5 text-brandtextprimary 2xl:leading-6">
                         {meta.author}
                     </div>

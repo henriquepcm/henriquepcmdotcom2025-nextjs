@@ -16,13 +16,13 @@ export default function ContactFormMessageInput({
             <textarea
                 id={id}
                 name={id}
-                className="required peer border-brandborder focus:border-brandprimary"
+                className="required peer border-brandborder focus:border-brandtextprimary"
                 required={isRequired}
                 disabled={isDisabled}
             ></textarea>
             <label
                 htmlFor={id}
-                className="-translate-y-[11rem] peer-focus:text-brandprimary"
+                className="-translate-y-[11rem] peer-focus:text-brandtextprimary"
             >
                 {label}
             </label>

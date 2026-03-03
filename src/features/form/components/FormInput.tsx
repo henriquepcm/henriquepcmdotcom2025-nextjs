@@ -13,13 +13,13 @@ export default function ContactFormInput({
             <input
                 id={id}
                 name={id}
-                className="peer border-brandborder focus:border-brandprimary"
+                className="peer border-brandborder focus:border-brandtextprimary"
                 type="text"
                 {...props}
             />
             <label
                 htmlFor={id}
-                className="-translate-y-[3.6rem] peer-focus:text-brandprimary"
+                className="-translate-y-[3.6rem] peer-focus:text-brandtextprimary"
             >
                 {label}
             </label>
