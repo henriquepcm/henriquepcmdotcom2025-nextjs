@@ -42,7 +42,7 @@ export default function ThemePicker({ theme }: { theme: string }) {
                 aria-haspopup="true"
                 aria-expanded={isThemePickerOpen}
                 aria-controls="theme-menu"
-                className="h-12 w-32 transform rounded-md border border-brandprimary p-3 text-[0.6rem] text-brandprimary duration-500 hover:bg-brandaccent"
+                className="h-12 w-full transform rounded-md border border-brandprimary p-3 text-[0.6rem] text-brandprimary duration-500 hover:bg-brandaccent"
             >
                 <div className="flex items-center justify-between">
                     <div className="text-start text-brandtextprimary">
@@ -61,7 +61,7 @@ export default function ThemePicker({ theme }: { theme: string }) {
                 <ul
                     id="theme-menu"
                     aria-labelledby="theme-button"
-                    className="absolute bottom-12 w-32 transform flex-col rounded-md border border-brandprimary bg-brandsurface p-2 text-[0.6rem] text-brandprimary"
+                    className="absolute bottom-12 w-full transform flex-col rounded-md border border-brandprimary bg-brandsurface p-2 text-[0.6rem] text-brandprimary"
                 >
                     {themeList.map((theme) => {
                         const isSelected = theme === selectedTheme;
