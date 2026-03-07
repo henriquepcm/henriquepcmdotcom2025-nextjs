@@ -59,6 +59,10 @@
         @apply flex justify-center bg-brandbackground text-xs leading-6 tracking-wider text-brandtextsecondary;
     }
 
+    iframe {
+        @apply rounded-[0.5rem];
+    }
+
     h1 {
         @apply mb-3 text-2xl font-black uppercase text-brandtextprimary;
     }
@@ -99,7 +103,7 @@
     h4,
     h5,
     h6 {
-        @apply mt-20 scroll-mt-28 text-brandtextprimary; /* Add extra space so headings don't get hidden under the site menu */
+        @apply mt-10 scroll-mt-28 text-brandtextprimary; /* Add extra space so headings don't get hidden under the site menu */
     }
 
     article h1 {
@@ -134,7 +138,7 @@
     }
 
     article ul {
-        @apply w-fit list-disc;
+        @apply w-fit list-disc pl-[1rem];
     }
 
     article ol {
@@ -162,6 +166,10 @@
 
     article tr {
         @apply rounded-xl odd:bg-brandbackground even:bg-brandsurface;
+    }
+
+    article img {
+        @apply rounded-[0.5rem] shadow-2xl;
     }
 }
 
