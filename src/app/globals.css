@@ -183,6 +183,15 @@
     }
 }
 
+/* Blog Photo Gallery */
+.wp-block-gallery {
+    @apply flex gap-3 overflow-x-auto rounded-[0.5rem] p-6 scrollbar scrollbar-track-brandbackground scrollbar-thumb-brandprimary;
+}
+
+.wp-block-image {
+    @apply w-full flex-none;
+}
+
 /* Blog Post Table of Contents */
 .toc ul {
     list-style-type: none;

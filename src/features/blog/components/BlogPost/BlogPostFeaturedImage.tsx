@@ -15,14 +15,15 @@ type FeaturedImageProps = {
 
 export default function BlogPostFeaturedImage({ image }: FeaturedImageProps) {
     return (
-        <figure className="aspect-[600/630] w-full overflow-hidden md:aspect-[1200/630]">
+        <figure className="w-full overflow-hidden">
             <Image
                 alt={image.altText}
                 priority
                 src={`${WP_URL}/${image.filePath}`}
-                width={1200}
-                height={630}
-                className="mt-8 h-full w-full object-cover object-right"
+                width={1280}
+                height={672}
+                layout="responsive"
+                className="mt-8"
                 unoptimized
             ></Image>
         </figure>
