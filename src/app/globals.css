@@ -150,10 +150,10 @@
     }
 
     article section a {
-        @apply transform border-b-[0.0625rem] border-dotted border-brandtextsecondary p-1 pb-1 font-bold leading-10 text-brandtextprimary duration-300;
+        @apply transform border-b-[0.0625rem] border-brandtextsecondary p-1 pb-1 font-bold leading-10 text-brandtextprimary duration-300;
     }
     article section a:hover {
-        @apply rounded-md border-solid border-brandborder bg-brandsurface p-1 text-brandtextsecondary;
+        @apply pb-[0.1rem] text-brandtextsecondary;
     }
 
     article table {
