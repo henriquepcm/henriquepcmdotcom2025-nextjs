@@ -1,3 +1,4 @@
+import { cache } from "react";
 import { notFound } from "next/navigation";
 import { gql } from "@apollo/client";
 import BlogPost from "@/features/blog/components/BlogPost/BlogPost";
@@ -67,31 +68,69 @@ type Data = {
     };
 };
 
-export default async function SingleBlogPage({ params }: { params: Params }) {
-    const { slug } = await params;
-
-    try {
-        const data = await getGraphQLData<Data>(GET_BLOG_POST_DATA, { slug });
-
-        const formattedData = {
-            category: data.post.categories.nodes[0].name,
-            title: data.post.title,
-            subtitle: data.post.subtitle.subtitle,
-            meta: {
-                author: `${data.post.author.node.firstName} ${data.post.author.node.lastName}`,
-                published: data.post.dateGmt,
-                updated: data.post.modifiedGmt,
-            },
-            image: {
-                altText: data.post.featuredImage.node.altText,
-                filePath: data.post.featuredImage.node.filePath,
-            },
-            content: data.post.content,
-        };
-
-        return <BlogPost data={formattedData} />;
-    } catch (error) {
-        console.error("Error loading blog post data", error);
+export const getPostData = cache(async (slug: string) => {
+    const data = await getGraphQLData<Data>(GET_BLOG_POST_DATA, { slug });
+    if (!data) {
         notFound();
     }
+
+    const formattedData = {
+        category: data.post.categories.nodes[0].name,
+        title: data.post.title,
+        subtitle: data.post.subtitle.subtitle,
+        meta: {
+            author: `${data.post.author.node.firstName} ${data.post.author.node.lastName}`,
+            published: data.post.dateGmt,
+            updated: data.post.modifiedGmt,
+        },
+        image: {
+            altText: data.post.featuredImage.node.altText,
+            filePath: data.post.featuredImage.node.filePath,
+        },
+        content: data.post.content,
+    };
+
+    return formattedData;
+});
+
+export async function generateMetadata({ params }: { params: Params }) {
+    const { slug } = await params;
+    const post = await getPostData(slug);
+
+    return {
+        title: post.title,
+        description: post.subtitle,
+        alternates: {
+            canonical: `https://henriquepcm.com/blog/${slug}`,
+        },
+        openGraph: {
+            title: post.title,
+            description: post.subtitle,
+            url: `https://henriquepcm.com/blog/${slug}`,
+            siteName: "henriquepcm.com",
+            images: [
+                {
+                    url: post.image.filePath,
+                    width: 4800,
+                    height: 2520,
+                    alt: post.image.altText,
+                },
+            ],
+            locale: "en_US",
+            type: "website",
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: post.title,
+            description: post.subtitle,
+            images: [post.image.filePath],
+        },
+    };
+}
+
+export default async function SinglBlogPage({ params }: { params: Params }) {
+    const { slug } = await params;
+    const post = await getPostData(slug);
+
+    return <BlogPost data={post} />;
 }
