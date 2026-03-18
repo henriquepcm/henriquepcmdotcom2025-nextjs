@@ -34,6 +34,8 @@ export default function BlogPost({ data }: BlogPostProps) {
         { label: data.title, href: `/blog/${data.category}/${data.title}` },
     ];
 
+    console.log(data);
+
     return (
         <BlogPost.Root>
             <BlogPost.Header>

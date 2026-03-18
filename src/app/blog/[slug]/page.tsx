@@ -96,6 +96,7 @@ export const getPostData = cache(async (slug: string) => {
 export async function generateMetadata({ params }: { params: Params }) {
     const { slug } = await params;
     const post = await getPostData(slug);
+    const NEXT_PUBLIC_WP_URL = process.env.NEXT_PUBLIC_WP_URL;
 
     return {
         title: post.title,
@@ -110,7 +111,7 @@ export async function generateMetadata({ params }: { params: Params }) {
             siteName: "henriquepcm.com",
             images: [
                 {
-                    url: post.image.filePath,
+                    url: `${NEXT_PUBLIC_WP_URL}/${post.image.filePath}`,
                     width: 4800,
                     height: 2520,
                     alt: post.image.altText,
@@ -123,7 +124,7 @@ export async function generateMetadata({ params }: { params: Params }) {
             card: "summary_large_image",
             title: post.title,
             description: post.subtitle,
-            images: [post.image.filePath],
+            images: [`${NEXT_PUBLIC_WP_URL}/${post.image.filePath}`],
         },
     };
 }
