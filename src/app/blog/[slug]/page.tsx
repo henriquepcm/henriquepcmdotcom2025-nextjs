@@ -101,6 +101,12 @@ export async function generateMetadata({ params }: { params: Params }) {
     return {
         title: post.title,
         description: post.subtitle,
+        authors: [
+            {
+                name: post.meta.author,
+                url: "https://henriquepcm.com",
+            },
+        ],
         alternates: {
             canonical: `https://henriquepcm.com/blog/${slug}`,
         },
@@ -118,7 +124,7 @@ export async function generateMetadata({ params }: { params: Params }) {
                 },
             ],
             locale: "en_US",
-            type: "website",
+            type: "article",
         },
         twitter: {
             card: "summary_large_image",
