@@ -19,6 +19,21 @@ export default function MenuMain({ items, button }: Menu) {
                     if (excluded.includes(item.title)) {
                         return null;
                     }
+
+                    if (item.title === "Blog") {
+                        return (
+                            <li key={item.id}>
+                                <Link
+                                    key={item.id}
+                                    aria-label={`Go to the ${item.title} page"`}
+                                    href="https://henriquepcm.com/blog"
+                                >
+                                    {item.title}
+                                </Link>
+                            </li>
+                        );
+                    }
+
                     return (
                         <li key={item.id}>
                             <Link
