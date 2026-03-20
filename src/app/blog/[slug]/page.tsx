@@ -118,8 +118,8 @@ export async function generateMetadata({ params }: { params: Params }) {
             images: [
                 {
                     url: `${NEXT_PUBLIC_WP_URL}/${post.image.filePath}`,
-                    width: 4800,
-                    height: 2520,
+                    width: 1200,
+                    height: 630,
                     alt: post.image.altText,
                 },
             ],
