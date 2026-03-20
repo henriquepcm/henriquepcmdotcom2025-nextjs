@@ -5,13 +5,13 @@ import { Projects } from "./SectionProjects.types";
 
 export default function SectionProjects({ projects }: { projects: Projects }) {
     return (
-        <div id="Projects">
+        <div id="Labs">
             {projects.map((project) => {
                 return (
                     <Section id={project.sectionId} key={project.id}>
                         <Section.Container className="lg:justiy-center flex w-10/12 flex-col gap-10 lg:flex-row">
                             <Section.Area className="lg:w-3/6 xl:translate-y-12">
-                                <Section.Name name="Projects" />
+                                <Section.Name name="Labs" />
                                 <Section.Title>{project.title}</Section.Title>
                                 <Section.Subtitle>
                                     {project.description}
