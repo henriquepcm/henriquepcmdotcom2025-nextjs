@@ -15,15 +15,15 @@ export default async function SectionSkillsContainer() {
             throw new Error(`Missing ${section} data`);
         }
 
-        const skills = fetchedSkillsData.technologies.nodes
-            .map((technology) => {
+        const skills = fetchedSkillsData.technologies.nodes.map(
+            (technology) => {
                 return {
                     id: technology.id,
                     icon: technology.technologies.icon,
                     label: technology.technologies.label,
                 };
-            })
-            .sort((a, b) => a.label.localeCompare(b.label));
+            },
+        );
 
         const sectionSkillsData = {
             sectionId: fetchedSkillsData.page.title,
