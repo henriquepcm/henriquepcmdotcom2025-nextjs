@@ -63,10 +63,7 @@
         @apply rounded-[0.5rem];
     }
 
-    h1 {
-        @apply mb-3 text-2xl font-black uppercase text-brandtextprimary;
-    }
-
+    h1,
     h2 {
         @apply text-xl font-bold leading-8 tracking-wide text-brandtextprimary;
     }
