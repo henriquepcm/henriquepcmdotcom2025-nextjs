@@ -5,15 +5,13 @@ import { BurgerIcon } from "./BurgerIcon";
 import { useOutsideClick } from "./hooks/useOutsideClick";
 import { Menu } from "@/types/headerTypes";
 
-export default function MenuMobile({ items, button }: Menu) {
+export default function MenuMobile({ items }: Menu) {
     const [isMobileMenuVisible, setIsMobileMenuVisible] = useState(false);
 
     const menuRef = useRef<HTMLUListElement | null>(null);
     const menuIconRef = useRef<HTMLButtonElement | null>(null);
 
     const isBlog = useIsBlog();
-
-    const contactUrl = isBlog ? `/#${button.link}` : `#${button.link}`;
 
     function handleMenuVisibility() {
         setIsMobileMenuVisible((prev) => !prev);
@@ -80,16 +78,6 @@ export default function MenuMobile({ items, button }: Menu) {
                             </li>
                         );
                     })}
-                    <li>
-                        <Link
-                            onClick={handleMenuVisibility}
-                            className="block"
-                            href={contactUrl}
-                            aria-label="Go to the contact form"
-                        >
-                            {button.label}
-                        </Link>
-                    </li>
                 </ul>
             </nav>
         </div>

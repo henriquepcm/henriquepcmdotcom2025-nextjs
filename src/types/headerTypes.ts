@@ -28,5 +28,4 @@ export type Button = {
 
 export type Menu = {
     items: PageNode[];
-    button: Button;
 };
