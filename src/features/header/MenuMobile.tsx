@@ -57,6 +57,7 @@ export default function MenuMobile({ items, button }: Menu) {
                             return (
                                 <li key={item.id}>
                                     <Link
+                                        onClick={handleMenuVisibility}
                                         key={item.id}
                                         aria-label={`Go to the ${item.title} page"`}
                                         href="https://henriquepcm.com/blog"
