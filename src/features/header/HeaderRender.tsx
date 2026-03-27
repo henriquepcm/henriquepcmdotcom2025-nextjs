@@ -1,6 +1,7 @@
 "use client";
 
 import useIsBlog from "@/hooks/useIsBlog";
+import ButtonContact from "./ButtonContact";
 import Logo from "./Logo";
 import MenuMain from "./MenuMain";
 import MenuMobile from "./MenuMobile";
@@ -41,11 +42,11 @@ export default function HeaderRender({ data }: { data: Data }) {
                         <Logo svgString={svgString} />
                         {isBlog && <BlogLogo />}
                     </div>
-                    <MenuMain items={sortedMenuItemList} button={buttonData} />
-                    <MenuMobile
-                        items={sortedMenuItemList}
-                        button={buttonData}
-                    />
+                    <div className="flex items-center gap-6">
+                        <MenuMain items={sortedMenuItemList} />
+                        <ButtonContact isBlog={isBlog} button={buttonData} />
+                        <MenuMobile items={sortedMenuItemList} />
+                    </div>
                 </div>
             </div>
         </header>

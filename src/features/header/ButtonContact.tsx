@@ -1,4 +1,5 @@
 import Link from "next/link";
+import EnvelopeIcon from "@/components/icons/EnvelopeIcon";
 import { Button } from "@/types/headerTypes";
 
 type ButtonContactProps = {
@@ -10,17 +11,17 @@ export default function ButtonContact({ button, isBlog }: ButtonContactProps) {
     const url = isBlog ? `/#${button.link}` : `#${button.link}`;
 
     return (
-        <div
-            aria-label="Go to contact form"
-            className="brand-btn h-10 w-28 text-[0.6rem]"
-        >
+        <>
             <Link
                 aria-label="Go to contact form"
-                className="flex h-full w-full items-center justify-center text-brandsecondary"
+                className="brand-btn flex h-10 w-full items-center justify-center px-4 text-[0.6rem] text-brandsecondary"
                 href={url}
             >
-                {button.label}
+                <span className="hidden lg:inline">{button.label}</span>
+                <span className="size-5 lg:hidden">
+                    <EnvelopeIcon />
+                </span>
             </Link>
-        </div>
+        </>
     );
 }

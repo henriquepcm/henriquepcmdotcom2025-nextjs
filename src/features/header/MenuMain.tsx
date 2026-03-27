@@ -1,9 +1,8 @@
 import Link from "next/link";
 import useIsBlog from "@/hooks/useIsBlog";
-import ButtonContact from "./ButtonContact";
 import { Menu } from "@/types/headerTypes";
 
-export default function MenuMain({ items, button }: Menu) {
+export default function MenuMain({ items }: Menu) {
     const isBlog = useIsBlog();
 
     return (
@@ -46,7 +45,6 @@ export default function MenuMain({ items, button }: Menu) {
                     );
                 })}
             </ul>
-            <ButtonContact isBlog={isBlog} button={button} />
         </nav>
     );
 }
