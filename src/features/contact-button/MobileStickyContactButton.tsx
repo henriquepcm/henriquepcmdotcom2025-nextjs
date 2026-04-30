@@ -11,7 +11,7 @@ export default function MobileStickyContactButton() {
         if (!contactFormID) return;
 
         const observer = new IntersectionObserver(
-            ([entry]) => setIsContactFormVisible(!entry.isIntersecting),
+            ([entry]) => setIsContactFormVisible(entry.isIntersecting),
             { threshold: 0.3 },
         );
 
@@ -22,7 +22,7 @@ export default function MobileStickyContactButton() {
         };
     }, []);
 
-    if (!isContactFormVisible) return null;
+    if (isContactFormVisible) return null;
 
     return (
         <div className="fixed bottom-0 z-[99] flex w-full items-center bg-brandoverlay p-9 backdrop-blur-sm sm:hidden">
