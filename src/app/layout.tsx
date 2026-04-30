@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { cookies } from "next/headers";
+import MobileStickyContactButton from "@/features/contact-button/MobileStickyContactButton";
 import CookieConsentBanner from "@/features/cookie-banner/CookieConsentBanner";
 import Footer from "@/features/footer/Footer";
 import Header from "@/features/header/Header";
@@ -75,6 +76,7 @@ export default async function RootLayout({
         >
             <body>
                 <div className="flex w-full max-w-[1920px] flex-col items-center justify-center">
+                    <MobileStickyContactButton />
                     <Header />
                     <main className="w-full">{children}</main>
                     <Footer theme={theme} />

@@ -41,7 +41,8 @@ export default function CookieConsentBanner() {
 
     return (
         <div
-            className={`${bannerClasses} fixed bottom-10 m-6 w-[90vw] transform duration-1000 sm:w-[66vw] md:w-[50vw] lg:w-[40vw] xl:w-[33vw] 2xl:w-[25vw]`}
+            id="Cookie-Banner"
+            className={`${bannerClasses} fixed bottom-32 m-6 w-[90vw] transform duration-1000 sm:w-[66vw] md:w-[50vw] lg:w-[40vw] xl:w-[33vw] 2xl:w-[25vw]`}
         >
             <div className="flex flex-col items-center rounded-lg bg-brandoverlay p-10 text-brandtextprimary backdrop-blur-sm">
                 <div className="flex gap-5">

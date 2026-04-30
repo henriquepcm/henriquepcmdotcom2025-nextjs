@@ -1,12 +1,12 @@
 "use client";
 
 import useIsBlog from "@/hooks/useIsBlog";
-import ButtonContact from "./ButtonContact";
 import Logo from "./Logo";
 import MenuMain from "./MenuMain";
 import MenuMobile from "./MenuMobile";
 import { useBeyondViewport } from "../../hooks/useBeyondViewport";
 import BlogLogo from "../blog/components/Blog/BlogLogo";
+import HeaderContactButton from "../contact-button/HeaderContactButton";
 import { Data } from "@/types/headerTypes";
 
 export default function HeaderRender({ data }: { data: Data }) {
@@ -19,11 +19,6 @@ export default function HeaderRender({ data }: { data: Data }) {
     );
     const svgString = data.page.header.logo;
 
-    const buttonData = {
-        label: data.page.header.buttonLabel,
-        link: data.page.header.buttonLink,
-    };
-
     const isBlog = useIsBlog();
 
     if (!data) {
@@ -33,7 +28,7 @@ export default function HeaderRender({ data }: { data: Data }) {
     return (
         <header>
             <div
-                className={`fixed left-0 top-0 z-[99] flex w-full justify-center ${
+                className={`fixed left-0 top-0 z-[98] flex w-full justify-center ${
                     isBeyondViewport && "bg-brandoverlay backdrop-blur-sm"
                 }`}
             >
@@ -44,7 +39,7 @@ export default function HeaderRender({ data }: { data: Data }) {
                     </div>
                     <div className="flex items-center gap-6">
                         <MenuMain items={sortedMenuItemList} />
-                        <ButtonContact isBlog={isBlog} button={buttonData} />
+                        <HeaderContactButton />
                         <MenuMobile items={sortedMenuItemList} />
                     </div>
                 </div>
