@@ -76,11 +76,12 @@ export default async function RootLayout({
         >
             <body>
                 <div className="flex w-full max-w-[1920px] flex-col items-center justify-center">
-                    <MobileStickyContactButton />
                     <Header />
                     <main className="w-full">{children}</main>
+
                     <Footer theme={theme} />
                 </div>
+                <MobileStickyContactButton />
                 <CookieConsentBanner />
             </body>
         </html>
