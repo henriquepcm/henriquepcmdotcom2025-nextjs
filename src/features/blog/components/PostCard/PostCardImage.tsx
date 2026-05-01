@@ -15,7 +15,7 @@ export default function PostCardImage({ image }: { image: ImageType }) {
                 alt={image.altText}
                 width={766}
                 height={402}
-                className="transition duration-300 group-hover:scale-105"
+                className="rounded-[0.5rem] transition duration-300 group-hover:scale-105"
                 unoptimized
             />
         </div>

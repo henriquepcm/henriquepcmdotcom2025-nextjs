@@ -13,7 +13,7 @@ export default function BlogPage({ posts }: { posts: FormattedPostType[] }) {
             <div className="w-10/12">
                 <Breadcrumb items={breadcrumbItems} />
                 <h1 className="mt-8 text-3xl font-bold normal-case leading-normal tracking-normal">
-                    Frontend Development, UI/UX Design, Digital Culture, and
+                    Product Design, UI/UX, Development, Digital Culture, and
                     more
                 </h1>
                 <div>Happiness is only real when shared</div>

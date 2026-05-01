@@ -40,14 +40,14 @@ export default function SectionExternalLinkButton({
                 <animated.div
                     ref={refLink}
                     style={styleExternalLink}
-                    className="flex h-12 w-full transform items-center justify-center gap-2 rounded-md border border-brandprimary p-2 duration-300 hover:bg-brandaccent"
+                    className="flex h-12 w-full transform items-center justify-center gap-2 rounded-md border border-brandborder p-2 duration-300 hover:bg-brandaccent"
                 >
                     <div
                         dangerouslySetInnerHTML={{ __html: icon }}
                         className="size-4 text-brandtextsecondary duration-300 group-hover:translate-x-1"
                     ></div>
 
-                    <div className="duration-300 group-hover:translate-x-2">
+                    <div className="duration-300 group-hover:translate-x-2 group-hover:font-bold">
                         {label}
                     </div>
                 </animated.div>
