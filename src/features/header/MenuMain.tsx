@@ -1,9 +1,8 @@
 import Link from "next/link";
 import useIsBlog from "@/hooks/useIsBlog";
-import ButtonContact from "./ButtonContact";
 import { Menu } from "@/types/headerTypes";
 
-export default function MenuMain({ items, button }: Menu) {
+export default function MenuMain({ items }: Menu) {
     const isBlog = useIsBlog();
 
     return (
@@ -19,6 +18,21 @@ export default function MenuMain({ items, button }: Menu) {
                     if (excluded.includes(item.title)) {
                         return null;
                     }
+
+                    if (item.title === "Blog") {
+                        return (
+                            <li key={item.id}>
+                                <Link
+                                    key={item.id}
+                                    aria-label={`Go to the ${item.title} page"`}
+                                    href="https://henriquepcm.com/blog"
+                                >
+                                    {item.title}
+                                </Link>
+                            </li>
+                        );
+                    }
+
                     return (
                         <li key={item.id}>
                             <Link
@@ -31,7 +45,6 @@ export default function MenuMain({ items, button }: Menu) {
                     );
                 })}
             </ul>
-            <ButtonContact isBlog={isBlog} button={button} />
         </nav>
     );
 }
