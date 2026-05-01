@@ -22,7 +22,6 @@ export default function BlogPostFeaturedImage({ image }: FeaturedImageProps) {
                 src={`${WP_URL}/${image.filePath}`}
                 width={1280}
                 height={672}
-                layout="responsive"
                 className="mt-8"
                 unoptimized
             ></Image>

@@ -1,13 +1,10 @@
 import Section from "@/features/section/components/Section";
-import { HomeTitles } from "./SectionHome.types";
-import HomeAnimation from "./SectionHomeAnimation";
+import BannerDominos from "./home-banners/BannerDominos";
 
-export default function SectionHome({ titles }: { titles: HomeTitles }) {
+export default function SectionHome() {
     return (
         <Section id="Home">
-            <Section.FeaturedImage>
-                <HomeAnimation titles={titles} />
-            </Section.FeaturedImage>
+            <BannerDominos />
         </Section>
     );
 }

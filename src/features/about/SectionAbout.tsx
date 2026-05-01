@@ -8,9 +8,9 @@ export default function SectionAbout({ data }: { data: SectionAboutData }) {
     return (
         <Section id={sectionId}>
             <Section.Container className="flex w-10/12 flex-col gap-10 lg:flex-row">
-                <Section.Area className="lg:w-3/6">
+                <Section.Area className="flex flex-col gap-4 lg:w-3/6">
                     <Section.Name name={name} />
-                    <Section.Title>{titles.title}</Section.Title>
+                    <h1>{titles.title}</h1>
                     <Section.Subtitle>{titles.subtitle}</Section.Subtitle>
 
                     <Section.ExternalLinkButton
