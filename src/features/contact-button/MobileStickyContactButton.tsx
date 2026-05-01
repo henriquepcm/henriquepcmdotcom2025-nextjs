@@ -1,10 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import PrimaryButtonLink from "./ContactButton";
 
 export default function MobileStickyContactButton() {
     const [isContactFormVisible, setIsContactFormVisible] = useState(false);
+    const pathname = usePathname();
 
     useEffect(() => {
         const contactFormID = document.getElementById("Contact");
@@ -20,7 +22,7 @@ export default function MobileStickyContactButton() {
         return () => {
             observer.disconnect();
         };
-    }, []);
+    }, [pathname]);
 
     if (isContactFormVisible) return null;
 
